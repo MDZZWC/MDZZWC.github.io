@@ -6,22 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.fangning.xyz.com">
-  <title>方宁 blog</title>
+  <title>进制 | 方宁 blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <meta name="keywords" content="方宁 学生博客 hexo主题 建立博客">
-  
-  <meta name="description" content="方宁 学生博客 hexo主题 建立博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="方宁 blog">
-<meta property="og:url" content="http://www.fangning.xyz.com/index.html">
+  <meta name="description" content="第四章 、进制转换数值类型二进制这个比较简单，就不记笔记了。快速的十进制转二进制的话。 256 128 64 32 16 8 4 2 1，然后进行凑数，比如 190 &#x3D; 128 + 32 + 16 + 8 + 4 + 2 找不大于190最大的数，128 找不大于190-128&#x3D;62最大的数，32 找不大于62-32&#x3D;30最大的数，16 找不大于30-16&#x3D;14最大的数，8 找不大于14-8&#x3D;6最大">
+<meta property="og:type" content="article">
+<meta property="og:title" content="进制">
+<meta property="og:url" content="http://www.fangning.xyz.com/2020/07/14/2020.07.14%20%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/index.html">
 <meta property="og:site_name" content="方宁 blog">
-<meta property="og:description" content="方宁 学生博客 hexo主题 建立博客">
+<meta property="og:description" content="第四章 、进制转换数值类型二进制这个比较简单，就不记笔记了。快速的十进制转二进制的话。 256 128 64 32 16 8 4 2 1，然后进行凑数，比如 190 &#x3D; 128 + 32 + 16 + 8 + 4 + 2 找不大于190最大的数，128 找不大于190-128&#x3D;62最大的数，32 找不大于62-32&#x3D;30最大的数，16 找不大于30-16&#x3D;14最大的数，8 找不大于14-8&#x3D;6最大">
 <meta property="og:locale">
+<meta property="article:published_time" content="2020-07-14T09:08:00.000Z">
+<meta property="article:modified_time" content="2020-09-03T17:17:12.989Z">
 <meta property="article:author" content="方宁">
-<meta property="article:tag" content="方宁_技术博客">
+<meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="方宁 blog" type="application/atom+xml">
@@ -204,784 +203,25 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-2020.09.02 个人博客搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-2020.07.14 进制转换" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/09/03/2020.09.02%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" target="_blank">Blog Start</a>
-  
+    <h1 class="article-title" itemprop="name">
+      进制
     </h1>
   
 
 
   
   
-<a href="/2020/09/03/2020.09.02%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-        <time datetime="2020-09-03T15:54:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-03</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="哈喽"><a href="#哈喽" class="headerlink" title="哈喽"></a>哈喽</h1><h2 id="从此刻开始"><a href="#从此刻开始" class="headerlink" title="从此刻开始"></a>从此刻开始</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>( <span class="string">&quot;Hello World !!\n&quot;</span> );</span><br><span class="line">System.out.println( <span class="string">&quot;Hello World !!&quot;</span> );</span><br><span class="line">print( <span class="string">&quot;Hello World&quot;</span> )</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Hello World !!&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">Console.WriteLine( <span class="string">&quot;Hello World !!&quot;</span> );</span><br><span class="line">System.Console.WriteLine( <span class="string">&quot;Hello World !!&quot;</span> );</span><br><span class="line">Console.<span class="built_in">log</span>( <span class="string">&quot;Hello World !!&quot;</span> );</span><br><span class="line">print_r( <span class="string">&quot;Hello World !!&quot;</span> );</span><br><span class="line">NSLog( @<span class="string">&quot;Hello World !!&quot;</span> );</span><br><span class="line">PRINT &#x27;Hello World !!&#x27;;</span><br><span class="line">puts &#x27;Hello World !!&#x27;</span><br><span class="line">fprintf( 1, &#x27;Hello World !!&#x27; );</span><br></pre></td></tr></table></figure>
-
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/博客功能测试//" class="article-tag-list-link color2">博客功能测试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/博客功能测试/标签与分类测试//" class="article-tag-list-link color3">标签与分类测试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/03/2020.09.02%20%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/09/03/hello-world/" target="_blank">Hello World</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/09/03/hello-world/" class="archive-article-date">
-        <time datetime="2020-09-03T09:42:39.545Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-03</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/博客功能测试//" class="article-tag-list-link color2">博客功能测试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/博客功能测试/模板效果//" class="article-tag-list-link color5">模板效果</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/03/hello-world/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.07.17 批处理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/17/2020.07.17%20%E6%89%B9%E5%A4%84%E7%90%86/" target="_blank">bat批处理文件</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/07/17/2020.07.17%20%E6%89%B9%E5%A4%84%E7%90%86/" class="archive-article-date">
-        <time datetime="2020-07-17T09:08:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-17</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="批处理1"><a href="#批处理1" class="headerlink" title="批处理1"></a>批处理1</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 新建 .bat 文件写批处理命令</span><br><span class="line">&gt; 在 bat 文件中编写批处理命令。双击运行</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 命令 pause</span><br><span class="line">&gt; 暂停，输出“按任意键继续...”，脚本停止，知道获取输入。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 命令 @echo off</span><br><span class="line">&gt; 关闭回显。</span><br><span class="line">&gt; 脚本在 dos 窗口运行过程中，所键入的 dos 命令被隐藏起来。只显示运行过程中的输出结果。</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 命令 color <span class="number">0</span>A</span><br><span class="line">&gt; 改变字体颜色，前者为背景色，后者为字体颜色。</span><br><span class="line">&gt; 具体 可使用 help color 查看其他颜色。</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 定义变量，<span class="string">&#x27;=&#x27;</span> 号左右不能加<span class="string">&quot;空格&quot;</span>!</span><br><span class="line">&gt; set a=<span class="number">100</span>				<span class="comment">#定义时复制</span></span><br><span class="line">&gt; set /p b=请输入一个数	<span class="comment">#定义后，用户输入值</span></span><br><span class="line">&gt;</span><br><span class="line">&gt; 使用变量时，用 echo %a%, %b%  <span class="comment">#用百分号引起来</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="制作恶意脚本，并且放置到开机启动文件夹中"><a href="#制作恶意脚本，并且放置到开机启动文件夹中" class="headerlink" title="制作恶意脚本，并且放置到开机启动文件夹中"></a>制作恶意脚本，并且放置到开机启动文件夹中</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">将关机脚本比编好，然后放到开机自动启动的程序文件夹中。</span><br><span class="line">这样一旦启动计算机，就会运行一遍该脚本使得计算机关机！</span><br><span class="line"></span><br><span class="line"><span class="meta">@echo</span></span><br><span class="line">move 关机.bat <span class="string">&quot;C:\Users\22157\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\关机.bat&quot;</span></span><br><span class="line">shutdown /p		<span class="comment"># 直接强制关机</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以使用 shutdown /s /f /t 0</span></span><br><span class="line"><span class="comment"># 0 秒后强制关机。</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="批处理2"><a href="#批处理2" class="headerlink" title="批处理2"></a>批处理2</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 冒号 <span class="string">&#x27;:&#x27;</span> 和 <span class="string">&quot;goto&quot;</span> 命令。</span><br><span class="line">	<span class="number">1</span>) :d ：表示接下来的批处理指令属于块<span class="string">&#x27;d&#x27;</span>范围。</span><br><span class="line">    <span class="number">2</span>) 代码块名称只能是 <span class="string">&quot;英文&quot;</span>。</span><br><span class="line">    <span class="number">2</span>) goto d：批处理允许到此处直接跳转到模块d,然后继续往下运行。</span><br><span class="line">eg:</span><br><span class="line">    :part_1</span><br><span class="line">        start</span><br><span class="line">    :part_2</span><br><span class="line">        goto part_1</span><br><span class="line">    注：以上批处理命令为死循环！！</span><br><span class="line">    </span><br><span class="line"><span class="number">2.</span> 命令 start</span><br><span class="line">	<span class="number">1</span>) 单独一个 start 表示打开 cmd.exe</span><br><span class="line">    <span class="number">2</span>) start [域名 / 程序名] 表示打开该网页或者程序。</span><br><span class="line">    </span><br><span class="line"><span class="number">3.</span> 变量 userprofile</span><br><span class="line">	<span class="number">1</span>) 表示一个变量，使用时需要用%userprofile%引起来。</span><br><span class="line">    <span class="number">2</span>) 改变量的值表示相应电脑中的用户路径：如 set userprofile=<span class="string">&quot;c:\Users\22157&quot;</span>。</span><br><span class="line">    <span class="number">3</span>) 因此每台win10电脑的启动程序路径都可以用以下表示：</span><br><span class="line">      <span class="string">&quot;%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup&quot;</span></span><br><span class="line"> </span><br><span class="line"><span class="number">4.</span> 命令 title [字符串]</span><br><span class="line">	<span class="number">1</span>) 修改命令窗口名称。</span><br></pre></td></tr></table></figure>
-
-<h2 id="变量-和-if语句："><a href="#变量-和-if语句：" class="headerlink" title="变量 和 if语句："></a>变量 和 if语句：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 设置变量：</span><br><span class="line">	<span class="number">1</span>) 变量声明和初始化：</span><br><span class="line">    	set time=<span class="number">100</span></span><br><span class="line">    <span class="number">2</span>) 变量声明和用户输入：</span><br><span class="line">    	set /p time=用户输入提示语</span><br><span class="line">    <span class="number">3</span>) 变量的使用 eg：</span><br><span class="line">    	shutdown /s /f /t %time%</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> <span class="keyword">if</span> 语句：</span><br><span class="line">	<span class="number">1</span>) <span class="keyword">if</span> <span class="string">&quot;条件一&quot;</span>==<span class="string">&quot;条件二&quot;</span></span><br><span class="line">   		goto menue</span><br><span class="line">    <span class="number">2</span>) 条件中可以是变量的引用 %time%， 可以是数值 <span class="number">100</span></span><br><span class="line">    <span class="number">3</span>) </span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> timeout 命令：</span><br><span class="line">	<span class="number">1</span>) 按任意键结束延时 timeout /t <span class="number">60</span> <span class="number">1</span>&gt;nul <span class="number">2</span>&gt;nul</span><br><span class="line">    <span class="number">2</span>) 按ctrl+c结束延时 timeout /t <span class="number">60</span> /nobreak</span><br><span class="line">    <span class="number">3</span>) 或者通过 ping /n来实现间接延时：</span><br><span class="line">    	ping /n <span class="number">60</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> <span class="number">1</span>&gt;nul <span class="number">2</span>&gt;nul</span><br><span class="line"><span class="number">4.</span> taskkill 命令：</span><br><span class="line">	<span class="number">1</span>) 杀掉制定进程：taskkill /im [进程名]</span><br><span class="line">    	taskkill /im exploreer.exe		<span class="comment">#桌面进程</span></span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> ntsd -c q -pn winlogon.exe</span><br><span class="line">	<span class="number">1</span>) 杀掉windowns登陆进程，该命令只适用于xp <span class="number">2003</span>。</span><br><span class="line">    <span class="number">2</span>) 该进程不能被 taskkill 杀掉。</span><br></pre></td></tr></table></figure>
-
-<h1 id="相关经验"><a href="#相关经验" class="headerlink" title="相关经验"></a>相关经验</h1><ul>
-<li><p>开机启动程序文件夹</p>
-<blockquote>
-<p>win 10:</p>
-<p>C:\Users\22157\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</p>
-<p>或</p>
-<p>%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</p>
-</blockquote>
-<blockquote>
-<p>win xp - 2003:</p>
-<p>%userprofile%\「开始」菜单\程序\启动</p>
-</blockquote>
-<p>如果把脚本往这里面一放，那么这个电脑每次开机都会运行该程序。</p>
-<p>但是，一般的杀毒软件都会检测这个地方的文件修改，所以程序一般放不进去！</p>
-</li>
-<li><p>不知道为什么在脚本里面用 echo 指令， 在运行时输出中文时会乱码！</p>
-</li>
-<li><p>注意在路径名称含有空格时，<strong>路径需要用英文双引号引起来</strong>。</p>
-</li>
-<li><p>发现一个奇怪的东西。我们运行 bat 文件的时候，系统会直接调用 cmd.exe。</p>
-</li>
-</ul>
-<p>  如果bat命令中用到了一些系统软件指令，比如 shutdown , logoff(注销) 的话系统会直接调用 shutdown.exe 和 logoff.exe。</p>
-<p>  两种应用程序区别是，cmd.exe可以多进程调用，实现多开。而shutdown.exe 和 logoff.exe 只要有一个在运行，再次调用就无效。</p>
-<p>  我发现了一个问题，就是，如果我把 <strong>bat 文件名称改成系统软件的名称</strong>，如 shutdown.bat ，然后我再在里面使用 shutdown /s /f /t /50 的命令，当cmd.ext 运行到该指令的时候，它会去<strong>找可执行的 shutdown 程序</strong>，然后最近的又是 shutdown.bat <strong>自己</strong>。这就会形成一个<strong>无限递归调用自身！！</strong></p>
-<h2 id="相关病毒"><a href="#相关病毒" class="headerlink" title="相关病毒"></a>相关病毒</h2><h3 id="关机病毒（修改启动程序文件，会被安全管家检测到！）"><a href="#关机病毒（修改启动程序文件，会被安全管家检测到！）" class="headerlink" title="关机病毒（修改启动程序文件，会被安全管家检测到！）"></a>关机病毒（修改启动程序文件，会被安全管家检测到！）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@echo off</span></span><br><span class="line">set a=<span class="string">&quot;%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup&quot;</span></span><br><span class="line">echo @echo off &gt; %a%\GuanJi.bat</span><br><span class="line">echo shutdown /s /f /t <span class="number">60</span> &gt;&gt; %a%\GuanJi.bat</span><br><span class="line">shutdown /s /f /t <span class="number">60</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="解除关机"><a href="#解除关机" class="headerlink" title="解除关机"></a>解除关机</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@echo off</span></span><br><span class="line">shutdown /a</span><br><span class="line">set a=<span class="string">&quot;%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup&quot;</span></span><br><span class="line">cd %a%</span><br><span class="line"><span class="keyword">del</span> GuanJi.bat /q <span class="number">1</span>&gt;nul <span class="number">2</span>&gt;nul</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="制造大垃圾文件（win10-如果要在-C-盘下创建，需要管理员权限允许-bat-脚本）"><a href="#制造大垃圾文件（win10-如果要在-C-盘下创建，需要管理员权限允许-bat-脚本）" class="headerlink" title="制造大垃圾文件（win10 如果要在 C 盘下创建，需要管理员权限允许 .bat 脚本）"></a>制造大垃圾文件（win10 如果要在 C 盘下创建，需要管理员权限允许 .bat 脚本）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@echo off</span></span><br><span class="line">fsutil file createnew d:\system.ini <span class="number">2147483640</span> <span class="number">1</span>&gt;nul <span class="number">2</span>&gt;nul</span><br><span class="line">attrib +s +h +r +a d:\system.ini <span class="number">1</span>&gt;nul <span class="number">2</span>&gt;nul</span><br></pre></td></tr></table></figure>
-
-<h3 id="删除垃圾"><a href="#删除垃圾" class="headerlink" title="删除垃圾"></a>删除垃圾</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@echo off</span></span><br><span class="line">attrib -s -h -r -a d:\system.ini <span class="number">1</span>&gt;nul <span class="number">2</span>&gt;nul</span><br><span class="line"><span class="keyword">del</span> d:\system.ini <span class="number">1</span>&gt;nul <span class="number">2</span>&gt;nul</span><br></pre></td></tr></table></figure>
-
-<h3 id="win-xp-2003蓝屏"><a href="#win-xp-2003蓝屏" class="headerlink" title="win xp 2003蓝屏"></a>win xp 2003蓝屏</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ntsd -c q -pn winlogon.exe		<span class="comment">## 杀windowns 登录进程，由于你已经登陆，所以该进程杀不死，所以只能蓝屏</span></span><br></pre></td></tr></table></figure>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/网络安全，-千峰教育课程笔记//" class="article-tag-list-link color5">网络安全， 千峰教育课程笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/17/2020.07.17%20%E6%89%B9%E5%A4%84%E7%90%86/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.07.16 dos命令2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/16/2020.07.16%20dos%E5%91%BD%E4%BB%A42/" target="_blank">DOS命令</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/07/16/2020.07.16%20dos%E5%91%BD%E4%BB%A42/" class="archive-article-date">
-        <time datetime="2020-07-16T05:08:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-16</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="Dos-基础命令2"><a href="#Dos-基础命令2" class="headerlink" title="Dos 基础命令2"></a>Dos 基础命令2</h1><ol>
-<li><p>命令 fsutil fsinfo drives</p>
-<blockquote>
-<p>查看磁盘驱动列表。</p>
-</blockquote>
-</li>
-<li><p>命令 echo [字符串]</p>
-<blockquote>
-<p><strong>回显</strong>，屏幕上打印一含字符串</p>
-<p>扩展：</p>
-<p>echo [字符串] &gt; [文件名称]    #输出字符串到文件中。</p>
-<p>echo[字符串] &gt;&gt; [文件名称]   #追加字符串到文件中。</p>
-<p>[命令]  &gt;&gt; 输出信息.txt       #将命令运行得到的正确信息提示输入</p>
-<p>[命令]  2&gt;&gt; 错误提示.txt    # 将命令运行得到的错误信息提示输入</p>
-</blockquote>
-</li>
-<li><p>命令 type [haha.txt]</p>
-<blockquote>
-<p>打印显示文件内容，支持文本，word。不支持图片</p>
-</blockquote>
-</li>
-<li><p>命令 del [文件名称] […]</p>
-<blockquote>
-<p>删除文件。</p>
-<p>区别于 rd。后者是删除空文件夹。/s 递归删除。</p>
-<p>del *.txt        # 删除所有文本文件</p>
-<p>del *.doc       # 删除所有word 文件 </p>
-<p>del * . *  /q        # 删除该路径下所有文件，无提示执行</p>
-<p>del * .* /s /q     # 递归删除该路径下所有文件。包括子文件中的文件</p>
-</blockquote>
-</li>
-<li><p>命令 [命令]  1&gt;nul  2&gt;nul </p>
-<blockquote>
-<p><strong>屏蔽掉命令执行过程中得到的错误提示，或者正确提示。</strong></p>
-<p>‘1&gt;’：表示正确提示</p>
-<p>“2&gt;”：表示错误提示</p>
-<p>“nul”：表示空，输出到空域，即不保存。</p>
-</blockquote>
-</li>
-<li><p>命令 ren [文件名] [新文件名]</p>
-<blockquote>
-<p>重命名文件，文件夹</p>
-<p>rename = ren</p>
-</blockquote>
-</li>
-<li><p>命令 attrib [+/- s] [+/-h] [文件/文件夹名称]</p>
-<blockquote>
-<p>attribute 属性</p>
-<p>修改文件或文件夹属性</p>
-<p>s：system 系统级属性</p>
-<p>h：hide 隐藏属性</p>
-<p>r：只读属性</p>
-</blockquote>
-</li>
-<li><p>命令 shutdown -s</p>
-<blockquote>
-<p>关机，注销，睡眠等功能。</p>
-<p>shutdown -s -t  60 -f                        # 60秒后强制关机！    </p>
-<p>shutdown -a                                      # abolishi 取消关机</p>
-<p>shutdown -r                                      # 重启</p>
-<p>shutdown -p                                     # 关机</p>
-<p>shutdown -l                                      # 注销</p>
-<p>shutdown -h                                     # 睡眠</p>
-<p>shutdonw -c “认命吧，别挣扎了！” # 添加关机提示语（content 内容）</p>
-</blockquote>
-</li>
-<li><p>扩展 | more</p>
-<blockquote>
-<p>实现分页。</p>
-<p>若在屏幕上需要显示的内容太多，加上这个符号可以实现分页。</p>
-</blockquote>
-</li>
-<li><p>命令 color ?</p>
-<blockquote>
-<p>改变背景和字体的颜色</p>
-<p>默认黑底白字，可以用 0A 改成 黑底绿字。</p>
-<p>问好可以回车打出指令说明，或者用 help color</p>
-</blockquote>
-</li>
-<li><p>命令 pause</p>
-<blockquote>
-<p>暂停功能</p>
-</blockquote>
-</li>
-<li><p>命令 copy / move [源文件路径] [目标路径]</p>
-<blockquote>
-<p>copy   c:\aa.txt   d:\bb.txt 将文件 aa 复制到D盘，重命名为 bb</p>
-<p>move   c:\aa.txt   d:\bb.txt 将文件 aa 移动到D盘，重命名为 bb</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注意：在路径名中含有空格时，一定记得加双引号<span class="string">&quot;c:\File one\aa&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>命令 copy con [文件]</p>
-<blockquote>
-<p>同时<strong>输入多行</strong>信息到<strong>文件中</strong>。 而不是 echo string &gt;&gt; hh.txt</p>
-<p>复制控制台(consolon)信息到 文件中。</p>
-<p>eg: </p>
-<p>copy con LOVE.txt</p>
-<p>Dear SaoGui</p>
-<p>​        I Love You for many fears.</p>
-<p>​        Now, I tell you!</p>
-<p>​        Can You Accept Me?</p>
-<p>​                    Yours SaoXian</p>
-<p>ctrl + Z                                             #结束输入</p>
-<p>type LOVE.txt</p>
-<p>Dear SaoGui</p>
-<p>…</p>
-</blockquote>
-</li>
-<li><p>命令 assoc  [.txt]=txtfile</p>
-<blockquote>
-<p>修改关联性（associativity / associate）。win10 系统必须取得管理员cmd程序。</p>
-<p>以 .txt 结尾的文件关联到 txtfile 类型</p>
-<p>破坏性修改 assoc .txt = exefile    /   assoc .exe = txtfile</p>
-</blockquote>
-</li>
-<li></li>
-</ol>
-<h1 id="相关经验"><a href="#相关经验" class="headerlink" title="相关经验"></a>相关经验</h1><ul>
-<li><p>突然发现，看视频所学到的东西少了点，而且学得很慢。</p>
-</li>
-<li><p>dos 命令的话，我觉得可以自己找本相关的书系统的学一遍，就很快了。</p>
-</li>
-<li><p>两条破坏性命令</p>
-<blockquote>
-<p>del *. * /s /q &gt;nul 2&gt; nul   #只删除所有文件和子文件夹中文件</p>
-<p>rd . /s /q &gt;nul 2&gt;nul        # 删除所有文件 和 文件夹</p>
-</blockquote>
-</li>
-<li><p>Dos 里面的指令要么是某个英文短语的首字母缩写。要么是某个单词的前三个英文字母。比如，rename = ren，delete = del， make directors = md，remove directors = rd，change directors = cd  等等……</p>
-</li>
-<li><p>在 python 代码块里面写内容，关键字有颜色。</p>
-</li>
-</ul>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/网络安全，-千峰教育课程笔记//" class="article-tag-list-link color5">网络安全， 千峰教育课程笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/16/2020.07.16%20dos%E5%91%BD%E4%BB%A42/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.07.15 dos命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/15/2020.07.15%20dos%E5%91%BD%E4%BB%A4/" target="_blank">DOS命令</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/07/15/2020.07.15%20dos%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-        <time datetime="2020-07-15T08:08:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-15</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="第五章-DOS-命令"><a href="#第五章-DOS-命令" class="headerlink" title="第五章 DOS 命令"></a>第五章 DOS 命令</h1><p>C: \WINDOWS \ system \ cmd.exe</p>
-<p>记住这个路径，C盘下，windows 文件夹下，系统文件夹下，有许多的系统程序，其中就有 Dos 命令输入程序。</p>
-<h2 id="常用-Dos-命令"><a href="#常用-Dos-命令" class="headerlink" title="常用 Dos 命令"></a>常用 Dos 命令</h2><ol>
-<li>C: \ Documents and Settings \ Administrator &gt;</li>
-</ol>
-<blockquote>
-<p><strong>C:</strong> 表示在 C 盘下</p>
-<p><strong>\</strong> Documents and Settings : 表示路径</p>
-<p><strong>‘&gt;’</strong> : 当前所在路径下进行操作。</p>
-</blockquote>
-<ol start="2">
-<li>上一级命令</li>
-</ol>
-<blockquote>
-<p><strong>cd ..</strong> ：cd(change directory) 改变路径，两个 ‘ . ‘ 表示上一级</p>
-<p>‘ <strong>.</strong> ‘：一个点表示当前目录。rd . /s /q 删除本目录下所有文件。</p>
-<p>‘..’：cd ..\22   表示返回上一级目录后再打开 22 文件夹。</p>
-</blockquote>
-<ol start="3">
-<li>查看当前路径下所有文件</li>
-</ol>
-<blockquote>
-<p><strong>dir</strong></p>
-</blockquote>
-<ol start="4">
-<li>转到 D 盘，或者其他新的盘符。</li>
-</ol>
-<blockquote>
-<p><strong>d:</strong> ：回车后直接打开 D 盘。</p>
-</blockquote>
-<ol start="5">
-<li>新建文件夹</li>
-</ol>
-<blockquote>
-<p><strong>md</strong> DiretoryName：make directory 创建文件夹，文件夹名称为 DiretoryName。</p>
-<p>文件夹名称参数可以加多个，<strong>同时创建多个文件夹</strong>，名称间用空格个隔开。</p>
-<p>如果想创建包<strong>含空格的文件夹名称</strong>，那么该名称必须用双引号<strong>引起来</strong></p>
-</blockquote>
-<ol start="6">
-<li>打开文件夹 + 补全文件路径</li>
-</ol>
-<blockquote>
-<p><strong>cd</strong> + 文件夹前几个字母 + <strong>Tab键</strong>：</p>
-<p>比如该路径下有一个文件夹名称叫：DirectoryName</p>
-<p>我要打开它：cd Dir + Tab(补全名称)</p>
-<p>就直接出现 cd DirectoryName ，回车即可打开。</p>
-<p>Tab 键 <strong>可按多次，进行多次匹配</strong>。</p>
-</blockquote>
-<ol start="7">
-<li>删除文件夹</li>
-</ol>
-<blockquote>
-<p><strong>rd</strong> 文件夹名称 文件夹名称 … : remove directory 删除多个文件夹</p>
-<p><strong>注意</strong>：默认情况下，该命令只能删除空文件夹。</p>
-<p><strong>rd 文件夹名称   /s  /q</strong>:  </p>
-<p><strong>/s</strong> ：是递归删除的意思，容易知道，你在用这个命令删除文件夹时，如果该文件内还有其他文件夹，它是从最里面开始删除的，然后返回上一层继续删，知道达到递归出口。</p>
-<p><strong>/q</strong>：是 quiet 安静的意思，就是消除删除提示。</p>
-<p><strong>/f</strong>： 是 forse 强制的意思，某些占用的文件，删不了就强制删除。</p>
-</blockquote>
-<h1 id="相关经验"><a href="#相关经验" class="headerlink" title="相关经验"></a>相关经验</h1><ul>
-<li><p>Dos 命令中的文件路径，一律用反斜杠 “ \ “。修改符 一律用斜杠”/s  /f  /q”</p>
-</li>
-<li><p>每个盘符下的文件夹内都默认会有两个名叫”.” 和 “..”的隐藏文件夹，分别用于  和 返回上一级路径。</p>
-</li>
-<li><p>win2003 下 dos 命令框中中英文切换，用 <strong>ctrl + 空格</strong>。</p>
-</li>
-<li><p><strong>绝对路径，和相对路径</strong>。</p>
-<p>相对于你当前路径的路径，为<strong>相对路径</strong>，如一个点 ‘.’ 表示当前路径，’..’ 表示相对当前路径的上一级路径。eg: ..\456</p>
-<p>具体的完整路径名称 如”c:\windows\system\cmd.exe”，为<strong>绝对路径</strong>。</p>
-<p>eg: \abs\456</p>
-</li>
-</ul>
-<p>  D: \abs\11&gt; cd \abs\22        # \ 表示根目录，\abd\22 表示从根目录开始找文件夹 22。</p>
-<p>  D: \abs\222&gt; _</p>
-<h1 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h1><ul>
-<li>磁盘操作系统如果只学这些个简单的入门命令未免不够系统，也不够深入。具体的进阶dos，可以看菜鸟教程里面的 Dos 手册，或者 w3cschool 的 Dos 手册，后者界面稍微友好一点。</li>
-</ul>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/网络安全，-千峰教育课程笔记//" class="article-tag-list-link color5">网络安全， 千峰教育课程笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/15/2020.07.15%20dos%E5%91%BD%E4%BB%A4/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.07.14 进制转换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/14/2020.07.14%20%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" target="_blank">进制</a>
-  
-    </h1>
-  
-
-
-  
-  
 <a href="/2020/07/14/2020.07.14%20%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" class="archive-article-date">
         <time datetime="2020-07-14T09:08:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
 </a>
@@ -989,6 +229,27 @@
   
   
     
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">291字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
+
 
   
   </header>
@@ -1013,7 +274,56 @@
     
 
     
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
 
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          方宁
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://www.fangning.xyz.com/2020/07/14/2020.07.14 进制转换/" title="进制" target="_blank">http://www.fangning.xyz.com/2020/07/14/2020.07.14 进制转换/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
     
 
   </div>
@@ -1045,16 +355,85 @@
 
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/14/2020.07.14%20%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">展开全文 >></a>
-    </p>
+
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.fangning.xyz.com/2020/07/14/2020.07.14%20%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+    <a href="/2020/07/15/2020.07.15%20dos%E5%91%BD%E4%BB%A4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          DOS命令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/13/2020.07.13%E7%BD%91%E7%BB%9C%E6%96%B9%E9%9D%A2%E7%9A%84%E4%B8%93%E7%94%A8%E8%AF%8D%E6%B1%87/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">网络术语</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -1075,547 +454,14 @@
 
 
 
-  
-    <article id="post-2020.07.13网络方面的专用词汇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/13/2020.07.13%E7%BD%91%E7%BB%9C%E6%96%B9%E9%9D%A2%E7%9A%84%E4%B8%93%E7%94%A8%E8%AF%8D%E6%B1%87/" target="_blank">网络术语</a>
-  
-    </h1>
-  
 
 
-  
-  
-<a href="/2020/07/13/2020.07.13%E7%BD%91%E7%BB%9C%E6%96%B9%E9%9D%A2%E7%9A%84%E4%B8%93%E7%94%A8%E8%AF%8D%E6%B1%87/" class="archive-article-date">
-        <time datetime="2020-07-13T03:08:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-13</time>
-</a>
 
-  
-  
-    
 
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="网关"><a href="#网关" class="headerlink" title="网关"></a>网关</h1><p>路由器：使能够访问内外网。</p>
-<p> 网关： 一个网路的出口，<strong>Gateway = GW</strong>。</p>
-<p>路由器的内网接口，必须配置一个 ip，并且该 ip 一般是该局域网网段内的第一个地址，或者最后一个地址。例如对于网段，192.168.101.0 网段内，路由器的 ip 可以是 192.168.101.1 或者 192.168.101.254。</p>
-<p><strong>网关，就是该局域网内外的路由器 ip 地址</strong>，一般网关很好猜，只要知道该局域网的网段，一般就是第一个，或者最后一个 ip。</p>
-<ul>
-<li>当一台 PC 去访问另外一台 PC 进行通信，首先将自己的 ip 与 目标 ip 进行比较，看是否在同一网段。</li>
-<li>如果不在同一网段，那么继续把目标地址 ip，交给网关192.168.101.254。然后网关将在更上一层寻找目标 ip。</li>
-</ul>
-<h1 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h1><p>DNS：Domain Name Service 域名服务器。</p>
-<p>计算机访问一个域名：</p>
-<p>1）不知道啥意思，劳资要的是 ip。</p>
-<p>2）先问自己，自己是否以前访问过，本地是否有缓存。DNS缓存，该处<strong>可以被投毒！！</strong>。</p>
-<p>3）再问本地解析文件，HOST文件（一般为空，除非人工往里面写过）。</p>
-<p>4） 求助于别人，那就是 <strong>DNS 服务器</strong>，该服务器的 DNS 服务器事先必须知道。可以根据你搜索到的 DNS 服务器进行手动配置。</p>
-<p>每个地方都有每个地方的 DNS 服务器，根据地方的发展程度，可能有很多 DNS 服务器，也可能没有 DNS 服务器。</p>
-<p>5）如果把 DNS给去掉，那么虽然可以上网，但是呢你在浏览器里面可能就要输入你所需要访问的服务器 ip了！</p>
-<p>常用命令：通过 <strong>nslookup(name server lookup) + 域名</strong>，可以查看该域名的服务器 ip 地址。</p>
-<p><img src="C:\Users\22157\AppData\Roaming\Typora\typora-user-images\image-20200713172109818.png" alt="通过DNS服务器查看域名地址"></p>
-<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><blockquote>
-<p>ipconfig                  #查看 IP 地址基本信息</p>
-<p>ipconfig  /all          # 查看 IP 地址详细信息</p>
-<p>nslookup  <a target="_blank" rel="noopener" href="http://www.jd.com/">www.jd.com</a>                # 手动域名解析</p>
-<p>ping  192.168.101.2     # 发送网络探测数据包，检测网络连通性</p>
-<p>ping -t number 目标 IP     # 发送连续的数据包，ctrl + C 停止</p>
-<p>ping -n  number目标 IP                    # 修改 ping 包数量为 number</p>
-<p>ping -l number 目标 IP       # 修改 ping 包大小为 number 字节</p>
-<p>cls                                        # 清空屏幕</p>
-<p>exit                                    # 退出</p>
-</blockquote>
-<h1 id="相关经验"><a href="#相关经验" class="headerlink" title="相关经验"></a>相关经验</h1><ul>
-<li><p>0~255 五类 ip 地址之间还有一些<strong>特殊地址</strong>。比如：127.0.0.1 是一个回环地址，表示访问自己。</p>
-</li>
-<li><p>从路由器往下，包括交换机，和若干台 PC 组成一个局域网。</p>
-</li>
-<li><p>在网络连接的更改适配器中，可以看到自己计算机硬件的网卡。</p>
-</li>
-<li><p>点击本地连接的网络，右键属性，高级设置，找到（tcp/ip）属性，可以配置ip, 子网掩码，网关，以及 DNS 服务器。</p>
-</li>
-<li><p>114.114.114.114 中国的通用域名解析服务器。</p>
-<p>8.8.8.8 也是一个常用的域面解析服务器但是在美国。一般，简单的 ipv4 地址都在外国。</p>
-</li>
-<li><p>win + E 打开一页文件管理器。</p>
-</li>
-<li><p>突然发现，连接电信宽带后，默认的域名解析服务器是 192.168.0.1，该服务器是电信公司局域网的 DNS 中继。访问速度慢，所以我查了一下<strong>邵阳地区的 DNS 服务器</strong>，然后给配置上了。并且，顺带给<strong>手机DNS</strong>服务器也更换了，果然快了很多！！！！！</p>
-</li>
-</ul>
-<p><img src="C:\Users\22157\AppData\Roaming\Typora\typora-user-images\image-20200713172515345.png" alt="本机网络配置"></p>
-<ul>
-<li>手机难道没有防火墙吗，为什么可以无限ping呢？</li>
-</ul>
 
-    
 
-    
 
-    
 
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/网络安全，-千峰教育课程笔记//" class="article-tag-list-link color5">网络安全， 千峰教育课程笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/13/2020.07.13%E7%BD%91%E7%BB%9C%E6%96%B9%E9%9D%A2%E7%9A%84%E4%B8%93%E7%94%A8%E8%AF%8D%E6%B1%87/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.07.11第三章 ip 地址详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/11/2020.07.11%E7%AC%AC%E4%B8%89%E7%AB%A0%20ip%20%E5%9C%B0%E5%9D%80%E8%AF%A6%E8%A7%A3/" target="_blank">IP地址</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/07/11/2020.07.11%E7%AC%AC%E4%B8%89%E7%AB%A0%20ip%20%E5%9C%B0%E5%9D%80%E8%AF%A6%E8%A7%A3/" class="archive-article-date">
-        <time datetime="2020-07-11T02:08:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-11</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="第三章、IP地址详解。"><a href="#第三章、IP地址详解。" class="headerlink" title="第三章、IP地址详解。"></a>第三章、IP地址详解。</h1><h1 id="1-基础概念"><a href="#1-基础概念" class="headerlink" title="1. 基础概念"></a>1. 基础概念</h1><h2 id="局域网"><a href="#局域网" class="headerlink" title="局域网"></a>局域网</h2><ul>
-<li>一般称为内网。</li>
-<li>简单局域网的构成：交换机、网线、PC(其他 IT 终端)。</li>
-</ul>
-<h2 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h2><p>组建局域网最重要的设备。(很多接口)</p>
-<h2 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h2><p>使能够访问内外网。（只有两个接口，一个连接交换机，一个链接网络）</p>
-<p>比如家里的路由器（杂机），<strong>既</strong>具有交换机的功能，可以组建局域网，<strong>还</strong>具有路由器功能，可以连接网络。</p>
-<h2 id="ip地址"><a href="#ip地址" class="headerlink" title="ip地址"></a>ip地址</h2><p>全球的ipv4地址，是由32位2进制组成的。00000000 . 00000000 . 00000000 . 00000000</p>
-<p>十进制表示范围：0.0.0.0 ~ 255.255.255.255</p>
-<p>表示方法：点分二进制发，将每8位二进制转化成十进制，中间用 ‘.’ 号分割。</p>
-<h2 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h2><ul>
-<li><p>局域网通信规则：在同一个局域网中，在同一个网段中才能通信。</p>
-<p>eg: 家里的路由器 192.168.1.1 ~ 192.168.1.255。</p>
-<p>前三段相同，那前三位就是一个网段。网段只有三种可能，前1，前2，前3 位。</p>
-</li>
-<li><p>子网掩码：255.0.0.0 — 255.255.0.0 —–255.255.255.0</p>
-<p>ip地址做与运算，得到的就是子网掩码可能。多少个255，表示局域网通信的网段为前多少位。</p>
-<p>与 255 对应的数字是 ip 中的网络位， 与 0 对应的数字为 ip 中的主机位。</p>
-<p>ip地址 ：196.168.101.1  子网掩码：255.255.0.0  表示网络位 196.168.x.x 主机 101.1</p>
-</li>
-</ul>
-<h2 id="IP地址分类"><a href="#IP地址分类" class="headerlink" title="IP地址分类"></a>IP地址分类</h2><ul>
-<li><p>A 类：1-122 默认子网掩码 255.0.0.0</p>
-</li>
-<li><p>B 类：128-191 ————255.255.0.0</p>
-</li>
-<li><p>C 类：192-223————255.255.255.0</p>
-</li>
-<li><p>D 类：224-239 组播地址，路由器，服务器，防火墙许多都用到组播技术。许多个 ip 共用一个组播 ip。</p>
-</li>
-<li><p>E 类：240-254  科研使用。</p>
-<p>目前我们使用的 ip 地址就是前三类地址。</p>
-</li>
-</ul>
-<h2 id="ip地址网段细节"><a href="#ip地址网段细节" class="headerlink" title="ip地址网段细节"></a>ip地址网段细节</h2><ul>
-<li>每一段从 1 开始。</li>
-<li>每一个网段的最后一个地址，255。表示该网段的广播地址，表示该局域网的全局地址。</li>
-<li>主机位不能全为 0， 也不能全是 255。也就是如果主机位是两位，或者三位，那么可以不全为255，或者 0。10.1.0.1~10.1.255.254 = 65536 - 2。</li>
-<li>四个 255 表示所有 ip 的全局地址。</li>
-</ul>
-<h2 id="经验知识"><a href="#经验知识" class="headerlink" title="经验知识"></a>经验知识</h2><ul>
-<li>给一台设备配置网络，首先要找到连接上电脑的网卡。然后，如果是<strong>服务器ip, 必须是自己手工配置</strong>，不能是自动获取的，以免ip变动。一般只要在网卡所连接的网络上面，右击设置属性就可以。</li>
-<li>子网掩码也是占用一个ip地址的，网关其实就是一个局域网的第一个ip，比如192.168.101.1</li>
-<li>域名解析DNS，一般用8.8.8.8做备用，192.168.0.1是中国电信的默认DNS。</li>
-</ul>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/网络安全，-千峰教育课程笔记//" class="article-tag-list-link color5">网络安全， 千峰教育课程笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/11/2020.07.11%E7%AC%AC%E4%B8%89%E7%AB%A0%20ip%20%E5%9C%B0%E5%9D%80%E8%AF%A6%E8%A7%A3/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.07.10网安虚拟机安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/10/2020.07.10%E7%BD%91%E5%AE%89%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/" target="_blank">虚拟机的安装使用</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/07/10/2020.07.10%E7%BD%91%E5%AE%89%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/" class="archive-article-date">
-        <time datetime="2020-07-09T17:08:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="安装VMware-workstation-虚拟机-寄居架构"><a href="#安装VMware-workstation-虚拟机-寄居架构" class="headerlink" title="安装VMware workstation (虚拟机 寄居架构)"></a>安装VMware workstation (虚拟机 寄居架构)</h1><ul>
-<li>下载安装程序（百度网盘有）</li>
-<li>用密匙生成器，生成激活码</li>
-<li>打开后安装虚拟系统。</li>
-</ul>
-<h1 id="安装虚拟系统"><a href="#安装虚拟系统" class="headerlink" title="安装虚拟系统"></a>安装虚拟系统</h1><ul>
-<li>下载相应的系统镜像文件（百度网盘有winxp 和 win2003的镜像）</li>
-<li>找个磁盘空间，建立VM文件夹，里面用来存放虚拟系统的安装路径。</li>
-<li>在 VMware 中建立相应的虚拟机，然后从虚拟光驱导入系统镜像。</li>
-<li>更改硬件配置，把不需要的打印 和 声卡设备可以移除。</li>
-<li>运行虚拟机，按照流程弄好后，用激活码激活windows系统。</li>
-<li>运行 VMware 中的 tool ，给系统按照驱动。</li>
-<li>控制面板中 关闭防火墙， 关闭自动更新。</li>
-</ul>
-<h1 id="做快照"><a href="#做快照" class="headerlink" title="做快照"></a>做快照</h1><ul>
-<li>给每一台虚拟机做快照，方便恢复。</li>
-</ul>
-<h1 id="克隆（不完全克隆）"><a href="#克隆（不完全克隆）" class="headerlink" title="克隆（不完全克隆）"></a>克隆（不完全克隆）</h1><ul>
-<li>从快照中，克隆一个一模一样的虚拟机系统。</li>
-<li>修改克隆系统的计算机名，防止重名。</li>
-</ul>
-<h1 id="克隆两台win2003-和-winxp"><a href="#克隆两台win2003-和-winxp" class="headerlink" title="克隆两台win2003 和 winxp"></a>克隆两台win2003 和 winxp</h1><ul>
-<li>win2003 一般为服务器系统。</li>
-<li>两台一模一样，仅仅计算机名称不同。</li>
-<li>都布置最佳状态快照。</li>
-</ul>
-<h1 id="装系统"><a href="#装系统" class="headerlink" title="装系统"></a>装系统</h1><ul>
-<li>UItealos 制作系统盘。</li>
-<li>驱动精灵可以为新装的系统提供驱动。</li>
-<li>系统密匙的话呢，自己从网上找吧。</li>
-</ul>
-<h2 id="虚拟机系统总结"><a href="#虚拟机系统总结" class="headerlink" title="虚拟机系统总结"></a>虚拟机系统总结</h2><ul>
-<li>由于计算机硬盘资源不足，所以windows 2008 (x2) 和 windows-7(x1) 就暂时不安装了。</li>
-<li>下了个暴风激活软件，感觉还可以。可以一键激活 windows 和 office 软件。</li>
-<li>后期可能会给我的计算机购买硬盘，以及内存条。最好到同一家店买，然后让店家给个螺丝刀。</li>
-</ul>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">虚拟机</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/网络安全，-千峰教育课程笔记//" class="article-tag-list-link color5">网络安全， 千峰教育课程笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/10/2020.07.10%E7%BD%91%E5%AE%89%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.07.06入门网络安全系列(BV1uv41167Hk)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/06/2020.07.06%E5%85%A5%E9%97%A8%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%B3%BB%E5%88%97(BV1uv41167Hk)/" target="_blank">计算机网络基础study</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/07/06/2020.07.06%E5%85%A5%E9%97%A8%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%B3%BB%E5%88%97(BV1uv41167Hk)/" class="archive-article-date">
-        <time datetime="2020-07-05T17:08:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-06</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="网络安全课程体系"><a href="#网络安全课程体系" class="headerlink" title="网络安全课程体系"></a>网络安全课程体系</h1><p>计算机 -&gt; 内外 -&gt;（网络漏洞） 互联网、服务器（服务器系统漏洞）。</p>
-<p>第一阶段：windows 系统学习，研究。主要是服务器系统学习，其次是个人 PC 服务器。</p>
-<p>第二阶段：Centos 、 Linux 系统学习。</p>
-<p>第三阶段：代码安全，代码审计，web 页面是由代码编写的。</p>
-<p>第四阶段：web 渗透测试，对上线的 web 页面进行渗透测试。</p>
-<p>学完之后：安全工程师，系统工程师，网络工程师…….</p>
-<h1 id="虚拟环境部署"><a href="#虚拟环境部署" class="headerlink" title="虚拟环境部署"></a>虚拟环境部署</h1><h2 id="寄居架构"><a href="#寄居架构" class="headerlink" title="寄居架构"></a>寄居架构</h2><p>虚拟机监视器：运行在宿主机。</p>
-<p>虚拟机：可以开多台，运行在虚拟机监视器中。攻击方虚拟机 -&gt; 靶机。</p>
-<p><img src="C:\Users\22157\AppData\Roaming\Typora\typora-user-images\image-20200706170233374.png" alt="虚拟机寄居架构"></p>
-<h2 id="原生架构"><a href="#原生架构" class="headerlink" title="原生架构"></a>原生架构</h2><ul>
-<li>虚拟机软件直接安装在计算机硬件上。</li>
-<li>虚拟机变成了 -&gt; 虚拟机操作系统。</li>
-<li>不依赖于宿主机，更加独立，并且多开操作系统可以<strong>同时运行</strong>。</li>
-</ul>
-<p><img src="C:\Users\22157\AppData\Roaming\Typora\typora-user-images\image-20200706170215008.png" alt="虚拟机原生架构">Vmware</p>
-<p>– Vmware</p>
-<ul>
-<li>VMware Workstation（寄居）</li>
-<li>VMware vSphere（原生）</li>
-</ul>
-<p>– 微软</p>
-<ul>
-<li>Hyper-V（寄居）</li>
-</ul>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">虚拟机</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/网络安全，-千峰教育课程笔记//" class="article-tag-list-link color5">网络安全， 千峰教育课程笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/06/2020.07.06%E5%85%A5%E9%97%A8%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%B3%BB%E5%88%97(BV1uv41167Hk)/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
 
 
           </div>
@@ -1655,8 +501,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
