@@ -207,7 +207,7 @@
             
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2020.09.10 搭建开发环境编写及仿真" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -215,7 +215,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/09/03/hello-world/" target="_blank">Hello World</a>
+	  <a class="article-title" href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/" target="_blank">zigbee环境搭建</a>
   
     </h1>
   
@@ -223,8 +223,8 @@
 
   
   
-<a href="/2020/09/03/hello-world/" class="archive-article-date">
-        <time datetime="2020-09-03T09:42:39.545Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-03</time>
+<a href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/" class="archive-article-date">
+        <time datetime="2020-09-10T12:46:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-10</time>
 </a>
 
   
@@ -236,20 +236,10 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+    <h1 id="软件安装，程序编写运行，烧录"><a href="#软件安装，程序编写运行，烧录" class="headerlink" title="软件安装，程序编写运行，烧录"></a>软件安装，程序编写运行，烧录</h1><h2 id="IAR安装"><a href="#IAR安装" class="headerlink" title="IAR安装"></a>IAR安装</h2> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> IAR程序下载:</span><br><span class="line">    <span class="number">1</span>) 不要从脚本之家之类的网站下载软件。否则，你的浏览器会被恶意串改主页。并且，电脑上会被恶意下载软件。</span><br><span class="line">    <span class="number">2</span>) 从官网下载最新版的 IAR <span class="keyword">for</span> <span class="number">8051</span> 就行了。</span><br><span class="line">    </span><br><span class="line"><span class="number">2.</span> IAR程序破解:   教程：<span class="string">&quot; https://blog.csdn.net/qq_38351824/article/details/85005672 &quot;</span></span><br><span class="line">    <span class="number">1</span>) 从可靠途径获得破解软件。</span><br><span class="line">    <span class="number">2</span>) 运行破解软件，选择所需要破解的版本。生成密钥</span><br><span class="line">    <span class="number">3</span>) 将密钥复制到 IAR程序密钥验证 步骤中，注意断网。</span><br><span class="line">    <span class="number">4</span>) IAR 会在生成一个文本，给它放在桌面。</span><br><span class="line">    <span class="number">5</span>) 将该文本路径填写到 破解软件 第二栏中，生成另外一个破解 文本。</span><br><span class="line">    <span class="number">6</span>) 将破解文本填写到 IAR程序 注册所需文件中，然后一直下一步就行了。</span><br><span class="line">    <span class="comment"># 注意，最后提取库文件的时候会失败，因为 IAR库文件 是需要另外一套 password 的。</span></span><br><span class="line">    <span class="comment"># 但是也不需要担心，我们一般用不到库文件，或者即使要用，也是后期手动下载导入。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/#more">more >></a>
+    
     
 
     
@@ -265,32 +255,17 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">zigbee</a>
         		</li>
       		
 		</ul>
 	</div>
 
     
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/博客功能测试//" class="article-tag-list-link color2">博客功能测试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/博客功能测试/模板效果//" class="article-tag-list-link color5">模板效果</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/03/hello-world/">展开全文 >></a>
+      <a class="article-more-a" href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/">展开全文 >></a>
     </p>
     
 
@@ -320,7 +295,7 @@
 
 
   
-    <article id="post-2020.07.06入门网络安全系列(BV1uv41167Hk)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2020.09.09 zigbee 概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -328,7 +303,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/07/06/2020.07.06%E5%85%A5%E9%97%A8%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%B3%BB%E5%88%97(BV1uv41167Hk)/" target="_blank">计算机网络基础study</a>
+	  <a class="article-title" href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/" target="_blank">zigbee概述</a>
   
     </h1>
   
@@ -336,8 +311,8 @@
 
   
   
-<a href="/2020/07/06/2020.07.06%E5%85%A5%E9%97%A8%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%B3%BB%E5%88%97(BV1uv41167Hk)/" class="archive-article-date">
-        <time datetime="2020-07-05T17:08:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-06</time>
+<a href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/" class="archive-article-date">
+        <time datetime="2020-09-09T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-09</time>
 </a>
 
   
@@ -349,32 +324,10 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="网络安全课程体系"><a href="#网络安全课程体系" class="headerlink" title="网络安全课程体系"></a>网络安全课程体系</h1><p>计算机 -&gt; 内外 -&gt;（网络漏洞） 互联网、服务器（服务器系统漏洞）。</p>
-<p>第一阶段：windows 系统学习，研究。主要是服务器系统学习，其次是个人 PC 服务器。</p>
-<p>第二阶段：Centos 、 Linux 系统学习。</p>
-<p>第三阶段：代码安全，代码审计，web 页面是由代码编写的。</p>
-<p>第四阶段：web 渗透测试，对上线的 web 页面进行渗透测试。</p>
-<p>学完之后：安全工程师，系统工程师，网络工程师…….</p>
-<h1 id="虚拟环境部署"><a href="#虚拟环境部署" class="headerlink" title="虚拟环境部署"></a>虚拟环境部署</h1><h2 id="寄居架构"><a href="#寄居架构" class="headerlink" title="寄居架构"></a>寄居架构</h2><p>虚拟机监视器：运行在宿主机。</p>
-<p>虚拟机：可以开多台，运行在虚拟机监视器中。攻击方虚拟机 -&gt; 靶机。</p>
-<p><img src="https://raw.githubusercontent.com/fangning222/fangning222/master/image-20200706170233374.png"></p>
-<h2 id="原生架构"><a href="#原生架构" class="headerlink" title="原生架构"></a>原生架构</h2><ul>
-<li>虚拟机软件直接安装在计算机硬件上。</li>
-<li>虚拟机变成了 -&gt; 虚拟机操作系统。</li>
-<li>不依赖于宿主机，更加独立，并且多开操作系统可以<strong>同时运行</strong>。</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/fangning222/fangning222/master/image-20200706170215008.png"></p>
-<p>– Vmware</p>
-<ul>
-<li>VMware Workstation（寄居）</li>
-<li>VMware vSphere（原生）</li>
-</ul>
-<p>– 微软</p>
-<ul>
-<li>Hyper-V（寄居）</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/fangning222/fangning222/master/QQ.png"></p>
-
+    <h1 id="zigbee"><a href="#zigbee" class="headerlink" title="zigbee"></a>zigbee</h1><h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> zigbee 不像 <span class="number">51</span>单片机 只需要理解里面的寄存器就可以玩转:</span><br><span class="line">    <span class="number">1</span>) zigbee 最主要的是协议栈。它包含了很多的协议站，以及相关代码。这是最难的。</span><br><span class="line">    <span class="number">2</span>) 资料方面，互联网上关于 zigbee 相关的深入浅出的资料很少。特别是关于讲解<span class="string">&#x27;协议栈&#x27;</span>这一方面。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 术语:</span><br><span class="line">    <span class="number">1</span>) zigbee, zigbee通信方式，zigbee协议 三者都是一个意思。</span><br><span class="line">    <span class="number">2</span>) 节点，无线模块，无线设备，三者都是一个意思。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 计算机之间，局域网采用以太网协议:</span><br><span class="line">    <span class="number">1</span>) zigbee之间通信，同样的，采用zigbee协议</span><br><span class="line">    <span class="number">2</span>) 作用：<span class="string">&#x27;构建无线局域网！！&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 如果一个无线局域网用于传感器的数据收集和监控，那么这个网络就叫做<span class="string">&#x27;无线传感器网络&#x27;</span></span><br><span class="line">    <span class="number">1</span>) 也就是说，无线传感器网络是无线局域网的一个具体应用。</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 已经有了 蓝牙 和 wifi 为什么还要用 zigbee:</span><br><span class="line">    <span class="number">1</span>) 蓝牙：功耗低，但是组件网络的节点数少 <span class="number">7</span>~<span class="number">8</span>个。</span><br><span class="line">    <span class="number">2</span>) wifi：通信功率 比较大， 功耗大。</span><br><span class="line">    <span class="number">3</span>) zigbee：可以组将大概模网络，节点可以上万个！功耗低(cc <span class="number">2530</span> 正常工作电流<span class="number">8</span>mA, 最低工作达到几个uA)。</span><br><span class="line">    	缺点：通信速率比较小，<span class="number">250</span> kbs。比较适合传感器的信息传送。</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 应用方面:</span><br><span class="line">    <span class="number">1</span>) 家具方面：可以用电池，或者太阳能供电。</span><br><span class="line">    <span class="number">2</span>) 工业方面：传统使用总线组将局域网，如果有zigbee的话，就可以无线组网。</span><br><span class="line">    <span class="number">3</span>) 农业方面：组将无线传感器网络，温湿度传感器，二氧化碳浓度等传感器的数据组网收集。</span><br><span class="line">    <span class="number">4</span>) 医疗方面：......</span><br><span class="line">    <span class="number">5</span>) 物联网时代，zigbee 使用十分频繁。</span><br><span class="line"></span><br><span class="line"><span class="number">7.</span> zigbee 模块一般配合上位机构建控制系统:</span><br><span class="line">    <span class="number">1</span>) 上位机可以是 pc，也可以是通过互联网的远程服务器。</span><br><span class="line">    <span class="number">2</span>) 上位机可以实现对 zigbee 系统中的元件控制。</span><br><span class="line">    <span class="number">3</span>) 主 zigbee 与 计算机之间 是<span class="string">&#x27;采用串口进行通信&#x27;</span>的。也就是和 arduino 串口通信一样，需要使用一根数据线连接电脑。计算机获取数据。 </span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/#more">more >></a>
+    
     
 
     
@@ -390,28 +343,108 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">虚拟机</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">zigbee</a>
         		</li>
       		
 		</ul>
 	</div>
 
     
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/网络安全，-千峰教育课程笔记//" class="article-tag-list-link color5">网络安全， 千峰教育课程笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/06/2020.07.06%E5%85%A5%E9%97%A8%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%B3%BB%E5%88%97(BV1uv41167Hk)/">展开全文 >></a>
+      <a class="article-more-a" href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hexo 默认文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/09/03/hexo%20%E9%BB%98%E8%AE%A4%E6%96%87%E7%AB%A0/" target="_blank">Hello world</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/09/03/hexo%20%E9%BB%98%E8%AE%A4%E6%96%87%E7%AB%A0/" class="archive-article-date">
+        <time datetime="2020-09-03T09:42:39.545Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-03</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+    
+    <a class="article-more-a" href="/2020/09/03/hexo%20%E9%BB%98%E8%AE%A4%E6%96%87%E7%AB%A0/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">个人模块搭建</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/09/03/hexo%20%E9%BB%98%E8%AE%A4%E6%96%87%E7%AB%A0/">展开全文 >></a>
     </p>
     
 
@@ -570,11 +603,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+                <a href="javascript:void(0)" class="js-tag color2">zigbee</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测试</a>
+                <a href="javascript:void(0)" class="js-tag color2">个人模块搭建</a>
               </li>
             
             <div class="clearfix"></div>
