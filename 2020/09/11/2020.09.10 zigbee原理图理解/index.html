@@ -6,22 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.fangning.xyz.com">
-  <title>zigbee环境搭建 | 方宁 blog</title>
+  <title>cc2530原理图及引脚功能控制 | 方宁 blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="软件安装，程序编写运行，烧录IAR安装 12345678910111213141. IAR程序下载:    1) 不要从脚本之家之类的网站下载软件。否则，你的浏览器会被恶意串改主页。并且，电脑上会被恶意下载软件。    2) 从官网下载最新版的 IAR for 8051 就行了。    2. IAR程序破解:   教程：&quot; https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_3835182">
+  <meta name="description" content="zigbee无线模块的基本工作电路原理图各部分理解12345678910111213141516171819201. 25 26 :    1) RF_P 和 RF_N 号角所连部分为&amp;#x27;无线部分&amp;#x27;，最后面接着一个天线。2. 40 30 :    1) 40：cdoupl 去耦电容。    2) 30 Rbias 为偏置电阻。    3) &amp;#x27;这两个必须正确连接，8051">
 <meta property="og:type" content="article">
-<meta property="og:title" content="zigbee环境搭建">
-<meta property="og:url" content="http://www.fangning.xyz.com/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/index.html">
+<meta property="og:title" content="cc2530原理图及引脚功能控制">
+<meta property="og:url" content="http://www.fangning.xyz.com/2020/09/11/2020.09.10%20zigbee%E5%8E%9F%E7%90%86%E5%9B%BE%E7%90%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="方宁 blog">
-<meta property="og:description" content="软件安装，程序编写运行，烧录IAR安装 12345678910111213141. IAR程序下载:    1) 不要从脚本之家之类的网站下载软件。否则，你的浏览器会被恶意串改主页。并且，电脑上会被恶意下载软件。    2) 从官网下载最新版的 IAR for 8051 就行了。    2. IAR程序破解:   教程：&quot; https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_3835182">
+<meta property="og:description" content="zigbee无线模块的基本工作电路原理图各部分理解12345678910111213141516171819201. 25 26 :    1) RF_P 和 RF_N 号角所连部分为&amp;#x27;无线部分&amp;#x27;，最后面接着一个天线。2. 40 30 :    1) 40：cdoupl 去耦电容。    2) 30 Rbias 为偏置电阻。    3) &amp;#x27;这两个必须正确连接，8051">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-09-10T12:46:25.000Z">
-<meta property="article:modified_time" content="2020-09-11T07:53:46.603Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/fangning222/fangning222/master/20200910160243.png">
+<meta property="og:image" content="c:/Users/22157/AppData/Roaming/Typora/typora-user-images/image-20200910162312749.png">
+<meta property="article:published_time" content="2020-09-11T00:00:00.000Z">
+<meta property="article:modified_time" content="2020-09-11T10:30:01.337Z">
 <meta property="article:author" content="方宁">
 <meta property="article:tag" content="zigbee">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/fangning222/fangning222/master/20200910160243.png">
   
     <link rel="alternative" href="/atom.xml" title="方宁 blog" type="application/atom+xml">
   
@@ -203,14 +206,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2020.09.10 搭建开发环境编写及仿真" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2020.09.10 zigbee原理图理解" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      zigbee环境搭建
+      cc2530原理图及引脚功能控制
     </h1>
   
 
@@ -222,8 +225,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/" class="archive-article-date">
-        <time datetime="2020-09-10T12:46:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-10</time>
+<a href="/2020/09/11/2020.09.10%20zigbee%E5%8E%9F%E7%90%86%E5%9B%BE%E7%90%86%E8%A7%A3/" class="archive-article-date">
+        <time datetime="2020-09-11T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-11</time>
 </a>
 
   
@@ -236,7 +239,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">950字</span>
+      <span class="post-count">1.6k字</span>
     </span>
   </span>
 
@@ -245,7 +248,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
+      <span class="post-count">6分</span>
     </span>
   </span>
 </div>
@@ -256,30 +259,35 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="软件安装，程序编写运行，烧录"><a href="#软件安装，程序编写运行，烧录" class="headerlink" title="软件安装，程序编写运行，烧录"></a>软件安装，程序编写运行，烧录</h1><h2 id="IAR安装"><a href="#IAR安装" class="headerlink" title="IAR安装"></a>IAR安装</h2> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> IAR程序下载:</span><br><span class="line">    <span class="number">1</span>) 不要从脚本之家之类的网站下载软件。否则，你的浏览器会被恶意串改主页。并且，电脑上会被恶意下载软件。</span><br><span class="line">    <span class="number">2</span>) 从官网下载最新版的 IAR <span class="keyword">for</span> <span class="number">8051</span> 就行了。</span><br><span class="line">    </span><br><span class="line"><span class="number">2.</span> IAR程序破解:   教程：<span class="string">&quot; https://blog.csdn.net/qq_38351824/article/details/85005672 &quot;</span></span><br><span class="line">    <span class="number">1</span>) 从可靠途径获得破解软件。</span><br><span class="line">    <span class="number">2</span>) 运行破解软件，选择所需要破解的版本。生成密钥</span><br><span class="line">    <span class="number">3</span>) 将密钥复制到 IAR程序密钥验证 步骤中，注意断网。</span><br><span class="line">    <span class="number">4</span>) IAR 会在生成一个文本，给它放在桌面。</span><br><span class="line">    <span class="number">5</span>) 将该文本路径填写到 破解软件 第二栏中，生成另外一个破解 文本。</span><br><span class="line">    <span class="number">6</span>) 将破解文本填写到 IAR程序 注册所需文件中，然后一直下一步就行了。</span><br><span class="line">    <span class="comment"># 注意，最后提取库文件的时候会失败，因为 IAR库文件 是需要另外一套 password 的。</span></span><br><span class="line">    <span class="comment"># 但是也不需要担心，我们一般用不到库文件，或者即使要用，也是后期手动下载导入。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <h1 id="zigbee无线模块的基本工作电路"><a href="#zigbee无线模块的基本工作电路" class="headerlink" title="zigbee无线模块的基本工作电路"></a>zigbee无线模块的基本工作电路</h1><h2 id="原理图各部分理解"><a href="#原理图各部分理解" class="headerlink" title="原理图各部分理解"></a>原理图各部分理解</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="number">25</span> <span class="number">26</span> :</span><br><span class="line">    <span class="number">1</span>) RF_P 和 RF_N 号角所连部分为<span class="string">&#x27;无线部分&#x27;</span>，最后面接着一个天线。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> <span class="number">40</span> <span class="number">30</span> :</span><br><span class="line">    <span class="number">1</span>) <span class="number">40</span>：cdoupl 去耦电容。</span><br><span class="line">    <span class="number">2</span>) <span class="number">30</span> Rbias 为偏置电阻。</span><br><span class="line">    <span class="number">3</span>) <span class="string">&#x27;这两个必须正确连接，8051单片机才能正常仿真、烧录程序&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> <span class="number">32</span> <span class="number">33</span> :</span><br><span class="line">    <span class="number">1</span>) 所连接部分接 <span class="string">&#x27;低频精准时钟源&#x27;</span>。可用，可不用。</span><br><span class="line">    <span class="number">2</span>) 主要用来做 定时器，或者 看门狗 才能用到。</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 胜达电子 与 TI cc2530基本工作电路的<span class="string">&#x27;不同点&#x27;</span>:</span><br><span class="line">    <span class="number">1</span>) 复位电路，实现按键复位 和 通电复位。</span><br><span class="line">    	* <span class="number">20</span> reset 脚提供程序 <span class="number">1</span>us 低电平信号，即可复位。</span><br><span class="line">        * <span class="number">20</span> 号交接复位电路。</span><br><span class="line">    <span class="number">2</span>) 下载程序电路</span><br><span class="line">    	* 下载程序所需条件 电源，GND，reset，<span class="number">34</span> P2_1，<span class="number">35</span> P2_2 <span class="string">&#x27;五条线齐全，就可以下载程序&#x27;</span></span><br><span class="line">        * 将上面五根线接入一个 JTAG下载接口 ，就可以通过仿真器进行程序烧入了！</span><br><span class="line">    <span class="number">3</span>) 只要有 <span class="string">&#x27;电源，地线，去耦电容，偏执电阻，以及程序烧录口P2_1,P2_2&#x27;</span>，加上基本的<span class="string">&#x27;晶振&#x27;</span>。<span class="string">&#x27;芯片就可以正常工作了！！&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <a id="more"></a>
 
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ul>
-<li><p>新建工程：</p>
-<ul>
-<li>project -&gt; new project</li>
-<li>选择新建一个 8051 的空白文件。</li>
-<li>同时<strong>新建一个文件夹 lesson1 用来存储所有的工程文件</strong>。</li>
-<li>工程名取名为 lessonp == lesson project</li>
-<li>新建一个空白文件，取名为 lesson.c 用来存储程序文件。</li>
-<li>右击工程，add -&gt; <strong>add lesson.c 导入源文件到工程</strong>。。</li>
-<li>写个主函数，然后运行，弹出一个 <strong>工作区保存路径</strong>，填写 lessonw == lesson workspace</li>
-</ul>
-</li>
-<li><p>程序编写</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 头文件 <span class="comment">#include &lt;iocc2530.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 配置工程文件:</span><br><span class="line">    1) 右击工程 -&gt; 修改常用选项中的 Device 驱动，找到在安装目录下 texas Instruments 中找到相应的 cpu cc2530F256。</span><br><span class="line">    2) 选择 linker -&gt; Output 勾选 Override default 和 Allow C-SPY-specific extra output file  # 程序可以进行在线烧录，仿真。</span><br><span class="line">    <span class="number">3</span>) 选择 Debugger 调试， 驱动器修改虚拟软件仿真 为 <span class="string">&#x27;Texas Instruments&#x27;</span> 真正的硬件仿真器。</span><br><span class="line">    </span><br><span class="line"><span class="number">3.</span> 安装仿真器(Texas Instruments)驱动。</span><br><span class="line">驱动所在路径：<span class="string">&quot; C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.1\8051\drivers\Texas Instruments &quot;</span></span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 仿真器上有两个红灯，其中一个是供电灯，另外一个是是否识别到 zigbee 芯片模块灯:</span><br><span class="line">    <span class="number">1</span>) 当能够识别到硬件的时候，其中一个灯不亮。表示正常，可以进行下载程序。</span><br><span class="line">    <span class="number">2</span>) 否则，如果两个灯都亮，就需要进行按键复位一下，重新识别硬件。</span><br><span class="line"></span><br><span class="line">5. IAR 中，先编译 --&gt; 再下载烧录程序。</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 调试:</span><br><span class="line">    <span class="number">1</span>) 烧录程序后，直接进入程序执行状态。</span><br><span class="line">    <span class="number">2</span>) 点击暂停按钮，可以进入 debug 状态。</span><br><span class="line">    <span class="number">3</span>) 曲线图标：逐行运行</span><br><span class="line">    <span class="number">4</span>) 向内∟图标: 逐行调试，遇到函数进入。</span><br><span class="line">       向外∟图标: 跳出当前所在函数。</span><br><span class="line">    <span class="number">5</span>) 小三角加条竖线: 跳转到下一个标记节点。    </span><br><span class="line">   </span><br><span class="line"><span class="number">7.</span> 生成 hex 文件:</span><br><span class="line">    1) option -&gt; linker -&gt; extra Output </span><br><span class="line">    <span class="number">2</span>) 勾选生成 Overide default文件名取名为 <span class="string">&#x27;lesson1.hex&#x27;</span>。</span><br><span class="line">    <span class="number">3</span>) 选择 OutPut fomat 格式为 <span class="string">&#x27;intel-extended&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="number">8.</span> hex 文件作用:</span><br><span class="line">    <span class="number">1</span>) 一种 <span class="number">16</span> 进制程序文件，相当于源代码，但是可以不用再结果 IAR 编译器编译。</span><br><span class="line">    <span class="number">2</span>) 可以直接使用烧录软件，烧录到 zigbee开发板 中。</span><br><span class="line">    <span class="number">3</span>) flash Programmer 下载地址:</span><br><span class="line"><span class="string">&quot; https://www.ti.com/licreg/docs/swlicresults.tsp?countryName=China+%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29&amp;eeq=Civil&amp;Certify=YES&amp;submitsubmit=Submit  &quot;</span></span><br><span class="line">	<span class="number">4</span>) 自动获取仿真驱动软件，选择好 hex 文件，点击开始烧录就行了！！</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/fangning222/fangning222/master/20200910160243.png" alt="TI cc2530基本工作电路"></p>
+<p><img src="C:\Users\22157\AppData\Roaming\Typora\typora-user-images\image-20200910162312749.png" alt="胜达电子工作电路"></p>
+<h2 id="如何控制-I-O-口输入-出"><a href="#如何控制-I-O-口输入-出" class="headerlink" title="如何控制 I/O 口输入/出"></a>如何控制 I/O 口输入/出</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> i/o 口:     <span class="number">21</span>个</span><br><span class="line">    <span class="number">1</span>) P0_0 ~ P0_7</span><br><span class="line">    <span class="number">2</span>) P1_0 ~ P1_7</span><br><span class="line">    <span class="number">3</span>) p2_0 ~ P2_4</span><br><span class="line">    <span class="number">4</span>) 所用引脚都可以作为普通 i/o 口。</span><br><span class="line">    <span class="number">5</span>) 部分引脚有特殊功能，可以作为<span class="string">&#x27;片上外设&#x27;</span>。 <span class="comment"># 由相应的寄存器控制。</span></span><br><span class="line">    <span class="number">6</span>) 要么某一时刻作为 i/o 要么作为 片上外设，不能冲突。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> P1_0 和 P1_1 有 <span class="number">20</span>mA 的驱动能力。  其余引脚只有 <span class="number">4</span>mA。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 输出如何配置: 用 P1_0 来进行输出，控制 LED 灯。</span><br><span class="line">    <span class="number">1</span>) 先让它处于 <span class="string">&#x27;普通I/O口模式&#x27;</span>，而非片上外设。</span><br><span class="line">    	* 两种模式的切换，是由寄存器进行控制的。</span><br><span class="line">        * <span class="string">&#x27;P0SEL&#x27;</span> | P1SEL | P2SEL 这三个寄存器分别管理 <span class="string">&#x27;P0&#x27;</span> | P1 | P2 三组引脚。</span><br><span class="line">        * <span class="string">&#x27;寄存器的&#x27;</span>其中 <span class="string">&#x27;0~7 位&#x27;</span>，对应<span class="string">&#x27;引脚 Px_0 ~ Px_7&#x27;</span> 。</span><br><span class="line">        * 每一位<span class="string">&#x27;是 0&#x27;</span>，表示对应引脚为 <span class="string">&#x27;普通 i/o 口&#x27;</span>。 <span class="string">&#x27;1&#x27;</span> 表示为 <span class="string">&#x27;片上外设口&#x27;</span>。</span><br><span class="line">        * 注意 P2_1 和 P2_2 一般用来作为程序烧入口，不作为 普通I/O 口。 <span class="string">&#x27;其他口随便用&#x27;</span>！</span><br><span class="line">        </span><br><span class="line">    <span class="number">2</span>) 其次，让 P1_0 处于输出状态。</span><br><span class="line">    	* 输入/出 状态的控制，也是由一组寄存器进行控制的。</span><br><span class="line">        * <span class="string">&#x27;P0DIR&#x27;</span> | P1DIR | P2DIR 这桑寄存器分别管理 <span class="string">&#x27;P0&#x27;</span> | P1 | P2 三组 I/O 口 输入或输出。</span><br><span class="line">        * 寄存器每一位 <span class="string">&#x27;0&#x27;</span> 表示对应的引脚进行 <span class="string">&#x27;输出&#x27;</span>。<span class="string">&#x27;1 表示&#x27;</span>对应引脚进行 <span class="string">&#x27;输入&#x27;</span>。</span><br><span class="line">    </span><br><span class="line">    <span class="number">3</span>) 最后，根据要求，让其处于 输出 高/低 点平。</span><br><span class="line">    	* 设置 Px_x = <span class="number">0</span> 输出高电平， Px_X = <span class="number">1</span> 输出低电平。</span><br><span class="line">        </span><br><span class="line"><span class="number">4.</span> <span class="comment"># 以上两种寄存器 PxSEL and PxDIR 默认情况下的值都是 0x00;</span></span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 输入如何配置: 读取 P0_6 状态，高电平表示<span class="string">&#x27;跳线帽&#x27;</span>断开，低电平表示<span class="string">&#x27;跳线帽连接&#x27;</span>GND。<span class="string">&#x27;见原理图 指针和等效光敏 模块&#x27;</span>。</span><br><span class="line">        <span class="number">1</span>) 让 p0_6 处于普通 I/O 口状态。 P0SEL = <span class="number">0</span></span><br><span class="line">        <span class="number">2</span>) 让 P0_6 处于输入状态。 P0DIR = <span class="number">0</span></span><br><span class="line">        <span class="number">3</span>) <span class="string">&#x27;让 P0_6 处于上拉、下拉或者三态 中的一种状态&#x27;</span>。</span><br><span class="line">        	* 上拉电路，很容易理解，就是引脚与外设之间，接一个电阻与VCC电源，来提高电压。</span><br><span class="line">            * 下拉电路，很容易理解，就是引脚与外设之间，接一个电阻与GND接地，来减低电压。</span><br><span class="line">            * 那什么是<span class="string">&#x27;三态呢？&#x27;</span>，就是引脚与外设之间，接一个<span class="string">&#x27;无穷大的电阻&#x27;</span>。 为什么要这样做，这样做有什么作用呢？</span><br><span class="line">            当我们的引脚是需要<span class="string">&#x27;读取&#x27;</span>外部设备的<span class="string">&#x27;电压值&#x27;</span>的时候，接<span class="string">&#x27;上拉或者下拉&#x27;</span>会<span class="string">&#x27;影响输入结果&#x27;</span>。此时接一个无穷大的电阻，可以保证它想断路一样，不会分压，又可以通过连通读取到接入点的电压值。</span><br><span class="line">            例如:</span><br><span class="line">                使用<span class="string">&#x27;热敏电阻传感器&#x27;</span>，或者<span class="string">&#x27;光敏电阻传感器&#x27;</span>的时候，传感器电压值，会随着温度变化，分压也随之变化，我们单片机就需要采集到传感器与地之间的电压值，然后计算出外界环境的变化。<span class="string">&#x27;ADC采集的时候一定要接三态&#x27;</span>。</span><br><span class="line">                </span><br><span class="line">        <span class="number">4</span>) 那么如何设置输入引脚是处于哪一种状态呢？ 用到了另外一组寄存器 <span class="string">&#x27;PxINP&#x27;</span></span><br><span class="line">            * <span class="string">&#x27;P0INP&#x27;</span> 中的第六位 如果是 <span class="string">&#x27;0&#x27;</span> 表示 P0_6 处于 <span class="string">&#x27;上拉|下拉&#x27;</span> 状态。</span><br><span class="line">            * <span class="string">&#x27;P0INP&#x27;</span> 中的第六位 如果是 <span class="string">&#x27;1&#x27;</span> 表示 P0_6 处于   <span class="string">&#x27;三态&#x27;</span>    状态。</span><br><span class="line">            * 进一步确定，到底是处于上拉，还是下拉状态呢？ 这里用到了 <span class="string">&#x27;P2INP的高三位&#x27;</span>！</span><br><span class="line">            * 因为 P2组 实际只存在五个引脚，<span class="string">&#x27;高三位不存在&#x27;</span>，所以！<span class="string">&#x27;P2INP 高三位是闲置的&#x27;</span>！！</span><br><span class="line">            * P2INP_5 --&gt; P0组的 上拉/下拉  </span><br><span class="line">              P2INP_6 --&gt; P1组的 上拉/下拉</span><br><span class="line">              P2INP_7 --&gt; P2组的 上拉/下拉</span><br><span class="line">            </span><br><span class="line">        <span class="number">5</span>) 因为 PxSEL, PxDIR, PxINP 三个寄存器都是默认值为<span class="number">0.</span></span><br><span class="line">          所以，我们说这些引脚都是默认<span class="string">&#x27;普通IO口 上拉 输入&#x27;</span>。</span><br></pre></td></tr></table></figure>
 
-</li>
-</ul>
+
+
 <h1 id="相关经验"><a href="#相关经验" class="headerlink" title="相关经验"></a>相关经验</h1><ul>
-<li>带排线的那个 zigbee 模块 ———— 是仿真用到。</li>
-<li>最小的那个模块 ———— 抓取无线数据包的硬件工具 dongle</li>
+<li>目前所学的控制寄存器：<ul>
+<li>PxSEL：控制三组引脚的作用，外设或者普通 I/O 口。</li>
+<li>PxDIR：控制三组引脚的 I/O 状态，输入或输出。</li>
+<li>PxINP：控制三组引脚的输入状态 上拉|下拉 或 三态。</li>
+<li>P2INP 的高三位：控制三组引脚的 上拉或下拉</li>
+</ul>
+</li>
+<li>跳线帽<ul>
+<li>就是开发板上，连接了两个相邻排针的导体，类似给排针戴了顶帽子，所以叫做跳线帽。</li>
+<li>zigbee 模块上，cc2580的 <strong>P0_6排针</strong> 与 <strong>GND排针</strong> 之间就有一个跳线帽。</li>
+<li>zigbee 模块上，LED8 与 GND 之间也有一个跳线帽。</li>
+</ul>
+</li>
+<li>zigbee 常用引脚的位宏定义。<ul>
+<li>比如其中一个 P0_2 表示的就是 P0 组引脚中的 第三个引脚。</li>
+<li>而单片机中，如果需要对寄存器位进行赋值操作，需要先声明一个位变量sbit P0_2 = P0^2</li>
+</ul>
+</li>
 </ul>
 
     
@@ -327,7 +335,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://www.fangning.xyz.com/2020/09/10/2020.09.10 搭建开发环境编写及仿真/" title="zigbee环境搭建" target="_blank">http://www.fangning.xyz.com/2020/09/10/2020.09.10 搭建开发环境编写及仿真/</a>
+          <a href="http://www.fangning.xyz.com/2020/09/11/2020.09.10 zigbee原理图理解/" title="cc2530原理图及引脚功能控制" target="_blank">http://www.fangning.xyz.com/2020/09/11/2020.09.10 zigbee原理图理解/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -402,7 +410,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.fangning.xyz.com/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.fangning.xyz.com/2020/09/11/2020.09.10%20zigbee%E5%8E%9F%E7%90%86%E5%9B%BE%E7%90%86%E8%A7%A3/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -417,18 +425,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/09/11/2020.09.10%20zigbee%E5%8E%9F%E7%90%86%E5%9B%BE%E7%90%86%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/09/11/%E7%AC%AC%E4%B8%80%E7%AF%87%E9%9A%8F%E7%AC%94/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          cc2530原理图及引脚功能控制
+          我的随笔
         
       </div>
     </a>
   
   
-    <a href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">zigbee概述</div>
+    <a href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">zigbee环境搭建</div>
       <i class="icon-circle-right"></i>
     </a>
   

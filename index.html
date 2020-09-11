@@ -297,6 +297,94 @@
 
 
   
+    <article id="post-2020.09.10 zigbee原理图理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/09/11/2020.09.10%20zigbee%E5%8E%9F%E7%90%86%E5%9B%BE%E7%90%86%E8%A7%A3/" target="_blank">cc2530原理图及引脚功能控制</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/09/11/2020.09.10%20zigbee%E5%8E%9F%E7%90%86%E5%9B%BE%E7%90%86%E8%A7%A3/" class="archive-article-date">
+        <time datetime="2020-09-11T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-11</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="zigbee无线模块的基本工作电路"><a href="#zigbee无线模块的基本工作电路" class="headerlink" title="zigbee无线模块的基本工作电路"></a>zigbee无线模块的基本工作电路</h1><h2 id="原理图各部分理解"><a href="#原理图各部分理解" class="headerlink" title="原理图各部分理解"></a>原理图各部分理解</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="number">25</span> <span class="number">26</span> :</span><br><span class="line">    <span class="number">1</span>) RF_P 和 RF_N 号角所连部分为<span class="string">&#x27;无线部分&#x27;</span>，最后面接着一个天线。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> <span class="number">40</span> <span class="number">30</span> :</span><br><span class="line">    <span class="number">1</span>) <span class="number">40</span>：cdoupl 去耦电容。</span><br><span class="line">    <span class="number">2</span>) <span class="number">30</span> Rbias 为偏置电阻。</span><br><span class="line">    <span class="number">3</span>) <span class="string">&#x27;这两个必须正确连接，8051单片机才能正常仿真、烧录程序&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> <span class="number">32</span> <span class="number">33</span> :</span><br><span class="line">    <span class="number">1</span>) 所连接部分接 <span class="string">&#x27;低频精准时钟源&#x27;</span>。可用，可不用。</span><br><span class="line">    <span class="number">2</span>) 主要用来做 定时器，或者 看门狗 才能用到。</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 胜达电子 与 TI cc2530基本工作电路的<span class="string">&#x27;不同点&#x27;</span>:</span><br><span class="line">    <span class="number">1</span>) 复位电路，实现按键复位 和 通电复位。</span><br><span class="line">    	* <span class="number">20</span> reset 脚提供程序 <span class="number">1</span>us 低电平信号，即可复位。</span><br><span class="line">        * <span class="number">20</span> 号交接复位电路。</span><br><span class="line">    <span class="number">2</span>) 下载程序电路</span><br><span class="line">    	* 下载程序所需条件 电源，GND，reset，<span class="number">34</span> P2_1，<span class="number">35</span> P2_2 <span class="string">&#x27;五条线齐全，就可以下载程序&#x27;</span></span><br><span class="line">        * 将上面五根线接入一个 JTAG下载接口 ，就可以通过仿真器进行程序烧入了！</span><br><span class="line">    <span class="number">3</span>) 只要有 <span class="string">&#x27;电源，地线，去耦电容，偏执电阻，以及程序烧录口P2_1,P2_2&#x27;</span>，加上基本的<span class="string">&#x27;晶振&#x27;</span>。<span class="string">&#x27;芯片就可以正常工作了！！&#x27;</span></span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2020/09/11/2020.09.10%20zigbee%E5%8E%9F%E7%90%86%E5%9B%BE%E7%90%86%E8%A7%A3/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">zigbee</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/09/11/2020.09.10%20zigbee%E5%8E%9F%E7%90%86%E5%9B%BE%E7%90%86%E8%A7%A3/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2020.09.10 搭建开发环境编写及仿真" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -697,11 +785,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color2">个人模块搭建</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">个人模块搭建</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
