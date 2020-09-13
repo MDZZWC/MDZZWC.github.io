@@ -18,7 +18,7 @@
 <meta property="og:description" content="软件安装，程序编写运行，烧录IAR安装 12345678910111213141. IAR程序下载:    1) 不要从脚本之家之类的网站下载软件。否则，你的浏览器会被恶意串改主页。并且，电脑上会被恶意下载软件。    2) 从官网下载最新版的 IAR for 8051 就行了。    2. IAR程序破解:   教程：&quot; https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_3835182">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-09-10T12:46:25.000Z">
-<meta property="article:modified_time" content="2020-09-11T07:53:46.603Z">
+<meta property="article:modified_time" content="2020-09-12T14:05:53.352Z">
 <meta property="article:author" content="方宁">
 <meta property="article:tag" content="zigbee">
 <meta name="twitter:card" content="summary">
@@ -236,7 +236,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">950字</span>
+      <span class="post-count">1.1k字</span>
     </span>
   </span>
 
@@ -245,7 +245,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
+      <span class="post-count">4分</span>
     </span>
   </span>
 </div>
@@ -281,6 +281,8 @@
 <li>带排线的那个 zigbee 模块 ———— 是仿真用到。</li>
 <li>最小的那个模块 ———— 抓取无线数据包的硬件工具 dongle</li>
 </ul>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iocc2530.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i, j;</span><br><span class="line">  <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">300</span>; i++)</span><br><span class="line">    <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; x; j++);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P0组 低四位输出 各自连接一个led灯, 形成流水灯。</span></span><br><span class="line">P0SEL &amp;= <span class="number">0xf0</span>; <span class="comment">// 最后四个引脚设置为 I/O</span></span><br><span class="line">P0DIR |= <span class="number">0x0f</span>; <span class="comment">// 最后四个引脚进行输出</span></span><br><span class="line"><span class="keyword">int</span> v = <span class="number">0x01</span>;</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    P0 = v;</span><br><span class="line">    delay(<span class="number">1000</span>);</span><br><span class="line">    P0 = <span class="number">0x00</span>;</span><br><span class="line">    delay(<span class="number">1000</span>);</span><br><span class="line">    v = v &lt;&lt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(v == <span class="number">0x10</span>)</span><br><span class="line">      v = <span class="number">0x01</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
     
 

@@ -6,22 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.fangning.xyz.com">
-  <title>方宁 blog</title>
+  <title>外部中断 | 方宁 blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="掌握所有引脚的外部中断## 概述   相关经验 什么是外部中断 在没有干预的情况下，单片机的程序在封闭状态下自主运行，如果在某一时刻需要响应一个外部事件(比如有按键按下)**，这时就会用到外部中断。具体来讲，外部中断就是在单片机的一个引脚上，由于外部因素导致了一个电平的变化(比如由高变低)，而通过捕获这个变化，单片机内部自主运行的程序就会被暂时打断，转而去执行相应的中断处理程序，执行完后又回到原来">
+  <meta name="description" content="掌握所有引脚的外部中断## 概述 一个水源（EA），下面有三个组开关（P0IE、P1IE、P1IE）。每个组开关内，又分别有 8、8、5 个 I&#x2F;0 口开关（中断开关 PxIEN）。 ​    类似于水管，想要最下面的水龙头流水，就得先让最上面的水塔开关打开，然后还得把中间的总管道开关打开，最后，只需要打开龙头开关，就会有水。 ​    因此，如果需要给某个脚配置成中断，就必须先满足，开总中断使能">
 <meta property="og:type" content="article">
-<meta property="og:title" content="方宁 blog">
-<meta property="og:url" content="http://www.fangning.xyz.com/2020/09/11/2020.09.11/index.html">
+<meta property="og:title" content="外部中断">
+<meta property="og:url" content="http://www.fangning.xyz.com/2020/09/12/2020.09.11%20%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/index.html">
 <meta property="og:site_name" content="方宁 blog">
-<meta property="og:description" content="掌握所有引脚的外部中断## 概述   相关经验 什么是外部中断 在没有干预的情况下，单片机的程序在封闭状态下自主运行，如果在某一时刻需要响应一个外部事件(比如有按键按下)**，这时就会用到外部中断。具体来讲，外部中断就是在单片机的一个引脚上，由于外部因素导致了一个电平的变化(比如由高变低)，而通过捕获这个变化，单片机内部自主运行的程序就会被暂时打断，转而去执行相应的中断处理程序，执行完后又回到原来">
+<meta property="og:description" content="掌握所有引脚的外部中断## 概述 一个水源（EA），下面有三个组开关（P0IE、P1IE、P1IE）。每个组开关内，又分别有 8、8、5 个 I&#x2F;0 口开关（中断开关 PxIEN）。 ​    类似于水管，想要最下面的水龙头流水，就得先让最上面的水塔开关打开，然后还得把中间的总管道开关打开，最后，只需要打开龙头开关，就会有水。 ​    因此，如果需要给某个脚配置成中断，就必须先满足，开总中断使能">
 <meta property="og:locale">
 <meta property="og:image" content="https://raw.githubusercontent.com/fangning222/fangning222/master/20200911210548.png">
-<meta property="article:published_time" content="2020-09-11T12:37:22.853Z">
-<meta property="article:modified_time" content="2020-09-12T10:45:40.032Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/fangning222/fangning222/master/20200912223828.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/fangning222/fangning222/master/%E4%B8%AD%E6%96%AD.png">
+<meta property="article:published_time" content="2020-09-12T06:20:34.000Z">
+<meta property="article:modified_time" content="2020-09-13T04:05:19.436Z">
 <meta property="article:author" content="方宁">
-<meta property="article:tag" content="方宁_技术博客">
+<meta property="article:tag" content="zigbee">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/fangning222/fangning222/master/20200911210548.png">
   
@@ -205,22 +207,103 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2020.09.11" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2020.09.11 外部中断" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+  
+  
+    <h1 class="article-title" itemprop="name">
+      外部中断
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/09/12/2020.09.11%20%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/" class="archive-article-date">
+        <time datetime="2020-09-12T06:20:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-12</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.9k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">7分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="掌握所有引脚的外部中断"><a href="#掌握所有引脚的外部中断" class="headerlink" title="掌握所有引脚的外部中断"></a>掌握所有引脚的外部中断</h1><h2 id="概述"><a href="#概述" class="headerlink" title="## 概述"></a>## 概述</h2><p><img src="https://raw.githubusercontent.com/fangning222/fangning222/master/20200911210548.png"></p>
+    <h1 id="掌握所有引脚的外部中断"><a href="#掌握所有引脚的外部中断" class="headerlink" title="掌握所有引脚的外部中断"></a>掌握所有引脚的外部中断</h1><h2 id="概述"><a href="#概述" class="headerlink" title="## 概述"></a>## 概述</h2><pre><code> 一个水源（EA），下面有三个组开关（P0IE、P1IE、P1IE）。每个组开关内，又分别有 8、8、5 个 I/0 口开关（中断开关 PxIEN）。</code></pre>
+<p>​    类似于水管，想要最下面的水龙头流水，就得先让最上面的水塔开关打开，然后还得把中间的总管道开关打开，最后，只需要打开龙头开关，就会有水。</p>
+<p>​    因此，如果需要给某个脚配置成中断，就必须先满足，<strong>开总中断使能，组内中断使能，以及对应 I/O 口中断打开</strong>。</p>
+<p><img src="https://raw.githubusercontent.com/fangning222/fangning222/master/20200911210548.png" alt="中断使能结构"></p>
 <!---more-->
 
+<h2 id="中断条件"><a href="#中断条件" class="headerlink" title="中断条件"></a>中断条件</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">1. 初始化 IO 口工作在 &#x27;普通IO、上拉输入状态&#x27;</span><br><span class="line">    <span class="number">1</span>) 配置 PxSEL</span><br><span class="line">    <span class="number">2</span>) 配置 PxDIR</span><br><span class="line">    <span class="number">3</span>) 配置 PxINP</span><br><span class="line">    <span class="number">4</span>) 配置 P2INP</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 开 IO 口组中断。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 开组内对应的具体某 IO 口中断。</span><br><span class="line"></span><br><span class="line">4. 配置&#x27;上升&#x27;还是&#x27;下降&#x27;沿触发:</span><br><span class="line">    1) 一个寄存器控制 P0-P1-P2 三组 21 个 IO 脚的中断触发类型，上升沿 或者 下降沿 ———— &#x27;PICTL&#x27;</span><br><span class="line">    <span class="number">2</span>) 关于寄存器 PICTL 具体对应控制 IO 口的关系图，如下图所示。</span><br><span class="line">       &#x27;D0 控制 P0&#x27;, </span><br><span class="line">       &#x27;D1 和 D2 控制 P1低四位 P1高四位&#x27;, </span><br><span class="line">       &#x27;D3 控制 P2&#x27; 。</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 开中断使能</span><br><span class="line">    <span class="number">1</span>) 开 CPU 总中断 EA = <span class="number">1</span></span><br><span class="line">    <span class="number">2</span>) 开小组中断控制位 ———— P0IE | P1IE | P2IE</span><br><span class="line">           * &#x27;如果一个寄存器的首地址是 8 的倍数，结尾是 0 或 8 ， 那么改寄存器内部所有位都会被 宏定义！！！&#x27;</span><br><span class="line">           * 反之，如果寄存器首地址不是 <span class="number">8</span> 的倍数，那么该寄存器内部所有位都不会被 宏定义。</span><br><span class="line">           * P0IE 处于首地址为 <span class="number">8</span> 的倍数的寄存器内，所以被宏定义了，可以直接赋值 P0IE = <span class="number">1</span></span><br><span class="line">           * P1IE 和 P2IE 这两个其实是不被定义的，所以用不辽，需要对他们所属寄存器进行值数。</span><br><span class="line">             他们都处于寄存器 IEN2 中:</span><br><span class="line">			P1IE ----&gt; IEN2 第 <span class="number">4</span> 位，</span><br><span class="line">             P2IE ----&gt; IEN2 第 <span class="number">1</span> 位。   </span><br><span class="line"><span class="number">6.</span> 写中断函数:</span><br><span class="line">    <span class="number">1</span>) #pragma verctor = P0INT_VECTOR</span><br><span class="line">        * #pragma 预处理，设定编译器状态，或者制定编译器完成特定动作。</span><br><span class="line">        * #pragma verctor 告诉编译器，&#x27;在这里设置中断服务函数入口地址&#x27;</span><br><span class="line">        * 将 &#x27;中断服务函数入口地址&#x27; 设置为 &#x27;P0INT_VECTOR&#x27; ———— 该地址在头文件中有定义。</span><br><span class="line">        * 如果是其他组中断，可以改成 P1INT_VERCTOR | P2INT_VERCTOR</span><br><span class="line">        </span><br><span class="line">    2)&#x27; __interrupt &#x27;: 中断函数声明关键字，后接中断函数就行了。</span><br><span class="line">    </span><br><span class="line">    3) 中断函数出口之前，&#x27;清除中断标志位&#x27;：&#x27;PxIF = 0&#x27; </span><br><span class="line">        * &#x27;小组中断标志位 PxIF&#x27; ———— 如果值为 1， 表示该小组内有中断触发。</span><br><span class="line">        * 为什么要清除中断标志位？</span><br><span class="line">        * 加入一个下降沿电位触发的中断，在接受到一个连续的下降沿的时候，中断标志位会置<span class="number">1</span>。如果下降沿持续了较长时间的话，那么处理完第一个中断函数，又会不断的再次处理中断函数，因为没有消除多余的中断触发信号的影响。</span><br><span class="line">        * 所以，只有在处理完一个中断函数的时候，顺便清除一下中断标志位，&#x27;这样子同一时间内中断任务就只会被执行一次就够了&#x27;。</span><br><span class="line">        * P0IF -- P1IF -- P2IF</span><br><span class="line">        </span><br><span class="line">    4) 中断是否为指定 I/O 口造成的中断: &#x27;函数结束时，也需要清零 PxIFG = 0&#x27;</span><br><span class="line">        * &#x27;组内中断标记寄存器 ———— PxIFG&#x27; ———— 如果某一位为 1， 表示该位对应 I/O 口触发外部中断。</span><br><span class="line">        * 既然以及产生中断了，小组中断标志位也已经触发了，也就进入了小组中断函数入口地址。</span><br><span class="line">        * 但是入口地址是组内公用的，那到底具体是哪个 I/O 口引发的中断呢？ 如果同一个小组内，有多个 I/O 作为外部中断触发引脚。可是中断入口是共用的，所以必须在中断函数内，&#x27;再加一个中断标识条件，来确定是否是指定 I/O 口的中断触发&#x27;。</span><br><span class="line">        * <span class="keyword">if</span>( P0IFG &amp; <span class="number">0x20</span> == <span class="number">1</span>) 表示 P0 组第五位 I/O 口触发了中断。</span><br><span class="line">            此时在条件语句内写改中断函数内容就行了，就不会受到组内别的中断影响。</span><br><span class="line">        </span><br><span class="line">    5) &#x27;消除&#x27;按钮抖动等&#x27;误操作触发的中断&#x27;</span><br><span class="line">        * 按钮抖动也可能会触发中断，人工按下的话中断触发时间较长。</span><br><span class="line">        * 为了消除按钮抖动的影响，我们在中断触发函数内，加一个延时。</span><br><span class="line">        * &#x27;延时一小段时间时候，如果按钮还是按下的状态&#x27;，那么&#x27;表示是人为触发的&#x27;。如果不是，那直接跳出中断函数。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/fangning222/fangning222/master/20200912223828.png" alt="PICTL控制上升或者下降沿"></p>
+<p><img src="https://raw.githubusercontent.com/fangning222/fangning222/master/%E4%B8%AD%E6%96%AD.png" alt="zigbee中断触发过程"></p>
 <h1 id="相关经验"><a href="#相关经验" class="headerlink" title="相关经验"></a>相关经验</h1><ul>
-<li>什么是外部中断<ul>
+<li><p>什么是外部中断</p>
+<ul>
 <li>在没有干预的情况下，单片机的程序在封闭状态下自主运行，如果在<strong>某一时刻需要响应一个外部事件(比如有按键按下)**，这时就会用到外部中断。具体来讲，外部中断就是在单片机的一个引脚上，由于外部因素导致了一个电平的变化(比如由高变低)，而通过捕获这个变化，</strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8D%95%E7%89%87%E6%9C%BA">单片机</a>内部自主运行的程序就会被暂时打断<strong>，转而去执行相应的中断处理程序，执行完后</strong>又回到原来中断的地方继续执行原来的程序**。这个引脚上的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%94%B5%E5%B9%B3">电平</a>变化，就申请了一个外部中断事件，而这个能申请外部中断的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BC%95%E8%84%9A">引脚</a>就是外部中断的触发引脚。</li>
 </ul>
 </li>
-<li></li>
 </ul>
-
+<ul>
+<li><p>给寄存器某一位位值数的时候</p>
+<ul>
+<li><p><strong>置0与1</strong> ———— P0SEL &amp;= 0xfe // 1111 1110 最后一位置0</p>
+</li>
+<li><p><strong>置1或0</strong> ———— P0SEL |= 0x01 // 0000 0001 最后一位置1</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>给一个 0 置 1 或 给 1 置零</p>
+<ul>
+<li><p>与 1 <strong>异或</strong> 运算。    相同结果为 0， 不相同结果为 1 .</p>
+<p>a = 1;   a ^= 1;   a –&gt; 0;</p>
+<p>a = 0;   a ^= 1;   a –&gt; 1;</p>
+</li>
+<li><p>C 语言中没有 <strong>同或操作</strong>。</p>
+</li>
+<li><p>有<strong>按位取反操作</strong> a = ~a ；</p>
+</li>
+</ul>
+</li>
+<li><p>#pragma optimze = none 关闭 IAR 编译器对下列函数的优化。必须放在函数外部，起始位置。</p>
+</li>
+</ul>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iocc2530.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay</span><span class="params">(<span class="keyword">int</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">//P0_5下，就会接受到一个下降沿（触发中断），让 led3-P0_4 灯亮（中断处理函数）</span></span><br><span class="line">  </span><br><span class="line">  P0SEL &amp;= <span class="number">0xdf</span>; <span class="comment">//1101 1111 普通io</span></span><br><span class="line">  P0SEL &amp;= <span class="number">0xef</span>; <span class="comment">//1110 1111 普通io</span></span><br><span class="line">  </span><br><span class="line">  P0DIR &amp;= <span class="number">0xdf</span>; <span class="comment">//1101 1111 输入</span></span><br><span class="line">  P0DIR |= <span class="number">0x10</span>; <span class="comment">//0001 0000 输出</span></span><br><span class="line">  </span><br><span class="line">  P0INP &amp;= <span class="number">0xdf</span>; <span class="comment">//1101 1111 上下拉</span></span><br><span class="line">  P2INP &amp;= <span class="number">0xdf</span>; <span class="comment">//1101 1111 上拉</span></span><br><span class="line">  </span><br><span class="line">  EA = <span class="number">1</span>; <span class="comment">//总中断</span></span><br><span class="line">  P0IE = <span class="number">1</span>; <span class="comment">//小组中断</span></span><br><span class="line">  <span class="comment">// IEN2 |= 0x10  -------&gt; P1IE = 1    这两个寄存器位地址（0x9A）不是 8 的倍数，所以不被宏定意，只能通过找到相应的寄存器置位。</span></span><br><span class="line">  <span class="comment">// IEN2 |= 0x02  -------&gt; P2IE = 1</span></span><br><span class="line">  P0IEN |= <span class="number">0x20</span>; <span class="comment">// 0010 0000 开组内中断</span></span><br><span class="line">  PICTL |= <span class="number">0x01</span>; <span class="comment">// 将 P0 小组配置成下降沿触发。</span></span><br><span class="line">  <span class="keyword">while</span>(<span class="number">1</span>);  <span class="comment">//中断已开，啥都不需要管了，就等外部中断触发条件就行了。</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> optimize = none</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> vector = P0INT_VECTOR <span class="comment">//设置中断函数向量，给中断函数地址</span></span></span><br><span class="line"><span class="function">__interrupt <span class="keyword">void</span> <span class="title">button</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(P0IFG &amp; <span class="number">0x20</span>)   <span class="comment">//增加一个标识 确定是否时 P0_5 引发的中断</span></span><br><span class="line">  &#123;</span><br><span class="line">     delay(<span class="number">30</span>);</span><br><span class="line">     <span class="keyword">if</span>(P0_5 == <span class="number">0</span>)   <span class="comment">// 消除按钮抖动触发中断的情况</span></span><br><span class="line">     &#123;</span><br><span class="line">        P0_4 = ~P0_4;  <span class="comment">//  P0_4 ^= 1 如果中断触发，LED 灯亮/灭</span></span><br><span class="line">     &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  P0IFG = <span class="number">0</span>;   <span class="comment">//清零中断标志</span></span><br><span class="line">  P0IF = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i, j;</span><br><span class="line">  <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; x; i++)</span><br><span class="line">    <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; <span class="number">1000</span>; j++);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
 
     
@@ -266,7 +349,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://www.fangning.xyz.com/2020/09/11/2020.09.11/" title="" target="_blank">http://www.fangning.xyz.com/2020/09/11/2020.09.11/</a>
+          <a href="http://www.fangning.xyz.com/2020/09/12/2020.09.11 外部中断/" title="外部中断" target="_blank">http://www.fangning.xyz.com/2020/09/12/2020.09.11 外部中断/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -280,6 +363,17 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">zigbee</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -330,7 +424,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.fangning.xyz.com/2020/09/11/2020.09.11/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.fangning.xyz.com/2020/09/12/2020.09.11%20%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/" alt="微信分享二维码"> -->
     </div>
 </div>
 
