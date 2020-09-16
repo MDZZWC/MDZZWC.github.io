@@ -207,6 +207,114 @@
             
 
   
+    <article id="post-2020.09.13 时钟" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/09/13/2020.09.13%20%E6%97%B6%E9%92%9F/" target="_blank">时钟</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/09/13/2020.09.13%20%E6%97%B6%E9%92%9F/" class="archive-article-date">
+        <time datetime="2020-09-13T14:36:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-13</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="时钟"><a href="#时钟" class="headerlink" title="时钟"></a>时钟</h1><ul>
+<li>cc2530 在正常运行的时候，需要一个高频时钟信号，以及一个低频时钟信号。<ul>
+<li>高频时钟信号，主要共给CPU ，保证程序的正常运行。他有两个来源：<ul>
+<li>芯片内部有一个 16M 的 <strong>RC震荡电路</strong>。</li>
+<li>也可以外接一个 32M 的<strong>高频石英晶振</strong>。</li>
+<li>正常工作的时候，其中一个给 cpu 共给。</li>
+</ul>
+</li>
+<li>地频时钟信号，主要共给看门狗，睡眠定时器等片上外设。也有 2 个来源：<ul>
+<li>芯片内部 32k RC 电路。</li>
+<li>d外接 32.768k 石英晶振。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>那么四个时钟电路，具体什么时候，是那些时钟在工作呢？<ul>
+<li>CC2530 芯片默认上电的时候，是<strong>默认的两个 RC 震荡电路</strong>作为 高 低 频时钟来源。</li>
+<li><strong>芯片做串口工作，特别是做无线通信的时候，必须要有 32M 的石英晶振作为时钟来源。</strong></li>
+</ul>
+</li>
+</ul>
+    
+    <a class="article-more-a" href="/2020/09/13/2020.09.13%20%E6%97%B6%E9%92%9F/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">zigbee</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/09/13/2020.09.13%20%E6%97%B6%E9%92%9F/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2020.09.11 外部中断" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
