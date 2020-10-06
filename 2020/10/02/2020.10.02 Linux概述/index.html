@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.fangning.xyz.com">
-  <title>zigbee概述 | 方宁 blog</title>
+  <title>Linux 概述 | 方宁 blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="zigbee组成12345678910111213141516171819202122232425262728293031321. zigbee 不像 51单片机 只需要理解里面的寄存器就可以玩转:    1) zigbee 最主要的是协议栈。它包含了很多的协议站，以及相关代码。这是最难的。    2) 资料方面，互联网上关于 zigbee 相关的深入浅出的资料很少。特别是关于讲解&amp;#x27;协议">
+  <meta name="description" content="Linux概述 Linux  ———— 一种开源操作系统 内核版本号组成，r.x.y  r ： 目前发部的内核版本 x : 偶数 表示稳定版本，奇数表示开发中版本 z : 错误修补次数   比较流行的版本            分为商业版， 以及社群版 Red Hat  Mandrake Slackware Debian CentOS  ———— 本人主要学习该版本的 Linux Ubuntu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="zigbee概述">
-<meta property="og:url" content="http://www.fangning.xyz.com/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/index.html">
+<meta property="og:title" content="Linux 概述">
+<meta property="og:url" content="http://www.fangning.xyz.com/2020/10/02/2020.10.02%20Linux%E6%A6%82%E8%BF%B0/index.html">
 <meta property="og:site_name" content="方宁 blog">
-<meta property="og:description" content="zigbee组成12345678910111213141516171819202122232425262728293031321. zigbee 不像 51单片机 只需要理解里面的寄存器就可以玩转:    1) zigbee 最主要的是协议栈。它包含了很多的协议站，以及相关代码。这是最难的。    2) 资料方面，互联网上关于 zigbee 相关的深入浅出的资料很少。特别是关于讲解&amp;#x27;协议">
+<meta property="og:description" content="Linux概述 Linux  ———— 一种开源操作系统 内核版本号组成，r.x.y  r ： 目前发部的内核版本 x : 偶数 表示稳定版本，奇数表示开发中版本 z : 错误修补次数   比较流行的版本            分为商业版， 以及社群版 Red Hat  Mandrake Slackware Debian CentOS  ———— 本人主要学习该版本的 Linux Ubuntu">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-09-09T09:00:00.000Z">
-<meta property="article:modified_time" content="2020-09-11T07:53:25.666Z">
+<meta property="article:published_time" content="2020-10-02T04:03:30.000Z">
+<meta property="article:modified_time" content="2020-10-06T08:29:36.275Z">
 <meta property="article:author" content="方宁">
-<meta property="article:tag" content="zigbee">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="方宁 blog" type="application/atom+xml">
@@ -203,14 +203,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2020.09.09 zigbee 概述" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2020.10.02 Linux概述" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      zigbee概述
+      Linux 概述
     </h1>
   
 
@@ -222,8 +222,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/" class="archive-article-date">
-        <time datetime="2020-09-09T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-09</time>
+<a href="/2020/10/02/2020.10.02%20Linux%E6%A6%82%E8%BF%B0/" class="archive-article-date">
+        <time datetime="2020-10-02T04:03:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-02</time>
 </a>
 
   
@@ -236,7 +236,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.1k字</span>
+      <span class="post-count">2.3k字</span>
     </span>
   </span>
 
@@ -245,7 +245,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">4分</span>
+      <span class="post-count">8分</span>
     </span>
   </span>
 </div>
@@ -256,21 +256,122 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="zigbee"><a href="#zigbee" class="headerlink" title="zigbee"></a>zigbee</h1><h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> zigbee 不像 <span class="number">51</span>单片机 只需要理解里面的寄存器就可以玩转:</span><br><span class="line">    <span class="number">1</span>) zigbee 最主要的是协议栈。它包含了很多的协议站，以及相关代码。这是最难的。</span><br><span class="line">    <span class="number">2</span>) 资料方面，互联网上关于 zigbee 相关的深入浅出的资料很少。特别是关于讲解<span class="string">&#x27;协议栈&#x27;</span>这一方面。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 术语:</span><br><span class="line">    <span class="number">1</span>) zigbee, zigbee通信方式，zigbee协议 三者都是一个意思。</span><br><span class="line">    <span class="number">2</span>) 节点，无线模块，无线设备，三者都是一个意思。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 计算机之间，局域网采用以太网协议:</span><br><span class="line">    <span class="number">1</span>) zigbee之间通信，同样的，采用zigbee协议</span><br><span class="line">    <span class="number">2</span>) 作用：<span class="string">&#x27;构建无线局域网！！&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 如果一个无线局域网用于传感器的数据收集和监控，那么这个网络就叫做<span class="string">&#x27;无线传感器网络&#x27;</span></span><br><span class="line">    <span class="number">1</span>) 也就是说，无线传感器网络是无线局域网的一个具体应用。</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 已经有了 蓝牙 和 wifi 为什么还要用 zigbee:</span><br><span class="line">    <span class="number">1</span>) 蓝牙：功耗低，但是组件网络的节点数少 <span class="number">7</span>~<span class="number">8</span>个。</span><br><span class="line">    <span class="number">2</span>) wifi：通信功率 比较大， 功耗大。</span><br><span class="line">    <span class="number">3</span>) zigbee：可以组将大概模网络，节点可以上万个！功耗低(cc <span class="number">2530</span> 正常工作电流<span class="number">8</span>mA, 最低工作达到几个uA)。</span><br><span class="line">    	缺点：通信速率比较小，<span class="number">250</span> kbs。比较适合传感器的信息传送。</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 应用方面:</span><br><span class="line">    <span class="number">1</span>) 家具方面：可以用电池，或者太阳能供电。</span><br><span class="line">    <span class="number">2</span>) 工业方面：传统使用总线组将局域网，如果有zigbee的话，就可以无线组网。</span><br><span class="line">    <span class="number">3</span>) 农业方面：组将无线传感器网络，温湿度传感器，二氧化碳浓度等传感器的数据组网收集。</span><br><span class="line">    <span class="number">4</span>) 医疗方面：......</span><br><span class="line">    <span class="number">5</span>) 物联网时代，zigbee 使用十分频繁。</span><br><span class="line"></span><br><span class="line"><span class="number">7.</span> zigbee 模块一般配合上位机构建控制系统:</span><br><span class="line">    <span class="number">1</span>) 上位机可以是 pc，也可以是通过互联网的远程服务器。</span><br><span class="line">    <span class="number">2</span>) 上位机可以实现对 zigbee 系统中的元件控制。</span><br><span class="line">    <span class="number">3</span>) 主 zigbee 与 计算机之间 是<span class="string">&#x27;采用串口进行通信&#x27;</span>的。也就是和 arduino 串口通信一样，需要使用一根数据线连接电脑。计算机获取数据。 </span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-
-<h2 id="zigbee组网组成"><a href="#zigbee组网组成" class="headerlink" title="zigbee组网组成"></a>zigbee组网组成</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 局域网内主要有三种成员:</span><br><span class="line">    <span class="number">1</span>) 自顶向下：调节器，路由器，终端。三者都是使用zigbee模块来组成的。</span><br><span class="line">    <span class="number">2</span>) 上位机主要是与主zigbee进行数据交互通信。</span><br><span class="line">    <span class="number">3</span>) 远程服务器，是为了外出也能控制家里的物联网设备。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 以太网协议通信条件:</span><br><span class="line">    <span class="number">1</span>) 硬件：网卡</span><br><span class="line">    <span class="number">2</span>) 软件：以太网协议栈（一堆程序代码？？？）</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> zigbee 协议通信条件:</span><br><span class="line">    <span class="number">1</span>) 软件上：zigbee协议栈（一堆程序代码）</span><br><span class="line">    <span class="number">2</span>) 硬件上：<span class="string">&#x27;一种支持zigbee底层协议的芯片&#x27;</span>。</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 几种关键字的含义:</span><br><span class="line">    <span class="number">1</span>) zigbee联盟：ambare/飞思卡尔...  制定zigbee协议的一个协会组织，再美国的TI公司。</span><br><span class="line">    	zigbee厂商，主要把zigbee协议用于推广和实际应用。</span><br><span class="line">    <span class="number">2</span>) zstack TI：zigbee软件上<span class="string">&#x27;支持的协议栈&#x27;</span>，由 TI 公司开发，并不是 zigbee 本身的底层协议.</span><br><span class="line">    <span class="number">3</span>) cc2530：就是 TI 公司推出的<span class="string">&#x27;其中一&#x27;</span>种<span class="string">&#x27;支持 zigbee 底层协议&#x27;</span>的 <span class="string">&#x27;硬件芯片&#x27;</span>。</span><br><span class="line">    <span class="number">4</span>) IAR：编程软件，编译程序，下载烧录程序到 zigbee 开发板。</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> cc2530芯片：cc2530F256 TI <span class="number">50j</span>..  <span class="comment"># zigbee芯片上那块小的板子，中间的黑色正方形就是cc2530</span></span><br><span class="line">    <span class="number">1</span>) F 标识flash，存储程序的rom <span class="number">256</span>kb 最大的一款。</span><br><span class="line">    <span class="number">2</span>) 所有的种类芯片，ram 只有<span class="number">8</span>K。</span><br><span class="line">    <span class="number">3</span>)  <span class="number">50j</span>：表示的是产品信息。</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 学习方法:</span><br><span class="line">    <span class="number">1</span>) 记录学习笔记，做实验，抓包</span><br><span class="line">    <span class="number">2</span>) <span class="number">1</span>~<span class="number">6</span> 节可以按照顺序看，第七部分上半部分协议栈的使用学习完，可以直接先看第八部分 zigbee无线网络通信。熟悉这两部分之后，在学习 OSAL 以及对比学习其他通信方式。</span><br><span class="line">    <span class="number">3</span>) 所有内容可以先粗看一遍，所有例子烧录进去观察现象，再来细看学习。</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="相关经验"><a href="#相关经验" class="headerlink" title="相关经验"></a>相关经验</h2><ul>
-<li>手机是不能直接和 zigbee 进行数据通信的。<ul>
-<li>计算机的作用就是，将 zigbee 网络 与 互联网广域网 进行连接的中间。</li>
+    <h1 id="Linux概述"><a href="#Linux概述" class="headerlink" title="Linux概述"></a>Linux概述</h1><ul>
+<li>Linux  ———— 一种开源操作系统</li>
+<li>内核版本号组成，r.x.y <ul>
+<li>r ： 目前发部的内核版本</li>
+<li>x : 偶数 表示稳定版本，奇数表示开发中版本</li>
+<li>z : 错误修补次数</li>
 </ul>
 </li>
-<li>国内用的一般都是 TI 公司的协议栈，以及硬件芯片cc2530。免费，稳定，可靠。</li>
+<li>比较流行的版本            <strong>分为商业版， 以及社群版</strong><ul>
+<li>Red Hat </li>
+<li>Mandrake</li>
+<li>Slackware</li>
+<li>Debian</li>
+<li>CentOS  ———— 本人主要学习该版本的 Linux</li>
+<li>Ubuntu</li>
 </ul>
+</li>
+</ul>
+<a id="more"></a>
+
+<h1 id="WMware-中安装-Linux"><a href="#WMware-中安装-Linux" class="headerlink" title="WMware 中安装 Linux"></a>WMware 中安装 Linux</h1><p>参考资料: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1i7411G7vm?p=123">bilbili 最详细教学</a> 千言万语都在视频里，我就不多累赘了</p>
+<ul>
+<li><p>先查看自己 VMware 可支持安装的 Linux 各版本号，然后再对应的去官网下载 Linux ios</p>
+</li>
+<li><p>Linux 系统w免费，直接官网下载，无需激活</p>
+</li>
+<li><p>建议安装 CentOS。我用 VMware 15 装了 CentOS 8，由于 CentOS 是由 Red-Hat 发展来的，所以采用了</p>
+<p>VMware 中的 red-hat 8 来装 CentOS 8 完全没问题</p>
+</li>
+<li><p>安装过程很简单，用过 VMware 的应该都不难。</p>
+</li>
+</ul>
+<h1 id="计算机启动基本过程"><a href="#计算机启动基本过程" class="headerlink" title="计算机启动基本过程"></a>计算机启动基本过程</h1><p>详情参考：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/langeldep/article/details/8788119?utm_source=app"><strong>计算机启动过程</strong></a></li>
+<li>进程：进程（Process）是计算机中的<strong>程序</strong>关于某<strong>数据集合</strong>上的一次<strong>运行活动</strong>，是<strong>系统进行资源分配和调度的基本单位</strong>，是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">操作系统</a>结构的基础。 进程 = 程序 + 数据 + 系统硬件运行资源</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 按下电源键:</span><br><span class="line">    <span class="number">1</span>) 上电，CPU 复位后开始工作</span><br><span class="line">    <span class="number">2</span>) 执行跳转指令，跳转到 存储有 BIOS 程序的 ROM 中。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> BIOS自检:</span><br><span class="line">    <span class="number">1</span>) 现在存储 BIOS 的存储器使用 Flash EPROM 这种可用擦写工具修改的芯片。</span><br><span class="line">    <span class="number">2</span>) BIOS ------- Baic Input/Output System 基本输入输出系统</span><br><span class="line">    <span class="number">3</span>) 该系统程序的主要作用:</span><br><span class="line">        * 硬件自检：检查 cpu、内存、显卡、I/O、键盘鼠标等是否上电正常。</span><br><span class="line">        * 查找引导设备：BIOS将控制权交给启动程序。<span class="string">&quot;启动顺序&quot;</span>可进入bios进行修改。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 系统引导:</span><br><span class="line">     <span class="number">1</span>) boot 启动的意思，bootloader 启动程序</span><br><span class="line">     <span class="number">2</span>) bios 运行结束后，运行 MBR（主引导记录）: 另外一个引导程序，NTLDR、BOOTMGR、GRUB(启动管理器)等等</span><br><span class="line">     <span class="number">3</span>) 计算机控制权转交给硬盘的某个分区</span><br><span class="line">    	* 如果操作系统位于激活的主分区（主分区有四个，只能激活一个）内，计算机读取激活分区的第一个扇区。</span><br><span class="line">        * 如果操作系统位于逻辑分区内，也就是扩展分区（四个主分区内，的再分区）。计算机读取 “启动管理器”程序代码，直接提示用户选择启动哪个操作系统。—————— Linux 主要使用 GRUB 启动管理器。</span><br><span class="line">    <span class="comment"># 对于嵌入式 系统来说，并没有 BIOS ，而是直接从 flsh 照顾你运行 bootloader启动程序 .</span></span><br><span class="line">    </span><br><span class="line"><span class="number">4.</span> 启动内核:</span><br><span class="line">    <span class="number">1</span>) 控制权给了操作系统，操作系统内核被加载到内存运行。</span><br><span class="line">    <span class="number">2</span>) Linux 中，先运行 /boot 目录下内核文件</span><br><span class="line">    <span class="number">3</span>) 第一个运行的程序是 /sbin/init ，该程序工具配置文件产生 init 进程 ———— Linux 第一个进程 PID = <span class="number">1</span></span><br><span class="line">    <span class="number">4</span>) init 进程产生其他的后代进程，加载系统各个模块，直到加载到 /bin/login 登陆程序，跳出登陆界面。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h2><ul>
+<li>shell 俗称 壳，是用户与 Linux 的接口。区别于内核</li>
+<li>Shell 有图形 GUI 形式的 ， 也有 命令行的。</li>
+<li>命令行模式下又分:<ul>
+<li>交互模式，类似 cmd.exe </li>
+<li>非交互模式，类似批处理文件，Windows下的 .bat ，Linux下的 .sh</li>
+</ul>
+</li>
+</ul>
+<h2 id="常见的Shell"><a href="#常见的Shell" class="headerlink" title="常见的Shell"></a>常见的Shell</h2><ul>
+<li>Linux 下 Shell 可能不同。也就是各种不同的标准</li>
+<li>Bourne Shell \ Korn shell \ C Shell \ Bourne Again Shell 等等</li>
+</ul>
+<h2 id="图形界面以及字符界面的切换"><a href="#图形界面以及字符界面的切换" class="headerlink" title="图形界面以及字符界面的切换"></a>图形界面以及字符界面的切换</h2><ul>
+<li>图形界面也就是 X-Windows 模式，Linux 系统默认开机进入 X-Windows 屏幕 <strong>tty2</strong></li>
+<li>当然，同时，Linux 还开起了其他六个 <strong>字符界面</strong> 屏幕 tty1，<strong>tty3-tty7</strong></li>
+<li>使用 <strong>ctrl + alt + Fn</strong> 可以在 各个屏幕之间切换。</li>
+<li>注意如果是 VMware 中使用该快捷键，会与 VMware 本身的 ctrl + alt 快捷键冲突，需要修改 VMware 的快捷键。<ul>
+<li>编辑 -&gt; 习惯设置(preference) -&gt;  热键  <strong>改为 alt + shift + ctrl</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="完全退出-X-Windows"><a href="#完全退出-X-Windows" class="headerlink" title="完全退出 X-Windows"></a>完全退出 X-Windows</h2><p>在图形界面中，打开一个终端（ <strong>terminal</strong> 一个黑乎乎的命令行），然后输入 <strong>init 3</strong>，强行关闭图形界面，然后转到字符界面。</p>
+<ul>
+<li>修改完运行级后，X-Windows 不再运行。</li>
+<li>如需重启 x-windows <strong>需要切换运行级到5</strong> ———— init 5</li>
+</ul>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><blockquote>
+<p> 环境变量，指操作系统中用来指定操作系统运行环境的一些变量</p>
+</blockquote>
+<ul>
+<li>系统级环境变量<ul>
+<li>对登陆系统的所有用户有效</li>
+<li>存储位置：/etc/profilt</li>
+<li>查看命令 <strong>env</strong></li>
+</ul>
+</li>
+<li>用户级环境变量<ul>
+<li>对指定登陆的用户有效</li>
+<li>存储位置: ~/.bash_profile 文件，其中 ~ 指用户目录，类似 windows 的 <strong>%userprofilt%</strong></li>
+<li>.bash_profile 为一个<strong>隐藏文件</strong></li>
+<li>查看命令 <strong>env</strong></li>
+</ul>
+</li>
+</ul>
+<h1 id="了解-Linux-系统信息"><a href="#了解-Linux-系统信息" class="headerlink" title="了解 Linux 系统信息"></a>了解 Linux 系统信息</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> [root@CentOS<span class="number">-1</span> /root]<span class="comment">#</span></span><br><span class="line">    <span class="number">1</span>) root : 表示当前登陆的身份。</span><br><span class="line">    <span class="number">2</span>) CentOS<span class="number">-1</span> : 表示你给你的 Linux 取的主机名。</span><br><span class="line">    <span class="number">3</span>) /root : 此处为当前路径，有时为 <span class="string">&#x27;~&#x27;</span> 表示用户家目录。</span><br><span class="line">    <span class="number">4</span>) <span class="string">&#x27;#&#x27;</span> : 表示此时登陆的身份为超级管理员，<span class="string">&#x27;$&#x27;</span> 表示普通用户。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 查看硬盘信息:</span><br><span class="line">    <span class="number">1</span>) fdisk -l</span><br><span class="line">    <span class="number">2</span>) 会出现一堆信息，主需要在乎 <span class="string">&#x27;disk /dev/sda: 21.5G&#x27;</span>		<span class="comment"># divice设备文件存放目录</span></span><br><span class="line">    <span class="number">3</span>) <span class="string">&#x27;sda&#x27;</span> 表示硬件在 Linux 系统中的<span class="string">&#x27;名称&#x27;</span>，<span class="string">&#x27;sd&#x27;</span> 表示硬盘所用为 <span class="string">&#x27;sata 接口&#x27;</span>，<span class="string">&#x27;a&#x27;</span> 表示<span class="string">&#x27;第一块&#x27;</span>硬盘。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 查看内存信息:</span><br><span class="line">    <span class="number">1</span>) cat /proc/meminfo  <span class="comment"># concatenate连锁，cat file1 file2 &gt;&gt; file3 将文件1和文件2联合起来放到file3</span></span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 查看 cpu 信息:</span><br><span class="line">    <span class="number">1</span>) cat /proc/cpuinfo <span class="comment"># cat 可用来输出文件信息</span></span><br><span class="line">    <span class="number">2</span>) 查看型号，主频，型号，产商 就行了</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 关机/重启:</span><br><span class="line">    <span class="number">1</span>) 关机: poweroff</span><br><span class="line">    <span class="number">2</span>) 重启: reboot</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<h1 id="了解-Linux-目录结构和文件属性"><a href="#了解-Linux-目录结构和文件属性" class="headerlink" title="了解 Linux 目录结构和文件属性"></a>了解 Linux 目录结构和文件属性</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="string">&#x27;/&#x27;</span> : 表示根目录</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 和 Windows 一样，都是采用树状结构。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 文件组织架构信息:</span><br><span class="line">    <span class="number">1</span>) /bin    ------  <span class="string">&#x27;系统命令字&#x27;</span> ， 普通用户 &amp; root 都可以使用的命令！ <span class="comment"># binaries 二进制文件</span></span><br><span class="line">    <span class="number">2</span>) /sbin   ------  <span class="string">&#x27;root&#x27;</span> 专用<span class="string">&#x27;命令字&#x27;</span>，比如开关机/重启，poweroff / reboot <span class="comment"># superuser binaries</span></span><br><span class="line">    <span class="number">3</span>) /boot   ------  <span class="string">&#x27;引导&#x27;</span>的意思，操作系统主引导目录。特点：独立的分区，有系统启动菜单，以及内核。</span><br><span class="line">    <span class="number">4</span>) /dev    ------  <span class="string">&#x27;device设备&#x27;</span>，设备文件存放目录 <span class="comment"># device</span></span><br><span class="line">    <span class="number">5</span>) /etc    ------  <span class="string">&#x27;配置文件&#x27;</span>存放目录 <span class="comment"># ETCetera</span></span><br><span class="line">    <span class="number">6</span>) /home   ------  <span class="string">&#x27;普通用户&#x27;</span>家目录   </span><br><span class="line">    <span class="number">7</span>) /root   ------  <span class="string">&#x27;超级管理员&#x27;</span>的家目录</span><br><span class="line">    <span class="number">8</span>) /lib , /lib64 ----- 一些<span class="string">&#x27;函数库&#x27;</span>的存放路径 <span class="comment"># libaray</span></span><br><span class="line">    <span class="number">9</span>) /media   ------  <span class="string">&#x27;光驱&#x27;</span>的挂载目录，<span class="string">&#x27;挂载&#x27;</span>：就是将一切和文件夹联系起来，一切皆文件 </span><br><span class="line">    <span class="number">10</span>) /mnt   ------  <span class="string">&#x27;临时设备&#x27;</span>的挂载目录，比如说 U盘文件，就在这里面。 </span><br><span class="line">    <span class="number">11</span>) /proc  ------  process<span class="string">&#x27;进程&#x27;</span>，该目录中所有的<span class="string">&#x27;数据都在内存中&#x27;</span>。</span><br><span class="line">    <span class="number">12</span>) /tmp   ------  <span class="string">&#x27;临时文件&#x27;</span>存放目录。  <span class="comment"># tmporary 临时</span></span><br><span class="line">    <span class="number">13</span>) /usr   ------  <span class="string">&#x27;第三方软件&#x27;</span>按照目录。 <span class="comment"># unix shared resources</span></span><br><span class="line">    <span class="number">14</span>) /var   ------  变量的意思，存放常变文件目录，比如<span class="string">&#x27;日志，邮件文件&#x27;</span>。 <span class="comment"># variable 变量</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> uname -a 或 cat/proc/version</span><br><span class="line">	<span class="number">1</span>) 查看当前系统版本号</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> <span class="comment">#echo $SHELL</span></span><br><span class="line">	<span class="number">1</span>) 查看当前环境所用 Shell 标准，eg: <span class="comment">#/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> init [x]: <span class="comment"># 初始化</span></span><br><span class="line">    <span class="number">1</span>) 切换 Linux 运行级</span><br><span class="line">    <span class="number">2</span>) <span class="number">0</span>: 停机</span><br><span class="line">       <span class="number">1</span>: 单用户模式</span><br><span class="line">       <span class="number">2</span>: 多用户，无 NFS</span><br><span class="line">       <span class="number">3</span>: 完全多用户模式，标准运行级，<span class="string">&#x27;字符界面模式&#x27;</span></span><br><span class="line">       <span class="number">4</span>: 一般不用</span><br><span class="line">       <span class="number">5</span>: X-Window 系统，<span class="string">&#x27;图形界面模式&#x27;</span></span><br><span class="line">       <span class="number">6</span>: 重启</span><br><span class="line">	<span class="comment"># 系统默认开机 init 3 进入图形界面</span></span><br><span class="line">	<span class="comment"># 可修改 /etc/inittab 文本文件中的 id:5:initdefault 为 id:3:initdefault</span></span><br><span class="line">	<span class="comment"># 这样子一开机就进入 3 运行级，也就是字符界面模式</span></span><br><span class="line">    </span><br><span class="line"><span class="number">4.</span> ls -a <span class="comment"># list all</span></span><br><span class="line">	<span class="number">1</span>) 查看当前目录下的隐藏文件</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> env: <span class="comment"># enviroment</span></span><br><span class="line">    <span class="number">1</span>) 查看当前系统的环境变量</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> cd .. <span class="comment"># change directory</span></span><br><span class="line">	<span class="number">1</span>) 同 windows 表示返回上一级目录。</span><br><span class="line"></span><br><span class="line"><span class="number">7.</span> pwd		<span class="comment"># print work directory</span></span><br><span class="line">	<span class="number">1</span>) 显示当前路径。</span><br><span class="line"></span><br><span class="line"><span class="number">8.</span> ls   <span class="comment"># list</span></span><br><span class="line">	<span class="number">1</span>) 列出当前路径目录。</span><br><span class="line"></span><br><span class="line"><span class="number">9.</span> clear</span><br><span class="line">    <span class="number">1</span>) 清空当前屏幕，保留列出的信息，实际上只是将屏幕滚动了一页。</span><br><span class="line"></span><br><span class="line"><span class="number">10.</span> reset</span><br><span class="line">	<span class="number">1</span>) 完全清空当前屏幕。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="相关经验"><a href="#相关经验" class="headerlink" title="相关经验"></a>相关经验</h1><ul>
+<li>多实践，遇到问题学会自己查看错误讯息，或日志 /var/log</li>
+<li>Linux 网路功能很强。</li>
+<li>熟练掌握 LInux 之后再玩架站。</li>
+<li>注意 <strong>网络安全</strong> 这一点很重要。<ul>
+<li>架设安全的 Linux 主机</li>
+<li>限制 Linux 主机的连线电脑</li>
+<li>更改 wu-ftp 成为 proftp  系统</li>
+<li>简单的防火墙设置</li>
+<li>Linux 的套件升级。</li>
+</ul>
+</li>
+<li><strong>在 LInux 系统中，一切皆文件，都有路径与文件名</strong></li>
+<li>Windows 下路径采用 反斜杠 <strong>\</strong>  ，，， Linux 下采用斜杠 <strong>/</strong></li>
+</ul>
+<h1 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h1><ul>
+<li><p>鸟哥的 Linux 私房菜：<a target="_blank" rel="noopener" href="http://linux.vbird.org/new_linux.php">新手建议</a> </p>
+</li>
+<li><p>Linux C与C++ 一线开发实践</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1i7411G7vm?p=123">千峰网络安全课程 之 CentOS 基本使用</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/WLFF_CSDN/article/details/79001243">Linux 相关英文指令缩写含义</a></p>
+</li>
+</ul>
+<p> ========================== 好好学习，然后，出去好好玩，逛一逛，看一看 =========================</p>
 
     
 
@@ -317,7 +418,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://www.fangning.xyz.com/2020/09/09/2020.09.09 zigbee 概述/" title="zigbee概述" target="_blank">http://www.fangning.xyz.com/2020/09/09/2020.09.09 zigbee 概述/</a>
+          <a href="http://www.fangning.xyz.com/2020/10/02/2020.10.02 Linux概述/" title="Linux 概述" target="_blank">http://www.fangning.xyz.com/2020/10/02/2020.10.02 Linux概述/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -336,7 +437,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">zigbee</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
@@ -392,7 +493,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.fangning.xyz.com/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.fangning.xyz.com/2020/10/02/2020.10.02%20Linux%E6%A6%82%E8%BF%B0/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -407,18 +508,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          zigbee环境搭建
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/09/03/hexo%20%E9%BB%98%E8%AE%A4%E6%96%87%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello world</div>
+    <a href="/2020/09/22/2020.09.22%20%E5%81%9C%E4%B8%8B%E6%9D%A5%E5%90%AC%E9%A6%96%E6%AD%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">美好事物</div>
       <i class="icon-circle-right"></i>
     </a>
   
