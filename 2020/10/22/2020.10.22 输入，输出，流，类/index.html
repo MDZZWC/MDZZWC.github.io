@@ -6,20 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.fangning.xyz.com">
-  <title>Archives | 方宁 blog</title>
+  <title>输入输出流与类 | 方宁 blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="方宁 学生博客 hexo主题 建立博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="方宁 blog">
-<meta property="og:url" content="http://www.fangning.xyz.com/archives/page/3/index.html">
+  <meta name="description" content="Linux 下的C++编程 首先需要编程，肯定需要源文件 我用的 Centos 中的 c++ 原程序可以是 以 .cpp 或者 .cc 结尾的文件存储。 创建文件的方法 vim [文件名]**，删除文件或目录方法 **rm -rf [文件&#x2F;目录名] 创建目录的方法  mkdir [目录名]**， 删除目录的方法 **rmdir [目录名]   敲好代码之后，就是需要进行编译 编译需要编译器。Lin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="输入输出流与类">
+<meta property="og:url" content="http://www.fangning.xyz.com/2020/10/22/2020.10.22%20%E8%BE%93%E5%85%A5%EF%BC%8C%E8%BE%93%E5%87%BA%EF%BC%8C%E6%B5%81%EF%BC%8C%E7%B1%BB/index.html">
 <meta property="og:site_name" content="方宁 blog">
-<meta property="og:description" content="方宁 学生博客 hexo主题 建立博客">
+<meta property="og:description" content="Linux 下的C++编程 首先需要编程，肯定需要源文件 我用的 Centos 中的 c++ 原程序可以是 以 .cpp 或者 .cc 结尾的文件存储。 创建文件的方法 vim [文件名]**，删除文件或目录方法 **rm -rf [文件&#x2F;目录名] 创建目录的方法  mkdir [目录名]**， 删除目录的方法 **rmdir [目录名]   敲好代码之后，就是需要进行编译 编译需要编译器。Lin">
 <meta property="og:locale">
+<meta property="og:image" content="http://images.fangning.xyz//20201027195210.png">
+<meta property="article:published_time" content="2020-10-22T08:15:30.000Z">
+<meta property="article:modified_time" content="2020-10-27T12:44:36.503Z">
 <meta property="article:author" content="方宁">
-<meta property="article:tag" content="方宁_技术博客">
+<meta property="article:tag" content="C&#x2F;C++">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://images.fangning.xyz//20201027195210.png">
   
     <link rel="alternative" href="/atom.xml" title="方宁 blog" type="application/atom+xml">
   
@@ -201,456 +205,409 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-2020.10.22 输入，输出，流，类" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/13/2020.08.13%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="archive-article-date">
-        <time datetime="2020-08-13T11:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-13</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/13/2020.08.13%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A8/" target="_blank">FTP服务器搭建</a>
   
+    <h1 class="article-title" itemprop="name">
+      输入输出流与类
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/10/22/2020.10.22%20%E8%BE%93%E5%85%A5%EF%BC%8C%E8%BE%93%E5%87%BA%EF%BC%8C%E6%B5%81%EF%BC%8C%E7%B1%BB/" class="archive-article-date">
+        <time datetime="2020-10-22T08:15:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-22</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">2.6k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">11分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Linux-下的C-编程"><a href="#Linux-下的C-编程" class="headerlink" title="Linux 下的C++编程"></a>Linux 下的C++编程</h1><ul>
+<li>首先需要编程，肯定需要<strong>源文件</strong><ul>
+<li>我用的 Centos 中的 c++ 原程序可以是 以 <strong>.cpp 或者 .cc</strong> 结尾的文件存储。</li>
+<li>创建文件的方法 <strong>vim [文件名]**，删除文件或目录方法 **rm -rf [文件/目录名]</strong></li>
+<li>创建目录的方法  <strong>mkdir [目录名]**， 删除目录的方法 **rmdir [目录名]</strong></li>
+</ul>
+</li>
+<li>敲好代码之后，就是需要进行<strong>编译</strong><ul>
+<li>编译需要编译器。Linux 中使用 GNU 编译器。</li>
+<li>调用 GNU 编译器的命令是 <ul>
+<li><strong>g++ -o [定义可执行文件名] [源文件名]</strong></li>
+<li>或者 <strong>g++ [源文件]</strong></li>
+</ul>
+</li>
+<li>如果不加参数 -o 与 [输出的文件名] 的话，就直接产生一个默认名为 <strong>a.out</strong> 的可执行文件文件。 </li>
+<li>Unix中要么<strong>无后缀</strong>，或者**.out<strong>后缀。Windows 中为 **.exe</strong> 为后缀。</li>
+</ul>
+</li>
+<li>编译生成可执行文件之后，就可以<strong>运行</strong>了<ul>
+<li>输入可执行文件的 <strong>绝对路径</strong>， 然后回车就行了。</li>
+</ul>
+</li>
+<li>GNU 编译命令中加参数 <strong>-Wall</strong>、微软编译器 <strong>visual studio</strong> 加参数 <strong>/w4</strong>。打开编译器选项。</li>
+</ul>
+<a id="more"></a>
+
+<h1 id="输入输出流"><a href="#输入输出流" class="headerlink" title="输入输出流"></a>输入输出流</h1><ul>
+<li>iostream 是一个输入输出流</li>
+<li>cout , cin ; 是 <strong>标准 输入/输出 对象</strong>。另外的 cerr 和 clog 使用的比较少，这里不加累述。</li>
+<li><strong>关于 endl</strong><ul>
+<li>一个操纵符，作用是 <strong>结束当前行</strong>，并将关联的缓冲区中的内容刷到设备中，<strong>也就是刷新缓冲区的作用。</strong></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/limera/p/buffer.html">关于缓冲区解释参照这篇博客</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="关于运算符-lt-lt-与-gt-gt"><a href="#关于运算符-lt-lt-与-gt-gt" class="headerlink" title="关于运算符 &lt;&lt; 与 &gt;&gt;"></a>关于运算符 &lt;&lt; 与 &gt;&gt;</h1><ul>
+<li><p>&lt;&lt;</p>
+<ul>
+<li>左侧运算对象必须为 ostream 类型的对象。</li>
+<li>右侧为需要打印的值。</li>
+<li>该运算符，将输出值写到 ostream 对象中，然后返回修改后的 ostream 对象。</li>
+</ul>
+</li>
+<li><p><strong>&gt;&gt;</strong></p>
+<ul>
+<li>左侧运算对象必须为 istream 类型的对象。</li>
+<li>右侧为需要存放输入数据的变量。</li>
+<li>该运算符，返回修改后的 istream 对象，istream对象是随时改变的。</li>
+</ul>
+</li>
+<li><p>代码解释</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> </span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;str1&quot;</span> &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 等价于 (cout &lt;&lt; &quot;str1&quot;) &lt;&lt; endl; 先将，str1 写入到标准输出对象中(暂时存放在缓冲区)，然后 endl 刷新缓冲区，并且输出换行。</span></span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> </span><br><span class="line"><span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; v1); <span class="comment">// cin 是标准输入流对象。其中的内容是随时间改变的，因此，每次循环，v1 都可以从 cin 中读取不同的数据。</span></span><br><span class="line">				<span class="comment">// 因为 &gt;&gt; 操作符返回值是 cin。当 cin 中遇到一个结束符 “EOF” 或者 “一个无效输入” 是，条件为假循环结束。</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="类介绍"><a href="#类介绍" class="headerlink" title="类介绍"></a>类介绍</h1><h2 id="书店销售记录保存"><a href="#书店销售记录保存" class="headerlink" title="书店销售记录保存"></a>书店销售记录保存</h2><p>​    我们需要实现以下功能，帮助一个书店记录销售记录。</p>
+<p>​    每条记录包含了三项基本信息：<strong>ISBM号、书的单价、售出册数</strong></p>
+<p>​    同时，便于老板查询销售情况，需要计算 <strong>每本书的销售量、销售总额、及平均售价。</strong></p>
+<h2 id="为了使用一个类，我们需要明白三件事："><a href="#为了使用一个类，我们需要明白三件事：" class="headerlink" title="为了使用一个类，我们需要明白三件事："></a>为了使用一个类，我们需要明白三件事：</h2><ul>
+<li>类名是什么？Sales_item<ul>
+<li>因为需要知道每一本书的销售总量、与销售总额、两者相除即可知道平均售价。</li>
+<li>所以我们需要一个类 <strong>Sales_item</strong> 来记录一本书的以上三种属性。</li>
+<li>暂时，先不深究它是如何实现的。</li>
+</ul>
+</li>
+<li>它在哪里被定义？<ul>
+<li>每个类实际上就是定义了一种类型，类型名就是类名。</li>
+<li>我们可以使用它，来定义<strong>类类型的变量</strong>。</li>
+<li>Sales_item 存在 Sales_item.h 中被定义，使用时需要包含该头文件，即可<strong>定义该类类型的变量</strong>。</li>
+</ul>
+</li>
+<li><strong>它支持什么操作？</strong><ul>
+<li><strong>初始化 / 赋值操作</strong><ul>
+<li>定义类，是为了使用类变量，既然是变量，就需要给予一定的值。</li>
+<li>方法一，输入值，需要支持 <strong>&gt;&gt;</strong> 输入运算符。</li>
+<li>方法二，直接赋值，需要支持 <strong>=</strong> 运算符。</li>
+</ul>
+</li>
+<li><strong>输出 / 读取操作</strong><ul>
+<li>方法一，使用<strong>类中的成员方法</strong>，比如 isbn() 来获取类变量中的某一属性，如 ISBN 编码。</li>
+<li>方法二，输出值，需要支持 <strong>&lt;&lt;</strong> 输出运算符。</li>
+</ul>
+</li>
+<li>同一类变量的<strong>相互运算操作</strong><ul>
+<li>既然是变量，那就会用到变量之间的运算，比如，**加，减，+=**等复合运算。</li>
+<li>销售记录相加，需要支持 <strong>+</strong> 运算，将 isbn 码相同的记录对应的销售额，与销售量进行相加。</li>
+<li>累加，需要支持 <strong>+=</strong> 运算，将两者相加的结果，再赋值给运算符左边的对象（类变量）。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="重定向命令"><a href="#重定向命令" class="headerlink" title="重定向命令"></a>重定向命令</h1><ul>
+<li><p>为了避免反复键盘输入数据，这里使用文件重定向。<strong>实现，将程序标志输入，输出与名命文件联系起来。</strong></p>
+<blockquote>
+<p><strong>a.out <infile > outfile</strong>   </p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>其中的 <strong>‘&lt;’** 命令表示重定向输入；**’&gt;’</strong> 命令表示重定向输出。</p>
+</li>
+<li><p>该语句，<strong>表示将 infile 文件中的数据作为程序 a.out 的标准输入。并且将程序的标准输出，输出到文件 outfile 中</strong>。</p>
+</li>
+</ul>
+<h1 id="Linux-下C-工程组织架构"><a href="#Linux-下C-工程组织架构" class="headerlink" title="Linux 下C++工程组织架构"></a>Linux 下C++工程组织架构</h1><ul>
+<li>首先，一般新建一个工程文件目录，比如 <strong>SalesPro</strong></li>
+<li>其中一般包含三个目录<ul>
+<li><strong>sourse</strong>：该目录下包含程序文件，包括 <strong>sell.cc、Sales_item.h</strong>。以及编译生成的可执行文件 <strong>a.out、sell</strong></li>
+<li><strong>infile</strong>：该目录下包含输入的测试数据，<strong>indata</strong></li>
+<li><strong>outfile</strong>： 该目录用来存放测试程序时，所输出的文件。</li>
+</ul>
+</li>
+<li>tree<ul>
+<li>使用 tree 命令同样可以输出目录树。同 Windows 下的 tree 命令。</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://images.fangning.xyz//20201027195210.png" alt="如何存储文件"></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><h2 id="Sales-item-h-中所定义的-Sales-item-类"><a href="#Sales-item-h-中所定义的-Sales-item-类" class="headerlink" title="Sales_item.h 中所定义的 Sales_item 类"></a>Sales_item.h 中所定义的 Sales_item 类</h2><p>以下类的定义暂时我们不需要懂，只需要知道如何使用该类。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> SALESITEM_H</span></span><br><span class="line"><span class="comment">// we&#x27;re here only if SALESITEM_H has not yet been defined </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SALESITEM_H</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Definition of Sales_item class and related functions goes here</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Sales_item</span> &#123;</span></span><br><span class="line"><span class="comment">// these declarations are explained section 7.2.1, p. 270 </span></span><br><span class="line"><span class="comment">// and in chapter 14, pages 557, 558, 561</span></span><br><span class="line"><span class="keyword">friend</span> <span class="built_in">std</span>::istream&amp; <span class="keyword">operator</span>&gt;&gt;(<span class="built_in">std</span>::istream&amp;, Sales_item&amp;);</span><br><span class="line"><span class="keyword">friend</span> <span class="built_in">std</span>::ostream&amp; <span class="keyword">operator</span>&lt;&lt;(<span class="built_in">std</span>::ostream&amp;, <span class="keyword">const</span> Sales_item&amp;);</span><br><span class="line"><span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> Sales_item&amp;, <span class="keyword">const</span> Sales_item&amp;);</span><br><span class="line"><span class="keyword">friend</span> <span class="keyword">bool</span> </span><br><span class="line"><span class="keyword">operator</span>==(<span class="keyword">const</span> Sales_item&amp;, <span class="keyword">const</span> Sales_item&amp;);</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// constructors are explained in section 7.1.4, pages 262 - 265</span></span><br><span class="line">    <span class="comment">// default constructor needed to initialize members of built-in type</span></span><br><span class="line">    Sales_item() = <span class="keyword">default</span>;</span><br><span class="line">    Sales_item(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span> &amp;book): bookNo(book) &#123; &#125;</span><br><span class="line">    Sales_item(<span class="built_in">std</span>::istream &amp;is) &#123; is &gt;&gt; *<span class="keyword">this</span>; &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// operations on Sales_item objects</span></span><br><span class="line">    <span class="comment">// member binary operator: left-hand operand bound to implicit this pointer</span></span><br><span class="line">    Sales_item&amp; <span class="keyword">operator</span>+=(<span class="keyword">const</span> Sales_item&amp;);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// operations on Sales_item objects</span></span><br><span class="line">    <span class="function"><span class="built_in">std</span>::<span class="built_in">string</span> <span class="title">isbn</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> bookNo; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">avg_price</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line"><span class="comment">// private members as before</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">string</span> bookNo;      <span class="comment">// implicitly initialized to the empty string</span></span><br><span class="line">    <span class="keyword">unsigned</span> units_sold = <span class="number">0</span>; <span class="comment">// explicitly initialized</span></span><br><span class="line">    <span class="keyword">double</span> revenue = <span class="number">0.0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// used in chapter 10</span></span><br><span class="line"><span class="keyword">inline</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">compareIsbn</span><span class="params">(<span class="keyword">const</span> Sales_item &amp;lhs, <span class="keyword">const</span> Sales_item &amp;rhs)</span> </span></span><br><span class="line"><span class="function"></span>&#123; <span class="keyword">return</span> lhs.isbn() == rhs.isbn(); &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// nonmember binary operator: must declare a parameter for each operand</span></span><br><span class="line">Sales_item <span class="keyword">operator</span>+(<span class="keyword">const</span> Sales_item&amp;, <span class="keyword">const</span> Sales_item&amp;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">bool</span> </span><br><span class="line"><span class="keyword">operator</span>==(<span class="keyword">const</span> Sales_item &amp;lhs, <span class="keyword">const</span> Sales_item &amp;rhs)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// must be made a friend of Sales_item</span></span><br><span class="line">    <span class="keyword">return</span> lhs.units_sold == rhs.units_sold &amp;&amp;</span><br><span class="line">           lhs.revenue == rhs.revenue &amp;&amp;</span><br><span class="line">           lhs.isbn() == rhs.isbn();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">bool</span> </span><br><span class="line"><span class="keyword">operator</span>!=(<span class="keyword">const</span> Sales_item &amp;lhs, <span class="keyword">const</span> Sales_item &amp;rhs)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> !(lhs == rhs); <span class="comment">// != defined in terms of operator==</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// assumes that both objects refer to the same ISBN</span></span><br><span class="line">Sales_item&amp; Sales_item::<span class="keyword">operator</span>+=(<span class="keyword">const</span> Sales_item&amp; rhs) </span><br><span class="line">&#123;</span><br><span class="line">    units_sold += rhs.units_sold; </span><br><span class="line">    revenue += rhs.revenue; </span><br><span class="line">    <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// assumes that both objects refer to the same ISBN</span></span><br><span class="line">Sales_item </span><br><span class="line"><span class="keyword">operator</span>+(<span class="keyword">const</span> Sales_item&amp; lhs, <span class="keyword">const</span> Sales_item&amp; rhs) </span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">Sales_item <span class="title">ret</span><span class="params">(lhs)</span></span>;  <span class="comment">// copy (|lhs|) into a local object that we&#x27;ll return</span></span><br><span class="line">    ret += rhs;           <span class="comment">// add in the contents of (|rhs|) </span></span><br><span class="line">    <span class="keyword">return</span> ret;           <span class="comment">// return (|ret|) by value</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">std</span>::istream&amp; </span><br><span class="line"><span class="keyword">operator</span>&gt;&gt;(<span class="built_in">std</span>::istream&amp; in, Sales_item&amp; s)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">double</span> price;</span><br><span class="line">    in &gt;&gt; s.bookNo &gt;&gt; s.units_sold &gt;&gt; price;</span><br><span class="line">    <span class="comment">// check that the inputs succeeded</span></span><br><span class="line">    <span class="keyword">if</span> (in)</span><br><span class="line">        s.revenue = s.units_sold * price;</span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">        s = Sales_item();  <span class="comment">// input failed: reset object to default state</span></span><br><span class="line">    <span class="keyword">return</span> in;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">std</span>::ostream&amp; </span><br><span class="line"><span class="keyword">operator</span>&lt;&lt;(<span class="built_in">std</span>::ostream&amp; out, <span class="keyword">const</span> Sales_item&amp; s)</span><br><span class="line">&#123;</span><br><span class="line">    out &lt;&lt; s.isbn() &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; s.units_sold &lt;&lt; <span class="string">&quot; &quot;</span></span><br><span class="line">        &lt;&lt; s.revenue &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; s.avg_price();</span><br><span class="line">    <span class="keyword">return</span> out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">Sales_item::avg_price</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (units_sold) </span><br><span class="line">        <span class="keyword">return</span> revenue/units_sold; </span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="该章节最终程序"><a href="#该章节最终程序" class="headerlink" title="该章节最终程序"></a>该章节最终程序</h2><p>实现，输入多条销售记录，其中isbn码相同的销售记录相邻。输入，每种书籍的销售总额、总销售量、以及平均售价。</p>
+<p>思路：创建一类变量，用来保存上一次输入的销售记录；另外再创建一个类变量，用来保存这一次输入的销售记录。</p>
+<p>如果两次连续输入的销售记录的 ISBN 编码相同，那么就将第二个类变量累加到第一个类变量当中。如何继续输入。</p>
+<p>如果两次连续输入的 ISBN 编码不同，那么进行一次输出，并且将第一个类变量，替换成第一个类变量。继续输入。</p>
+<ul>
+<li>如果输入为空，输出错误警告。</li>
+<li>记得，最后需要输出，第一个类变量的值。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">include &lt;iostream&gt;</span><br><span class="line">#include &quot;Sales_item.h&quot;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">        Sales_item per;</span><br><span class="line">        if(cin &gt;&gt; per)	&#x2F;&#x2F; 先输入一条销售记录</span><br><span class="line">        &#123;</span><br><span class="line">                Sales_item cur;</span><br><span class="line">                while(cin &gt;&gt; cur)</span><br><span class="line">                &#123;</span><br><span class="line">                        if(per.isbn() &#x3D;&#x3D; cur.isbn()) 	&#x2F;&#x2F; 输入的下一条销售记录与之前一条的一致，进行累加</span><br><span class="line">                        &#123;</span><br><span class="line">                                per +&#x3D; cur;</span><br><span class="line">                        &#125;</span><br><span class="line">                        else					&#x2F;&#x2F; 不一致，进行输出累加结果，并且保存新记录</span><br><span class="line">                        &#123;</span><br><span class="line">                                cout &lt;&lt; per &lt;&lt; endl;</span><br><span class="line">                                per &#x3D; cur;</span><br><span class="line">                        &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                cout &lt;&lt; per &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">    	else	&#x2F;&#x2F; 如果没有输入数据，那么输出错误提示。</span><br><span class="line">        &#123;</span><br><span class="line">            cerr &lt;&lt; &quot;No Data?!&quot; &lt;&lt; endl;</span><br><span class="line">            return -1;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>输入1</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span><span class="number">-201</span><span class="number">-78345</span>-X <span class="number">3</span> <span class="number">20.00</span></span><br><span class="line"><span class="number">0</span><span class="number">-201</span><span class="number">-78345</span>-X <span class="number">2</span> <span class="number">15.00</span></span><br><span class="line"><span class="number">0</span><span class="number">-201</span><span class="number">-78345</span>-X <span class="number">1</span> <span class="number">10.01</span></span><br><span class="line"><span class="number">1</span><span class="number">-321</span><span class="number">-12345</span>-B <span class="number">10</span> <span class="number">100.00</span></span><br><span class="line"><span class="number">1</span><span class="number">-321</span><span class="number">-12345</span>-B <span class="number">2</span> <span class="number">10.40</span></span><br><span class="line"><span class="number">2</span><span class="number">-111</span><span class="number">-11111</span><span class="number">-1</span> <span class="number">3</span> <span class="number">10</span></span><br><span class="line"><span class="number">3</span><span class="number">-112</span><span class="number">-12121</span><span class="number">-4</span> <span class="number">4</span> <span class="number">7</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>输出1</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span><span class="number">-201</span><span class="number">-78345</span>-X <span class="number">6</span> <span class="number">100.01</span> <span class="number">16.6683</span></span><br><span class="line"><span class="number">1</span><span class="number">-321</span><span class="number">-12345</span>-B <span class="number">12</span> <span class="number">1020.8</span> <span class="number">85.0667</span></span><br><span class="line"><span class="number">2</span><span class="number">-111</span><span class="number">-11111</span><span class="number">-1</span> <span class="number">3</span> <span class="number">30</span> <span class="number">10</span></span><br><span class="line"><span class="number">3</span><span class="number">-112</span><span class="number">-12121</span><span class="number">-4</span> <span class="number">4</span> <span class="number">24</span> <span class="number">6</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>输入2</p>
+<ul>
+<li>空</li>
+</ul>
+</li>
+<li><p>输出2</p>
+<ul>
+<li>error: No Data?!</li>
+</ul>
+</li>
+</ul>
+<h1 id="小细节"><a href="#小细节" class="headerlink" title="小细节"></a>小细节</h1><ul>
+<li>Cerr</li>
+</ul>
+<blockquote>
+<p>一个 ostream 对象，关联到标准错误，通常写入到与标准输出相同的设备。默认情况下，<strong>写到 cerr 的数据是不缓冲的</strong>。</p>
+<p>cerr 通常用于输出错误信息，或其他不属于程序正常逻辑的输出内容。</p>
+</blockquote>
+<ul>
+<li>缓冲区（buffer）</li>
+</ul>
+<blockquote>
+<p>一个存储区，用于保存数据。IO设备通常将输入输出保存在一个缓冲区中，读写的动作与程序中的动作无关。</p>
+<p>我们可以显式地刷新输出缓冲区，以便强制将其中的数据写入输出设备。</p>
+<p>默认情况，读cin会刷新cout；程序非正常终止，会刷新cout。</p>
+</blockquote>
+<ul>
+<li>未初始化变量</li>
+</ul>
+<blockquote>
+<p>类类型的变量如果没有初始化，则按照类定义指定的方式进行初值指定。</p>
+<p>定义在函数内部的内置类型变量默认不初始化的，除非有显式初始化语句。</p>
+</blockquote>
+<ul>
+<li>:: 运算符</li>
+</ul>
+<blockquote>
+<p>作用域运算符。比如访问命名空间中的名字，可以：std::cout 表示命名空间 std 中的名字 cout</p>
+</blockquote>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay1.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin2.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          方宁
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://www.fangning.xyz.com/2020/10/22/2020.10.22 输入，输出，流，类/" title="输入输出流与类" target="_blank">http://www.fangning.xyz.com/2020/10/22/2020.10.22 输入，输出，流，类/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">C/C++</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.fangning.xyz.com/2020/10/22/2020.10.22%20%E8%BE%93%E5%85%A5%EF%BC%8C%E8%BE%93%E5%87%BA%EF%BC%8C%E6%B5%81%EF%BC%8C%E7%B1%BB/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/12/2020.08.12%20IIS%20%E4%B9%8B%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A83/" class="archive-article-date">
-        <time datetime="2020-08-12T12:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/10/19/2020.09.28%20%E4%B8%B2%E5%8F%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">串口</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/12/2020.08.12%20IIS%20%E4%B9%8B%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A83/" target="_blank">IIS之Web服务器3</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/11/2020.08.11%20IIS%20%E4%B9%8B%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A82/" class="archive-article-date">
-        <time datetime="2020-08-11T11:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-11</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/11/2020.08.11%20IIS%20%E4%B9%8B%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A82/" target="_blank">IIS之Web服务器2</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/10/2020.08.10%20IIS%20%E4%B9%8B%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="archive-article-date">
-        <time datetime="2020-08-10T09:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-10</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/10/2020.08.10%20IIS%20%E4%B9%8B%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/" target="_blank">IIS之Web服务器</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/04/2020.08.04%20DNS%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A82/" class="archive-article-date">
-        <time datetime="2020-08-04T09:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-04</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/04/2020.08.04%20DNS%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A82/" target="_blank">DNS部署与安全2</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/02/2020.08.02%20DNS%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A8/" class="archive-article-date">
-        <time datetime="2020-08-02T09:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-02</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/02/2020.08.02%20DNS%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A8/" target="_blank">DNS部署与安全</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/01/2020.08.01%20%E8%BD%AC%E5%8F%91%E5%85%B3%E4%BA%8EVMware%E7%9A%84%E7%BD%91%E7%BB%9C%E7%8A%B6%E6%80%81/" class="archive-article-date">
-        <time datetime="2020-08-01T10:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-01</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/01/2020.08.01%20%E8%BD%AC%E5%8F%91%E5%85%B3%E4%BA%8EVMware%E7%9A%84%E7%BD%91%E7%BB%9C%E7%8A%B6%E6%80%81/" target="_blank">虚拟机三种网络模式</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">转发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/07/31/2020.07.31%20DHCP%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A82/" class="archive-article-date">
-        <time datetime="2020-07-31T15:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/07/31/2020.07.31%20DHCP%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A82/" target="_blank">DHCP 部署与安全</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/07/31/2020.07.31%20DHCP%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A8/" class="archive-article-date">
-        <time datetime="2020-07-31T10:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/07/31/2020.07.31%20DHCP%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A8/" target="_blank">DHCP 部署与安全</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/07/30/2020.07.30%20PE%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E7%A0%B4%E8%A7%A3%E5%BC%80%E6%9C%BA%E5%AF%86%E7%A0%81/" class="archive-article-date">
-        <time datetime="2020-07-30T10:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-30</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/07/30/2020.07.30%20PE%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E7%A0%B4%E8%A7%A3%E5%BC%80%E6%9C%BA%E5%AF%86%E7%A0%81/" target="_blank">用pe系统破解开机密码</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/4/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -691,8 +648,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
