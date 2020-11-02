@@ -207,6 +207,98 @@
             
 
   
+    <article id="post-2020.08.16 最大子序列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/08/16/2020.08.16%20%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97/" target="_blank">分而治之</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/08/16/2020.08.16%20%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97/" class="archive-article-date">
+        <time datetime="2020-08-16T03:41:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-16</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="分而治之思想——最大子序列和"><a href="#分而治之思想——最大子序列和" class="headerlink" title="分而治之思想——最大子序列和"></a>分而治之思想——最大子序列和</h1><h2 id="首先说一下自己O-n-算法的总体思路"><a href="#首先说一下自己O-n-算法的总体思路" class="headerlink" title="首先说一下自己O(n)算法的总体思路"></a>首先说一下自己O(n)算法的总体思路</h2><p><strong>思路</strong>：一段序列的子序列，必须是连续的。要求最大的子序列，就是找出原序列中一段连续空间元素和最大应该是多少。</p>
+<p>​            朴素算法是，枚举起始位置 i , 和终止位置 j。然后每次求 i ~ j的和，最终得到结果。该算法时间复杂度为O(n^n)，明显是不可取的。</p>
+<p>​            要求和的话，肯定先想到前缀和，然后由于要找一段子序列的和，那么如果两个位置的前缀和相减，得到的不就是中间一段连续空间的和了嘛？需要添加一个数组 sum。</p>
+<p>​            那么应该如何确定哪两个位置的前缀和相减呢？首先，肯定是后面的位置 j 减前面的位置 i，我们可以枚举每一个后面的位置 j。</p>
+<p>​            那如何确定 i ？很显然，找小于 j 的最小的一个数，他们之间的差就一定最大。那么如何找最小的数？每次都遍历一遍太费时间。所以我们可以一遍找出所有位置<strong>之前所有元素中最小元素</strong>所在位置。这需要我们再添加一个数组 vis。</p>
+    
+    <a class="article-more-a" href="/2020/08/16/2020.08.16%20%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/08/16/2020.08.16%20%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2020.08.13 IIS 之 FTP 服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1015,94 +1107,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/07/31/2020.07.31%20DHCP%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A8/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.07.30 PE系统启动破解开机密码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/30/2020.07.30%20PE%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E7%A0%B4%E8%A7%A3%E5%BC%80%E6%9C%BA%E5%AF%86%E7%A0%81/" target="_blank">用pe系统破解开机密码</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/07/30/2020.07.30%20PE%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E7%A0%B4%E8%A7%A3%E5%BC%80%E6%9C%BA%E5%AF%86%E7%A0%81/" class="archive-article-date">
-        <time datetime="2020-07-30T10:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-30</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="如何用-PE-系统破解开机密码"><a href="#如何用-PE-系统破解开机密码" class="headerlink" title="如何用 PE 系统破解开机密码"></a>如何用 PE 系统破解开机密码</h1><p>步骤：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 下载一个 PE 系统制作工具。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 制作一个 PE 系统镜像文件，用于虚拟机启动。</span><br><span class="line">   或则制作一个系统启动盘，把系统装进U盘，用于物理机使用。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 插入启动U盘，或者光盘。重启计算机。</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 进入计算机固件系统，也就是 BIOS 系统。一般的牌子机，也就是个人笔记本电脑都有这玩意。一些专用服务器应该没有。</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 修改启动引导顺序。将 CDROM / USB 移动到最上面，或者直接 enter 进入相应应导。</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 进入 PE 系统后，一般里面会集成一些专业的应用软件。比如破解开机密码，磁盘分区助手，以及释放镜像。</span><br><span class="line"></span><br><span class="line"><span class="number">7.</span> 运行破解开机密码，破解 SAM 文件，选中需要破解的用户名，然后输入新设置的密码。重启！成功！</span><br></pre></td></tr></table></figure>
-
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/30/2020.07.30%20PE%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E7%A0%B4%E8%A7%A3%E5%BC%80%E6%9C%BA%E5%AF%86%E7%A0%81/">展开全文 >></a>
     </p>
     
 

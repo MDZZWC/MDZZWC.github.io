@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.fangning.xyz.com">
-  <title>Archives: 2020 | 方宁 blog</title>
+  <title>变量与基本类型 | 方宁 blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="方宁 学生博客 hexo主题 建立博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="方宁 blog">
-<meta property="og:url" content="http://www.fangning.xyz.com/archives/2020/page/2/index.html">
+  <meta name="description" content="前言 不同的编程语言都具备一组公共的语法特征，不同语言之间仅在特征的细节上有所区别。 如，整型、字符型等内置类型。 变量，表达式，语句，if，while控制语句。函数等等……   大多数编程语言使用两种方式，扩展其基本特征： 赋予程序员自定义数据类型的权力。如 c++ &#x2F; java 等面向对象语言。 将一些有用的功能，封装成库函数。如 python Smalltalk等语言。   C++ 是一种静">
+<meta property="og:type" content="article">
+<meta property="og:title" content="变量与基本类型">
+<meta property="og:url" content="http://www.fangning.xyz.com/2020/11/02/2020.10.27%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="方宁 blog">
-<meta property="og:description" content="方宁 学生博客 hexo主题 建立博客">
+<meta property="og:description" content="前言 不同的编程语言都具备一组公共的语法特征，不同语言之间仅在特征的细节上有所区别。 如，整型、字符型等内置类型。 变量，表达式，语句，if，while控制语句。函数等等……   大多数编程语言使用两种方式，扩展其基本特征： 赋予程序员自定义数据类型的权力。如 c++ &#x2F; java 等面向对象语言。 将一些有用的功能，封装成库函数。如 python Smalltalk等语言。   C++ 是一种静">
 <meta property="og:locale">
+<meta property="article:published_time" content="2020-11-02T13:07:23.482Z">
+<meta property="article:modified_time" content="2020-11-02T13:04:56.088Z">
 <meta property="article:author" content="方宁">
-<meta property="article:tag" content="方宁_技术博客">
+<meta property="article:tag" content="C&#x2F;C++">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="方宁 blog" type="application/atom+xml">
@@ -201,456 +203,500 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-2020.10.27 变量与基本类型" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/09/11/2020.09.10%20zigbee%E5%8E%9F%E7%90%86%E5%9B%BE%E7%90%86%E8%A7%A3/" class="archive-article-date">
-        <time datetime="2020-09-11T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-11</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/09/11/2020.09.10%20zigbee%E5%8E%9F%E7%90%86%E5%9B%BE%E7%90%86%E8%A7%A3/" target="_blank">cc2530原理图及引脚功能控制</a>
   
+    <h1 class="article-title" itemprop="name">
+      变量与基本类型
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/11/02/2020.10.27%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
+        <time datetime="2020-11-02T13:07:23.482Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-02</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">2.2k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">8分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li>不同的编程语言都具备一组公共的语法特征，不同语言之间仅在特征的细节上有所区别。<ul>
+<li>如，整型、字符型等内置类型。</li>
+<li>变量，表达式，语句，if，while控制语句。函数等等……</li>
+</ul>
+</li>
+<li>大多数编程语言使用两种方式，扩展其基本特征：<ul>
+<li>赋予程序员自定义数据类型的权力。如 c++ / java 等面向对象语言。</li>
+<li>将一些有用的功能，封装成库函数。如 python Smalltalk等语言。</li>
+</ul>
+</li>
+<li>C++ 是一种静态数据类型语言，它的类型检查发生在编译时。因此，编译器必须知道程序中每一个变量对应的数据类型。<ul>
+<li>一条表达式是否合法，依赖于其中参与运算的对象的类型。</li>
+</ul>
+</li>
+<li><strong>数据类型是程序的基础：它告诉我们数据的意义以及我们能在数据上执行的操作（行为）。</strong></li>
+</ul>
+<a id="more"></a>
+
+<h1 id="基本数据类型及使用注意事项"><a href="#基本数据类型及使用注意事项" class="headerlink" title="基本数据类型及使用注意事项"></a>基本数据类型及使用注意事项</h1><table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">含义</th>
+<th align="center">最小尺寸</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">int</td>
+<td align="center">整形</td>
+<td align="center">16位</td>
+</tr>
+<tr>
+<td align="center">long</td>
+<td align="center">长整性</td>
+<td align="center">32位</td>
+</tr>
+<tr>
+<td align="center">long long</td>
+<td align="center">长整性</td>
+<td align="center">32位</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">浮点型</td>
+<td align="center">6位有效数字</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">双精度浮点</td>
+<td align="center">10位有效数字</td>
+</tr>
+<tr>
+<td align="center">short</td>
+<td align="center">短整性</td>
+<td align="center">16位</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">字符型</td>
+<td align="center">8位</td>
+</tr>
+<tr>
+<td align="center">wchar_t</td>
+<td align="center">宽字符</td>
+<td align="center">16位</td>
+</tr>
+<tr>
+<td align="center">bool</td>
+<td align="center">布尔型</td>
+<td align="center">未定义</td>
+</tr>
+</tbody></table>
+<ul>
+<li>为了支持国际化，一个 char 空间应该确保可以存放机器基本字符集中的任意字符对应的数字值。扩展字符集，如 wchar_t， char16_t, char32_t。<strong>其中 wchar_t 宽字符，可以确保存放扩展字符集中的任意一个字符</strong>，后面两者则是为了 Unicode 字符集服务。</li>
+<li>计算机中，一个基本存储单元如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">地址</th>
+<th align="center">比特位</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">736424</td>
+<td align="center">0 0 1 1 1 0 1 1</td>
+</tr>
+<tr>
+<td align="center">736425</td>
+<td align="center">0 0 0 1 1 0 1 1</td>
+</tr>
+<tr>
+<td align="center">736426</td>
+<td align="center">0 1 1 1 0 0 0 1</td>
+</tr>
+<tr>
+<td align="center">736427</td>
+<td align="center">0 1 1 0 0 1 0 0</td>
+</tr>
+</tbody></table>
+<p>在 32 位计算机中，一个字，有 32 bit ，有 32 / 8 = 4 Bit字节。</p>
+<p>可<strong>寻址的最小内存块为 “字节”</strong> —— 表中每一行为一个字节。</p>
+<p>存储的<strong>基本单元成为 “字”</strong> —— 表中整个四行，为一个基本存储单元，为一个字。</p>
+<p>也就是说，<strong>字 &gt; 字节 &gt; 比特。32位系统中，1字 = 4字节 = 32比特</strong>，64位操作系统中，1字 = 8字节 = 64比特。</p>
+<ul>
+<li>浮点型表示，有单精度，双精度，扩展精度值。分别用 float , double , long double 来表示。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">空间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">float</td>
+<td align="center">1 字 = 32bit</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">2 字 = 64bit</td>
+</tr>
+<tr>
+<td align="center">long double</td>
+<td align="center">3<del>4 字 = 96</del>128bit</td>
+</tr>
+</tbody></table>
+<ul>
+<li>整型<ul>
+<li>字符型其实也能称之为整型，不过一般情况，用 char 来表示字符，而不是用来表示数字。但是，有时为了表示一个较小的数字，我们也可以用 unsigned char 来表示一个 0 ~ 255 的数字。</li>
+<li>int , short , long , long long 都是带符号的，如果在前面加上 unsigned 就是无符号的。无符号，就是只能表示大于 0 的数，同时表示的正数范围变大了一倍。</li>
+<li>char , signed char , unsigned char 。字符的表示也有有无符号之分。char 可能是有符号，也可能无符号。后两种分别为有符号，和无符号。</li>
+</ul>
+</li>
+</ul>
+<h2 id="如何选择类型？"><a href="#如何选择类型？" class="headerlink" title="如何选择类型？"></a>如何选择类型？</h2><ul>
+<li>明确知道数据不会为负时 ———— 采用无符号类型</li>
+<li>采用 <strong>int</strong> 做整型运算，<strong>范围不够 直接用 long long</strong>。一般不用 long</li>
+<li>别用 char 和 bool 做计算，<strong>除非需要用一个比较小的整数，可以用 unsigned char 或则 signed char 一定要指定类型</strong>，需要正负，就用有符号的，不需要就用无符号的。因为 char 是不确定的。</li>
+<li><strong>浮点运算直接用 double</strong> ， float 精度不行，而且计算代价和 double 差不多，用 double 岂不是很香:laughing:</li>
+</ul>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><ul>
+<li><p>两种不同类型的数据进行运算会发生类型转换。</p>
+<ul>
+<li>如果是赋值时不同，那么转换结果为，最终等号左边的类型。</li>
+</ul>
+</li>
+<li><p><strong>当我们赋给无符号类型，一个超出它范围的值时，结果为初始值对无符号类型所能表示的数的总数取模的余数。</strong>总数的意思，就是你这个类型，一供可以表示多少个数，如果范围是 0 ~ 255 那就是能表示 256 个数。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">unsigned</span> <span class="keyword">char</span> x;  <span class="comment">// 0 ~ 255</span></span><br><span class="line">x = <span class="number">-1</span>;  <span class="comment">// x 实际为 (-1 + 256)%256 = 255</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>**当我们赋给有符号类型，一个超出它范围的值时，结果是未定义的(undefind)**，此时程序会报错，越界，或者生成垃圾值。</p>
+</li>
+<li><p>当一个算术表达式中，既有 <strong>整型 int</strong> 又有 <strong>无符号 unsigned</strong>。那么会<strong>首先，将 int 转化成 unsigned</strong> ，然后再和 unsigned 进行运算。</p>
+</li>
+<li><p>循环控制条件中，最好别用 unsigned。</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>( <span class="keyword">unsigned</span> i = <span class="number">10</span>; i &gt;= <span class="number">0</span>; i-- ); <span class="comment">//该条件会循环无限次，因为 i 永远满足 i &gt;= 0，不会变成 -1 </span></span><br></pre></td></tr></table></figure>
+
+<h2 id="字面值"><a href="#字面值" class="headerlink" title="字面值"></a>字面值</h2><table>
+<thead>
+<tr>
+<th align="center">正常情况下 - 20</th>
+<th align="center">十进制</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">以 0 开头 - 024</td>
+<td align="center">八进制</td>
+</tr>
+<tr>
+<td align="center">以 0x 开头 - 0x14</td>
+<td align="center">十六进制</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>十进制字面值</strong>，一般用 int 存，如果超出再尝试用 long ，最后用 long long 。还是超界限，那就报错。</li>
+<li><strong>八进制，和十六进制字面值</strong>，依次用 int ， unsigned int , long , unsigned long , long long , unsigned long long 。或者报错。</li>
+<li><strong>负数字面值</strong> -24，先存 24 然后，再对所保存的数去负值。实际上，只是在正数字面值上，多加了一步处理而已。</li>
+<li><strong>浮点数字面值</strong>，直接用 double 存。</li>
+<li><strong>布尔字面值</strong>， true or false 两种表示方法。</li>
+</ul>
+<h2 id="转义序列"><a href="#转义序列" class="headerlink" title="转义序列"></a>转义序列</h2><ul>
+<li>对于一些我们无法打印的字符（回车，退格），或则一些特殊字符（单引号，双引号，反斜杠，问号），需要用到转义字符来处理。<ul>
+<li>通常使用 \ 加上特殊符号来表示。\n , \t , \b , ……</li>
+</ul>
+</li>
+<li><strong>字符，字符串加前缀</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">前缀</th>
+<th align="center">含义</th>
+<th align="center">类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">u</td>
+<td align="center">Unicode 16 字符</td>
+<td align="center">char16_t</td>
+</tr>
+<tr>
+<td align="center">U</td>
+<td align="center">Unicode 32 字符</td>
+<td align="center">char32_t</td>
+</tr>
+<tr>
+<td align="center">L</td>
+<td align="center">宽字符</td>
+<td align="center">wchar_t</td>
+</tr>
+<tr>
+<td align="center">u8</td>
+<td align="center">UTF-8（仅适用于字面值）</td>
+<td align="center">char</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>整型字面值加后缀</strong><ul>
+<li>u or U 表示 unsigned   如： 32U 为 unsigned x = 32</li>
+<li>l or L 表示 long   如：32L 为 long x = 32</li>
+<li>ll or LL 表示 long long 如：32LL 为 long long x = 32</li>
+<li>以上后缀可复合使用，如 ULL 表示 unsigned long long 型字面值。</li>
+</ul>
+</li>
+<li><strong>浮点型字面值加后缀</strong><ul>
+<li>f or F 表示 float</li>
+<li>l or L 表示扩展精度 long double</li>
+</ul>
+</li>
+</ul>
+<h1 id="变量使用注意事项"><a href="#变量使用注意事项" class="headerlink" title="变量使用注意事项"></a>变量使用注意事项</h1><h2 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h2><ul>
+<li>类说明符，可以是基本数据类型 int ， 或者自定义数据类型 Sales_item ，或者库类型 std::string</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">std</span>::<span class="built_in">string</span> <span class="title">str</span><span class="params">(<span class="string">&quot;123&quot;</span>)</span></span>; <span class="comment">// str 是一种可变长度的字符序列，以 &#x27;\0&#x27; 结尾！！</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>对象</strong>：具有某种数据类型的内存空间。数据类型，不关心是基本数据类型，或者程序员自定义的数据类型。</li>
+<li><strong>初始值</strong>：注意，初始化不等同于赋值。初始化含义是创建变量时，赋予一个初始值，而赋值的含义是把对象的当前值擦除，而用一个新值来替代。</li>
+<li><strong>C++ 11 一种新的初始化变量的方法 —— 使用花括号 {}</strong></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> a = &#123;<span class="number">0</span>&#125;;	<span class="comment">// C++ 11 标准中，可以使用花括号，进行 列表初始化。且可以规避丢失值的风险，解释如下文。</span></span><br><span class="line"><span class="keyword">int</span> a&#123;<span class="number">0</span>&#125;;		<span class="comment">// 同上一行方法。</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">a</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>{} 花括号赋初值</strong>，<strong>列表初始化</strong>，如果括号内值的数值类型，转化成被初始化的类型，<strong>造成数据丢失，编译器会警告</strong>。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">double</span> y;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">double</span> ld = <span class="number">3.1425926</span>;</span><br><span class="line"><span class="keyword">int</span> a&#123;ld&#125; , b = &#123;ld&#125;; <span class="comment">// 编译器报错，将 double 转 int 造成精度丢失。</span></span><br><span class="line">int a(ld) , a = ld;	  // 编译通过，精度丢失了，但是我们却不知道。</span><br><span class="line">node N&#123;ld, <span class="number">1.414</span>&#125;;   <span class="comment">// 列表初始化可以对对象的多个变量进行初始化，第一个会警告精度丢失，第二个值初始化正确。</span></span><br></pre></td></tr></table></figure>
+
+<p>由此可见，我们最好习惯使用列表初始化的方法，后期有更多广泛的用途……</p>
+<h2 id="默认初始化"><a href="#默认初始化" class="headerlink" title="默认初始化"></a>默认初始化</h2><ul>
+<li>基本数据类型（内置类型）：<ul>
+<li>如果定义的对象在函数体内部，且未初始化，其值是不确定的。</li>
+<li>如果定义对象在函数体外部，其值为 0 。</li>
+</ul>
+</li>
+<li>类的对象：<ul>
+<li>如果没有显式地初始化，那么其值由类确定。</li>
+<li>如果类没有确定对象的初始值，那么其值也是不确定的。</li>
+<li>另外，类可以规定，是否允许不经过初始化就定义对象。</li>
+</ul>
+</li>
+</ul>
+<h2 id="突然发现"><a href="#突然发现" class="headerlink" title="突然发现"></a>突然发现</h2><ul>
+<li>这样子写读书笔迹过于繁琐，浪费时间。以后就不这样更新博客了。</li>
+<li>只遇到比较特别的知识点，应用，以及使用技巧，再记录下来。</li>
+<li>对于绝大部分语言的细节，就只再书上做个笔记，博客就不再耗费精力更新了。</li>
+</ul>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay1.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin2.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          方宁
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://www.fangning.xyz.com/2020/11/02/2020.10.27 变量与基本类型/" title="变量与基本类型" target="_blank">http://www.fangning.xyz.com/2020/11/02/2020.10.27 变量与基本类型/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">zigbee</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">C/C++</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.fangning.xyz.com/2020/11/02/2020.10.27%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/" class="archive-article-date">
-        <time datetime="2020-09-10T12:46:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-10</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/10/22/2020.10.22%20%E8%BE%93%E5%85%A5%EF%BC%8C%E8%BE%93%E5%87%BA%EF%BC%8C%E6%B5%81%EF%BC%8C%E7%B1%BB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">输入输出流与类</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/" target="_blank">zigbee环境搭建</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">zigbee</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/" class="archive-article-date">
-        <time datetime="2020-09-09T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-09</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/" target="_blank">zigbee概述</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">zigbee</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/09/03/hexo%20%E9%BB%98%E8%AE%A4%E6%96%87%E7%AB%A0/" class="archive-article-date">
-        <time datetime="2020-09-03T09:42:39.545Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-03</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/09/03/hexo%20%E9%BB%98%E8%AE%A4%E6%96%87%E7%AB%A0/" target="_blank">Hello world</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">个人博客搭建</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/24/2020.08.24%20PKI/" class="archive-article-date">
-        <time datetime="2020-08-24T14:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-24</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/24/2020.08.24%20PKI/" target="_blank">PKI</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/22/2020.08.22%20BFS%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/" class="archive-article-date">
-        <time datetime="2020-08-22T09:14:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-22</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/22/2020.08.22%20BFS%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/" target="_blank">BFS广度搜索</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/20/2020.08.20%20%E5%9F%9F3/" class="archive-article-date">
-        <time datetime="2020-08-20T11:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/20/2020.08.20%20%E5%9F%9F3/" target="_blank">域3</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/19/2020.08.19%20%E5%9F%9F2/" class="archive-article-date">
-        <time datetime="2020-08-19T07:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/19/2020.08.19%20%E5%9F%9F2/" target="_blank">域2</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/17/2020.08.17%20%E5%9F%9F/" class="archive-article-date">
-        <time datetime="2020-08-17T07:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-17</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/17/2020.08.17%20%E5%9F%9F/" target="_blank">域</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/16/2020.08.16%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A82/" class="archive-article-date">
-        <time datetime="2020-08-16T14:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-16</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/16/2020.08.16%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A82/" target="_blank">FTP服务器搭建2</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2020/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2020/page/3/">3</a><a class="page-number" href="/archives/2020/page/4/">4</a><a class="page-number" href="/archives/2020/page/5/">5</a><a class="extend next" rel="next" href="/archives/2020/page/3/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -691,8 +737,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
