@@ -6,23 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.fangning.xyz.com">
-  <title>方宁 blog</title>
+  <title>DP动态规划 | 方宁 blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <meta name="keywords" content="方宁 学生博客 hexo主题 建立博客">
-  
-  <meta name="description" content="方宁 学生博客 hexo主题 建立博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="方宁 blog">
-<meta property="og:url" content="http://www.fangning.xyz.com/page/2/index.html">
+  <meta name="description" content="样例1：铺满 2*N 方格描述杭电题目链接 在2×n的一个长方形方格中,用一个1× 2的骨牌铺满方格,输入n ,输出铺放方案的总数. 输入输入数据由多行组成，每行包含一个整数n,表示该测试实例的长方形方格的规格是2×n (0&lt;n&lt;&#x3D;50)。 输出对于每个测试实例，请输出铺放方案的总数，每个实例的输出占一行。 样例12345678输入：1350输出：1320365011074  代码12">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DP动态规划">
+<meta property="og:url" content="http://www.fangning.xyz.com/2020/10/15/2020.10.15%20DP/index.html">
 <meta property="og:site_name" content="方宁 blog">
-<meta property="og:description" content="方宁 学生博客 hexo主题 建立博客">
+<meta property="og:description" content="样例1：铺满 2*N 方格描述杭电题目链接 在2×n的一个长方形方格中,用一个1× 2的骨牌铺满方格,输入n ,输出铺放方案的总数. 输入输入数据由多行组成，每行包含一个整数n,表示该测试实例的长方形方格的规格是2×n (0&lt;n&lt;&#x3D;50)。 输出对于每个测试实例，请输出铺放方案的总数，每个实例的输出占一行。 样例12345678输入：1350输出：1320365011074  代码12">
 <meta property="og:locale">
+<meta property="og:image" content="http://images.fangning.xyz//20201031211138.png">
+<meta property="og:image" content="http://images.fangning.xyz//20201031212825.png">
+<meta property="og:image" content="http://images.fangning.xyz//20201031213012.png">
+<meta property="og:image" content="http://images.fangning.xyz//20201031213300.png">
+<meta property="article:published_time" content="2020-10-15T09:26:30.000Z">
+<meta property="article:modified_time" content="2020-11-13T03:20:54.187Z">
 <meta property="article:author" content="方宁">
-<meta property="article:tag" content="方宁_技术博客">
+<meta property="article:tag" content="ACM">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://images.fangning.xyz//20201031211138.png">
   
     <link rel="alternative" href="/atom.xml" title="方宁 blog" type="application/atom+xml">
   
@@ -204,778 +208,339 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-2020.09.13 时钟" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-2020.10.15 DP" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/09/13/2020.09.13%20%E6%97%B6%E9%92%9F/" target="_blank">时钟</a>
-  
+    <h1 class="article-title" itemprop="name">
+      DP动态规划
     </h1>
   
 
 
   
   
-<a href="/2020/09/13/2020.09.13%20%E6%97%B6%E9%92%9F/" class="archive-article-date">
-        <time datetime="2020-09-13T14:36:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-13</time>
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/10/15/2020.10.15%20DP/" class="archive-article-date">
+        <time datetime="2020-10-15T09:26:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-15</time>
 </a>
 
   
   
     
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">3.7k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">15分</span>
+    </span>
+  </span>
+</div>
+
 
   
   </header>
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="时钟"><a href="#时钟" class="headerlink" title="时钟"></a>时钟</h1><ul>
-<li>cc2530 在正常运行的时候，需要一个高频时钟信号，以及一个低频时钟信号。<ul>
-<li>高频时钟信号，主要共给CPU ，保证程序的正常运行。他有两个来源：<ul>
-<li>芯片内部有一个 16M 的 <strong>RC震荡电路</strong>。</li>
-<li>也可以外接一个 32M 的<strong>高频石英晶振</strong>。</li>
-<li>正常工作的时候，其中一个给 cpu 共给。</li>
+    <h1 id="样例1：铺满-2-N-方格"><a href="#样例1：铺满-2-N-方格" class="headerlink" title="样例1：铺满 2*N 方格"></a>样例1：铺满 2*N 方格</h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=2046">杭电题目链接</a></p>
+<p>在2×n的一个长方形方格中,用一个1× 2的骨牌铺满方格,输入n ,输出铺放方案的总数.</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>输入数据由多行组成，每行包含一个整数n,表示该测试实例的长方形方格的规格是2×n (0&lt;n&lt;=50)。</p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>对于每个测试实例，请输出铺放方案的总数，每个实例的输出占一行。</p>
+<h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入：</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">50</span></span><br><span class="line">输出：</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">20365011074</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line">ll f[<span class="number">51</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    f[<span class="number">0</span>] = f[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= <span class="number">50</span>; i++ )</span><br><span class="line">        f[i] = f[i<span class="number">-1</span>] + f[i<span class="number">-2</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>( <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n) != EOF )</span><br><span class="line">        <span class="built_in">printf</span>( <span class="string">&quot;%lld\n&quot;</span>, f[n] );</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ul>
+<li><p>f[i] 表示放满第 i 列的方法数。</p>
+</li>
+<li><p>考虑第 i 列</p>
+<ul>
+<li>要么横着放置两个，方法数 = f[i-2]。影响范围最远扩散到 i-2</li>
+<li>要么竖着放置一个，方法数 = f[i-1]。影响范围最远扩散到 i-1</li>
 </ul>
 </li>
-<li>地频时钟信号，主要共给看门狗，睡眠定时器等片上外设。也有 2 个来源：<ul>
-<li>芯片内部 32k RC 电路。</li>
-<li>d外接 32.768k 石英晶振。</li>
+<li><p>结合两者情况，得到递推式</p>
+<ul>
+<li>f[n] = f[n-1] + f[n-2]</li>
+</ul>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>将一个大问题，分解成两个，或者多个子问题。假设，子问题的答案以已知。<ul>
+<li>如何确定大问题?    在一维dp 中，最终需要求解的就是大问题。</li>
+<li><strong>如果是多维dp，大问题就是当前维度的所有情况。</strong><ul>
+<li><strong>小问题就是，把当前维度的所有情况往前递推。</strong> <strong>具体参考下一个样例进行理解。</strong></li>
+</ul>
+</li>
+<li>如何确定小问题？   分情况考虑大问题，最终会将范扩散到如求解小问题。<ul>
+<li>比如，此题，考虑到第 n 列可以有两种情况。分别需要用到 f[n-1] 和 f[n-2]。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>那么四个时钟电路，具体什么时候，是那些时钟在工作呢？<ul>
-<li>CC2530 芯片默认上电的时候，是<strong>默认的两个 RC 震荡电路</strong>作为 高 低 频时钟来源。</li>
-<li><strong>芯片做串口工作，特别是做无线通信的时候，必须要有 32M 的石英晶振作为时钟来源。</strong></li>
+<li>得到递推式。<ul>
+<li>f[n] = f[i-1] + f[i-2]</li>
+</ul>
+</li>
+<li>确定边界值。<ul>
+<li>考虑推式的边界情况。f[2] = f[1] + f[0] 。</li>
+<li>易知 f[2] = 2 ， f[1] = 1 。那么 f[0]  = f[2] - f[1] = 1</li>
+<li>此时，初始化打表时，需要将 f[0] 置 1</li>
 </ul>
 </li>
 </ul>
-    
-    <a class="article-more-a" href="/2020/09/13/2020.09.13%20%E6%97%B6%E9%92%9F/#more">more >></a>
-    
-    
+<h1 id="样例2：铺满-3-N-方格"><a href="#样例2：铺满-3-N-方格" class="headerlink" title="样例2：铺满 3*N 方格"></a>样例2：铺满 3*N 方格</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39322743/article/details/78680854">题目</a></p>
+<p>将上一个题目的描述改成，在 3*N 的长方形中，铺满 1 * 2 大小的骨牌。</p>
+<h2 id="样例-1"><a href="#样例-1" class="headerlink" title="样例"></a>样例</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">输入：</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">1000</span></span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">11</span></span><br><span class="line"><span class="number">74979</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><ul>
+<li>当每一列的长度变成 3 的时候，我们再来考虑最多第 n 列的大问题，如果用一维的分解思路，并不能推出所有的子问题。比如下面n=4时，下面两种情况:</li>
+</ul>
+<p><img src="http://images.fangning.xyz//20201031211138.png" alt="跨越两列情况"></p>
+<ul>
+<li><p>这种情况下 f[4] 并不能完全分解为 f[2] 或者 f[1] 两种情况，因为有些方块可能跨越两列。这时就需要用到二维的dp，增加一个维度的参数。比如 f[ i ] [ j ] 表示，铺满 i 列，多余 j 个。</p>
+</li>
+<li><p>此时，因为维度改变了，所以我们需要求的大问题是所有的 f[i] ，也就是 f[ j ] [ 0 ] ， f[ j ] [ 1 ]， f[ j ] [ 2 ]</p>
+</li>
+<li><p>通过每一个大问题得到一个递推式：</p>
+<ul>
+<li><p>f[ i ] [0] ：铺满 i 列后，一个都不剩。可由三种子问题推出：</p>
+<ul>
+<li>f[ i-2 ] [0] + 3横放骨牌</li>
+<li>f[ i-2 ] [2] + 1横 + 1竖着</li>
+<li>f[ i-1 ] [2] + 1竖</li>
+</ul>
+<p><img src="http://images.fangning.xyz//20201031212825.png" alt="大问题1"></p>
+</li>
+<li><p>f[ i ] [1] : 铺满 i 列后，还多一个方格。可由一种子问题推出：</p>
+<ul>
+<li>f[ i-1 ] [2] + 1横</li>
+</ul>
+<p><img src="http://images.fangning.xyz//20201031213012.png" alt="大问题2"></p>
+</li>
+<li><p>f[ i ] [2]：铺满 i 列后，还多出两个方格。可由两种子问题推出：</p>
+<ul>
+<li>f[ i ] [0] + 1竖</li>
+<li>f[ i-1] [1] + 2横</li>
+</ul>
+<p><img src="http://images.fangning.xyz//20201031213300.png" alt="大问题3"></p>
+</li>
+</ul>
+</li>
+<li><p>最终递推式：</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f[i][<span class="number">0</span>] = f[i<span class="number">-2</span>][<span class="number">0</span>] + f[i<span class="number">-2</span>][<span class="number">2</span>] + f[i<span class="number">-1</span>][<span class="number">1</span>];</span><br><span class="line">f[i][<span class="number">1</span>] = f[i<span class="number">-1</span>][<span class="number">2</span>];</span><br><span class="line">f[i][<span class="number">2</span>] = f[i][<span class="number">0</span>] + f[i<span class="number">-1</span>][<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>确定边界：<ul>
+<li>每个递推式，都需要用到前一行，或者两行。</li>
+<li>所以需要预先确定二维数组最前面的两行值。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f[<span class="number">0</span>][<span class="number">1</span>] = f[<span class="number">1</span>][<span class="number">0</span>] = f[<span class="number">1</span>][<span class="number">2</span>] = <span class="number">0</span>;</span><br><span class="line">f[<span class="number">0</span>][<span class="number">0</span>] = f[<span class="number">0</span>][<span class="number">2</span>] = f[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> M = <span class="number">1e5</span>+<span class="number">3</span>; <span class="comment">//答案对 M 取模</span></span><br><span class="line"><span class="keyword">int</span> f[<span class="number">10005</span>][<span class="number">3</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">work</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    f[<span class="number">0</span>][<span class="number">1</span>] = f[<span class="number">1</span>][<span class="number">0</span>] = f[<span class="number">1</span>][<span class="number">2</span>] = <span class="number">0</span>;</span><br><span class="line">    f[<span class="number">0</span>][<span class="number">0</span>] = f[<span class="number">0</span>][<span class="number">2</span>] = f[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= <span class="number">1000</span>; i++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++ )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">switch</span>(j)&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">0</span>: f[i][j] = (f[i<span class="number">-2</span>][<span class="number">0</span>] + f[i<span class="number">-2</span>][<span class="number">2</span>] + f[i<span class="number">-1</span>][<span class="number">1</span>])%M; <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>: f[i][j] = f[i<span class="number">-1</span>][<span class="number">2</span>]; <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>: f[i][j] = (f[i][<span class="number">0</span>] + f[i<span class="number">-1</span>][<span class="number">1</span>])%M; <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    work();		<span class="comment">// 打表</span></span><br><span class="line">    <span class="keyword">while</span>( <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n) != EOF )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>( n%<span class="number">2</span> != <span class="number">0</span> )</span><br><span class="line">            <span class="built_in">printf</span>( <span class="string">&quot;0\n\n&quot;</span> ); <span class="comment">// 如果 3*n ， n 为奇数， 那么总面积为奇数，不可能是 1*2 的倍数。</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">printf</span>( <span class="string">&quot;%d\n\n&quot;</span>, f[n][<span class="number">0</span>] );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>一维解决不了的时候，想想如何多加一个参数，形成二维。</li>
+<li>二维的大问题不止一个，因此，递推式也不止一个。</li>
+</ul>
+<h1 id="样例3：数的划分"><a href="#样例3：数的划分" class="headerlink" title="样例3：数的划分"></a>样例3：数的划分</h1><p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/16695">https://ac.nowcoder.com/acm/problem/16695</a><br>来源：牛客网</p>
+<p>将整数n分成k份，且每份不能为空，任意两个方案不能相同(不考虑顺序)。<br> 例如：n=7，k=3，下面三种分法被认为是相同的。</p>
+<p>  1，1，5; </p>
+<p>  1，5，1; </p>
+<p>  5，1，1; </p>
+<p> 问有多少种不同的分法。<br> 输入：n，k ( 6 &lt; n ≤ 200，2 ≤ k ≤ 6 )<br> 输出：一个整数，即不同的分法。</p>
+<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">两个整数 n,k ( <span class="number">6</span> &lt; n ≤ <span class="number">200</span>， <span class="number">2</span> ≤ k ≤ <span class="number">6</span> )</span><br></pre></td></tr></table></figure>
+
+<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>个整数，即不同的分法。</span><br></pre></td></tr></table></figure>
+
+<h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><h3 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">7</span> <span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><ul>
+<li><p>刚拿到这题，第一想法是用 dfs，但是不知道咋去掉重复的情况了。看题解用动态，然而递推式让我感觉很迷啊，为毛会想得到用这种递推式？？？？？？:sob:</p>
+</li>
+<li><p>首先确定大问题：将 n 分成 k 份。</p>
+</li>
+<li><p>然后如何确定小问题呢？</p>
+<ul>
+<li><p>小问题的解的和，一定要包含大问题所有的情况。在这里，用到了一个很巧妙的分解方法。也就是一下两个子问题。</p>
+<ul>
+<li>子问题一：将 n 分成 k 份，每一份都 &gt; 0。如果我们假设每一份都 &gt; 1 ，那么问题就变成了将 n-k 份成 k 份。因为，每一份都至少有一个1，所以用到了k，只需要再份 n-k 就行了。另外，因为每一份都要大于1，所以剩下的 n-k 还得分到 k 份当中。</li>
+<li>子问题二：将 n 分个1出来，单独作为1份，将剩下的 n-1 分成 k-1 份。我靠，为啥要这样子分？？？因为，子问题1中，我们假设每一份都大于1了，那么还有等于1的情况没有考虑，所以我们需要加上至少有1份等于1的情况，这样才能保证完整性，不遗漏。</li>
+</ul>
+</li>
+<li><p>设 dp[ i ] [ j ] 表示，将数 i 划分成 j 份。我们所求即为 dp[ n ] [ k ]</p>
+<ul>
+<li>递推公式：dp[ i ] [ j ] = dp[ i-j ] [ j ] + dp[ i-1 ] [ j-1 ]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>我们在确定小问题的时候需要注意<ul>
+<li>子问题一定要是二位数组之前的量。比如 dp[ i ] [ j ] 大问题，子问题一定要从该位置的上方，或者前方找。</li>
+</ul>
+</li>
+<li>划分子问题时<ul>
+<li>子问题所有解的集合，一定要是大问题所有解。不能有情况遗漏。</li>
+</ul>
+</li>
+<li>动态规划问题，最难就难在找不到如何正确找到划分大问题的办法。<ul>
+<li>我们在思考将 n 个数分解成 k 个数的时候。需要思考分解的特点。</li>
+<li>要么每一份都大于 1 ， 要么 至少有一份等于1。这样就分解成两个子问题了。这涉及到高中的组合数的知识。</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">201</span>][<span class="number">8</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, k;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;k);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++)&#123;</span><br><span class="line">        dp[i][<span class="number">1</span>] = <span class="number">1</span>;		<span class="comment">// 将一个数分成一份，那么只有一种情况</span></span><br><span class="line">        dp[i][<span class="number">0</span>] = <span class="number">0</span>;		<span class="comment">// 将 0 进行划分，0 种情况。</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= k; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(i == j)	<span class="comment">// 将 i 划分成 i 份，只有一种分法</span></span><br><span class="line">                dp[i][j] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(i &lt; j)	<span class="comment">// 将 i 划分为小于本身的份数，将无法划分，情况为0</span></span><br><span class="line">                dp[i][j] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                dp[i][j] = dp[i-j][j] + dp[i<span class="number">-1</span>][j<span class="number">-1</span>]; <span class="comment">// 大问题划分为两个子问题。</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>( <span class="string">&quot;%d\n&quot;</span>, dp[n][k] );</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="样例4：删括号"><a href="#样例4：删括号" class="headerlink" title="样例4：删括号"></a>样例4：删括号</h1><p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/21303">https://ac.nowcoder.com/acm/problem/21303</a><br>来源：牛客网</p>
+<h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p> 给你一个合法的括号序列s1，每次你可以删除一个”()”<br> 你可以删除0个或者多个”()”<br> 求能否删成另一个括号序列s2</p>
+<h2 id="输入描述-1"><a href="#输入描述-1" class="headerlink" title="输入描述:"></a>输入描述:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">第一行输入一个字符串s (2 ≤ |s| ≤ 100)</span><br><span class="line">第二行输入一个字符串t (2 ≤ |t| ≤ 100 )</span><br></pre></td></tr></table></figure>
+
+<h2 id="输出描述-1"><a href="#输出描述-1" class="headerlink" title="输出描述:"></a>输出描述:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">如果可以输出&quot;Possible&quot;</span><br><span class="line">否则输出&quot;Impossible&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="示例1-1"><a href="#示例1-1" class="headerlink" title="示例1"></a>示例1</h2><h3 id="输入-2"><a href="#输入-2" class="headerlink" title="输入"></a>输入</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(())</span><br><span class="line">()</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出-2"><a href="#输出-2" class="headerlink" title="输出"></a>输出</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Possible</span><br></pre></td></tr></table></figure>
+
+<h2 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h2><h3 id="输入-3"><a href="#输入-3" class="headerlink" title="输入"></a>输入</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(()())</span><br><span class="line">()()</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出-3"><a href="#输出-3" class="headerlink" title="输出"></a>输出</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Impossible</span><br></pre></td></tr></table></figure>
+
+<h2 id="备注"><a href="#备注" class="headerlink" title="备注:"></a>备注:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">子任务<span class="number">1</span>: |s| &lt;= <span class="number">10</span></span><br><span class="line">子任务<span class="number">2</span>: |s| &lt;= <span class="number">20</span></span><br><span class="line">子任务<span class="number">3</span>: 无限制</span><br></pre></td></tr></table></figure>
+
+<h2 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h2><ul>
+<li>设 dp[ i ] [ j ] = true 表示 s1 中下标 0 ~ i-1 的字串，通过删除若干个 “()” ，可以得到 s2 中下标为 0 ~ j-1 的字串。<ul>
+<li>反之，如果 dp[ i ] [ j ] = false , 表示不能得到。</li>
+<li>dp 类型为 bool 二维数组。</li>
+</ul>
+</li>
+<li>我们需要求出二维数组 dp 的每一行，在求第 i 行、第 j 列的时候，前面第 0 ~ i-1 行都是已知状态，可以利用前面来推导当前的状态。</li>
+<li>将 s1 的第 i 个字符，和 s2 的第 j 个字符进行比较，会有几种情况发生：<ul>
+<li>情况1：两者不同：<ul>
+<li>如果 s1 此时为 左括号，那就先不管，因为此时无法进行删除 “()” 一组括号。dp[ i ] [ j ] 默认为 false</li>
+<li>如果 s2 此时为 右括号，那就进行删除 “()” 操作，删除成对数量的 “()” ，dp[ i ] [ j ] 的状态，就等于 dp[ i-k ] [ j ] 的状态。其中，k 表示进行删除操作后，i 值向前的偏移量。这样子，就实现了将问题向前推的转化。</li>
+</ul>
+</li>
+<li>情况2：两者相同：<ul>
+<li>两者相同的话，dp[ i ] [ j ] 状态，直接就是， dp[ i-1 ] [ j-1 ]。</li>
+<li>但是，如果 s1 此时为右括号仍然需要进行删除 “()” 操作。排除 dp[ i-1 ] [ j-1 ] 为 false ，但是删除若干个 “()” 后，dp[ i-k ] [ j ] 为真的情况。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>对于 “()” 括号对合法的字符串，可以从一端删除数量相同的左括号，与右括号。</li>
+<li>得到的字符串，必然还是成对合法的”()”字符串。</li>
+<li>:sob: 我是菜鸡，这种题解析看得都不是很懂，更别所独立想到用 dp 做出来了，哎……</li>
+</ul>
+<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s1;</span><br><span class="line">    <span class="built_in">string</span> s2;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; s1 &gt;&gt; s2;</span><br><span class="line">    <span class="keyword">int</span> len1 = s1.length();</span><br><span class="line">    <span class="keyword">int</span> len2 = s2.length();</span><br><span class="line">    <span class="keyword">bool</span> dp[<span class="number">105</span>][<span class="number">105</span>];</span><br><span class="line">    <span class="built_in">memset</span>(dp, <span class="literal">false</span>, <span class="keyword">sizeof</span>(dp));</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= len1; i++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= len2; j++ )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(s1[i<span class="number">-1</span>] == s2[j<span class="number">-1</span>]) dp[i][j] |= dp[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">            <span class="keyword">if</span>(s1[i<span class="number">-1</span>] == <span class="string">&#x27;)&#x27;</span>)&#123;</span><br><span class="line">                <span class="keyword">int</span> cnt = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">int</span> k = i;</span><br><span class="line">                <span class="keyword">while</span>(cnt)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(s1[k<span class="number">-1</span>]==<span class="string">&#x27;)&#x27;</span>) cnt++;</span><br><span class="line">                    <span class="keyword">else</span> cnt--;</span><br><span class="line">                    k--;</span><br><span class="line">                &#125;</span><br><span class="line">                dp[i][j] |= dp[k][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(dp[len1][len2]) <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Possible&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Impossible&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="样例5：划分"><a href="#样例5：划分" class="headerlink" title="样例5：划分"></a>样例5：划分</h1><h2 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h2><p>小河认为一个数组是强大的，当且仅当其中所有数字的和不小于 <em>l</em> 且不大于 <em>r</em>。</p>
+<p>他得到了一个长度为 <em>n</em> 的数组，希望从中划分出若干个强大的连续子数组。比如，对于数组 [1,−2,−3,4] 以及 <em>l</em>=<em>r</em>=1，可以划分出 [1],[−3,4] 两个满足条件的强大的连续子数组。</p>
+<p>小河是贪心的。他希望知道，对于给定的数组，最多能够划分出多少个强大的连续子数组。注意，并不一定要用到数组中的每一个数。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>本题包含多组数据。</p>
+<p>第一行一个整数 <em>T</em>(1≤<em>T</em>≤5×103) 表示数据组数。</p>
+<p>对于每组数据，第一行三个数字<em>n</em>,<em>l</em>,<em>r</em>(1≤<em>n</em>≤5×103,−109≤<em>l</em>≤<em>r</em>≤109)，表示数组长度和强大的数组所要求的和的最小值及最大值。</p>
+<p>接下来一行包含数组中的<em>n</em>个数字<em>a</em>1,<em>a</em>2,…,<em>a**n</em>(∣<em>a**i</em>∣≤109)。</p>
+<p>题目保证 ∑<em>n</em>≤5×103。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>对于每组数据，输出一行一个整数，即最多能分割出的强大子数组的个数</p>
+<h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">10</span> <span class="number">2</span> <span class="number">10</span></span><br><span class="line"><span class="number">-1</span> <span class="number">2</span> <span class="number">-3</span> <span class="number">4</span> <span class="number">-5</span> <span class="number">6</span> <span class="number">-7</span> <span class="number">8</span> <span class="number">-9</span> <span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h2><p>这道题用动态规划，假设我们以及知道 [1, i-1] 区间最大的划分数 dp[i-1] 为多少。</p>
+<p>那么 dp[i] 至少会有 dp[i-1] 这么多。</p>
+<p>再考虑多出的数字 a[i] 能不能组成新的满足条件的分组。也就是枚举以 a[i] 结尾的连续区间有哪些？我们可以枚举所有可能的左端点 1 到 i-1 。组成区间 [1, i] 或 [2, i] 或 [3, i] … [i-1, i] 。</p>
+<p>然后计算每个区间的和，是否满足条件。如果满足条件，那么说明我们需要这个区间，组成一种划分情况。dp[i] 可能等于 dp[j-1] + 1 ， 其中，dp[j-1] 是除去最后一个区间，数组剩余数字能够得到的最大划分数。</p>
+<p>j 从 1-i ，<strong>计算每种情况所得到的结果，取最大值</strong>，就是 dp[i]</p>
+<h2 id="总结-4"><a href="#总结-4" class="headerlink" title="总结"></a>总结</h2><p>动态规划，很多时候，一维dp。主问题，可能会引出 i-1 个子问题。不是对于每一个子问题都要写一个转移公式。</p>
+<p>而是，循环判断每一个子问题所得到的结果。拿出来做比较，得到最大的，最优的那一个，就是我们所需要的主问题答案。</p>
+<p>所以，一般一维dp，也会嵌套循环两个 for</p>
+<h2 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">5e3</span>+<span class="number">10</span>;</span><br><span class="line">ll p[N];</span><br><span class="line">ll a[N];</span><br><span class="line"><span class="keyword">int</span> dp[N]; <span class="comment">// 1-i 区间的数组，最多的划分数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="keyword">int</span> n, l, r;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;n, &amp;l, &amp;r);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>, &amp;a[i]);</span><br><span class="line">            p[i] = p[i<span class="number">-1</span>]+a[i]; <span class="comment">//预处理出前缀和，方便得到区间和</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            dp[i] = dp[i - <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++) <span class="comment">//判断 [j-i] 区间是否满足条件</span></span><br><span class="line">            &#123;</span><br><span class="line">                ll tmp = p[i] - p[j<span class="number">-1</span>];</span><br><span class="line">                <span class="keyword">if</span>(tmp &gt;= l &amp;&amp; tmp &lt;= r) <span class="comment">/// 如果满足，求最大</span></span><br><span class="line">                    dp[i] = <span class="built_in">max</span>(dp[i] , dp[j<span class="number">-1</span>]+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, dp[n]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="相关参考链接"><a href="#相关参考链接" class="headerlink" title="相关参考链接"></a>相关参考链接</h1><p><a target="_blank" rel="noopener" href="http://cppblog.com/menjitianya/archive/2015/10/23/212084.html">一篇比较详细的入门介绍</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xiaoliangxiansheng/article/details/21594235?utm_medium=distribute.wap_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.wap_blog_relevant_pic&depth_1-utm_source=distribute.wap_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.wap_blog_relevant_pic">有关数的划分（dp）各种变式</a></p>
 
     
 
     
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">zigbee</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/13/2020.09.13%20%E6%97%B6%E9%92%9F/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay1.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin2.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
         </div>
-        
-        
+      </a>
     </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.09.11 外部中断" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/09/12/2020.09.11%20%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/" target="_blank">外部中断</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/09/12/2020.09.11%20%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/" class="archive-article-date">
-        <time datetime="2020-09-12T06:20:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-12</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="掌握所有引脚的外部中断"><a href="#掌握所有引脚的外部中断" class="headerlink" title="掌握所有引脚的外部中断"></a>掌握所有引脚的外部中断</h1><h2 id="概述"><a href="#概述" class="headerlink" title="## 概述"></a>## 概述</h2><pre><code> 一个水源（EA），下面有三个组开关（P0IE、P1IE、P1IE）。每个组开关内，又分别有 8、8、5 个 I/0 口开关（中断开关 PxIEN）。</code></pre>
-<p>​    类似于水管，想要最下面的水龙头流水，就得先让最上面的水塔开关打开，然后还得把中间的总管道开关打开，最后，只需要打开龙头开关，就会有水。</p>
-<p>​    因此，如果需要给某个脚配置成中断，就必须先满足，<strong>开总中断使能，组内中断使能，以及对应 I/O 口中断打开</strong>。</p>
-<p><img src="https://raw.githubusercontent.com/fangning222/fangning222/master/20200911210548.png" alt="中断使能结构"></p>
-    
-    <a class="article-more-a" href="/2020/09/12/2020.09.11%20%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/#more">more >></a>
-    
     
 
     
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">zigbee</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/12/2020.09.11%20%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          方宁
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://www.fangning.xyz.com/2020/10/15/2020.10.15 DP/" title="DP动态规划" target="_blank">http://www.fangning.xyz.com/2020/10/15/2020.10.15 DP/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
     </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.09.12 第一篇随笔" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/09/11/2020.09.12%20%E7%AC%AC%E4%B8%80%E7%AF%87%E9%9A%8F%E7%AC%94/" target="_blank">我的随笔</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/09/11/2020.09.12%20%E7%AC%AC%E4%B8%80%E7%AF%87%E9%9A%8F%E7%AC%94/" class="archive-article-date">
-        <time datetime="2020-09-11T08:22:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-11</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="建立个人博客了"><a href="#建立个人博客了" class="headerlink" title="建立个人博客了"></a>建立个人博客了</h1><h2 id="特殊一年"><a href="#特殊一年" class="headerlink" title="特殊一年"></a>特殊一年</h2><p>​    2020年，全球爆发新冠状病毒，此时我正读大二下半学期。因为疫情，这一学期全国大部分学校都没开学，我也因此在家过了大半年。</p>
-<p>​    也就是这段时间，我终于自己搭建了一个，一直让我心心念念的个人博客。</p>
-<p>​
-    
-    <a class="article-more-a" href="/2020/09/11/2020.09.12%20%E7%AC%AC%E4%B8%80%E7%AF%87%E9%9A%8F%E7%AC%94/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/11/2020.09.12%20%E7%AC%AC%E4%B8%80%E7%AF%87%E9%9A%8F%E7%AC%94/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.09.10 zigbee原理图理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/09/11/2020.09.10%20zigbee%E5%8E%9F%E7%90%86%E5%9B%BE%E7%90%86%E8%A7%A3/" target="_blank">cc2530原理图及引脚功能控制</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/09/11/2020.09.10%20zigbee%E5%8E%9F%E7%90%86%E5%9B%BE%E7%90%86%E8%A7%A3/" class="archive-article-date">
-        <time datetime="2020-09-11T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-11</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="zigbee无线模块的基本工作电路"><a href="#zigbee无线模块的基本工作电路" class="headerlink" title="zigbee无线模块的基本工作电路"></a>zigbee无线模块的基本工作电路</h1><h2 id="原理图各部分理解"><a href="#原理图各部分理解" class="headerlink" title="原理图各部分理解"></a>原理图各部分理解</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="number">25</span> <span class="number">26</span> :</span><br><span class="line">    <span class="number">1</span>) RF_P 和 RF_N 号角所连部分为<span class="string">&#x27;无线部分&#x27;</span>，最后面接着一个天线。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> <span class="number">40</span> <span class="number">30</span> :</span><br><span class="line">    <span class="number">1</span>) <span class="number">40</span>：cdoupl 去耦电容。</span><br><span class="line">    <span class="number">2</span>) <span class="number">30</span> Rbias 为偏置电阻。</span><br><span class="line">    <span class="number">3</span>) <span class="string">&#x27;这两个必须正确连接，8051单片机才能正常仿真、烧录程序&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> <span class="number">32</span> <span class="number">33</span> :</span><br><span class="line">    <span class="number">1</span>) 所连接部分接 <span class="string">&#x27;低频精准时钟源&#x27;</span>。可用，可不用。</span><br><span class="line">    <span class="number">2</span>) 主要用来做 定时器，或者 看门狗 才能用到。</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 胜达电子 与 TI cc2530基本工作电路的<span class="string">&#x27;不同点&#x27;</span>:</span><br><span class="line">    <span class="number">1</span>) 复位电路，实现按键复位 和 通电复位。</span><br><span class="line">    	* <span class="number">20</span> reset 脚提供程序 <span class="number">1</span>us 低电平信号，即可复位。</span><br><span class="line">        * <span class="number">20</span> 号交接复位电路。</span><br><span class="line">    <span class="number">2</span>) 下载程序电路</span><br><span class="line">    	* 下载程序所需条件 电源，GND，reset，<span class="number">34</span> P2_1，<span class="number">35</span> P2_2 <span class="string">&#x27;五条线齐全，就可以下载程序&#x27;</span></span><br><span class="line">        * 将上面五根线接入一个 JTAG下载接口 ，就可以通过仿真器进行程序烧入了！</span><br><span class="line">    <span class="number">3</span>) 只要有 <span class="string">&#x27;电源，地线，去耦电容，偏执电阻，以及程序烧录口P2_1,P2_2&#x27;</span>，加上基本的<span class="string">&#x27;晶振&#x27;</span>。<span class="string">&#x27;芯片就可以正常工作了！！&#x27;</span></span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/09/11/2020.09.10%20zigbee%E5%8E%9F%E7%90%86%E5%9B%BE%E7%90%86%E8%A7%A3/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">zigbee</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/11/2020.09.10%20zigbee%E5%8E%9F%E7%90%86%E5%9B%BE%E7%90%86%E8%A7%A3/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.09.10 搭建开发环境编写及仿真" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/" target="_blank">zigbee环境搭建</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/" class="archive-article-date">
-        <time datetime="2020-09-10T12:46:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-10</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="软件安装，程序编写运行，烧录"><a href="#软件安装，程序编写运行，烧录" class="headerlink" title="软件安装，程序编写运行，烧录"></a>软件安装，程序编写运行，烧录</h1><h2 id="IAR安装"><a href="#IAR安装" class="headerlink" title="IAR安装"></a>IAR安装</h2> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> IAR程序下载:</span><br><span class="line">    <span class="number">1</span>) 不要从脚本之家之类的网站下载软件。否则，你的浏览器会被恶意串改主页。并且，电脑上会被恶意下载软件。</span><br><span class="line">    <span class="number">2</span>) 从官网下载最新版的 IAR <span class="keyword">for</span> <span class="number">8051</span> 就行了。</span><br><span class="line">    </span><br><span class="line"><span class="number">2.</span> IAR程序破解:   教程：<span class="string">&quot; https://blog.csdn.net/qq_38351824/article/details/85005672 &quot;</span></span><br><span class="line">    <span class="number">1</span>) 从可靠途径获得破解软件。</span><br><span class="line">    <span class="number">2</span>) 运行破解软件，选择所需要破解的版本。生成密钥</span><br><span class="line">    <span class="number">3</span>) 将密钥复制到 IAR程序密钥验证 步骤中，注意断网。</span><br><span class="line">    <span class="number">4</span>) IAR 会在生成一个文本，给它放在桌面。</span><br><span class="line">    <span class="number">5</span>) 将该文本路径填写到 破解软件 第二栏中，生成另外一个破解 文本。</span><br><span class="line">    <span class="number">6</span>) 将破解文本填写到 IAR程序 注册所需文件中，然后一直下一步就行了。</span><br><span class="line">    <span class="comment"># 注意，最后提取库文件的时候会失败，因为 IAR库文件 是需要另外一套 password 的。</span></span><br><span class="line">    <span class="comment"># 但是也不需要担心，我们一般用不到库文件，或者即使要用，也是后期手动下载导入。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">zigbee</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.09.09 zigbee 概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/" target="_blank">zigbee概述</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/" class="archive-article-date">
-        <time datetime="2020-09-09T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-09</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="zigbee"><a href="#zigbee" class="headerlink" title="zigbee"></a>zigbee</h1><h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> zigbee 不像 <span class="number">51</span>单片机 只需要理解里面的寄存器就可以玩转:</span><br><span class="line">    <span class="number">1</span>) zigbee 最主要的是协议栈。它包含了很多的协议站，以及相关代码。这是最难的。</span><br><span class="line">    <span class="number">2</span>) 资料方面，互联网上关于 zigbee 相关的深入浅出的资料很少。特别是关于讲解<span class="string">&#x27;协议栈&#x27;</span>这一方面。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 术语:</span><br><span class="line">    <span class="number">1</span>) zigbee, zigbee通信方式，zigbee协议 三者都是一个意思。</span><br><span class="line">    <span class="number">2</span>) 节点，无线模块，无线设备，三者都是一个意思。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 计算机之间，局域网采用以太网协议:</span><br><span class="line">    <span class="number">1</span>) zigbee之间通信，同样的，采用zigbee协议</span><br><span class="line">    <span class="number">2</span>) 作用：<span class="string">&#x27;构建无线局域网！！&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 如果一个无线局域网用于传感器的数据收集和监控，那么这个网络就叫做<span class="string">&#x27;无线传感器网络&#x27;</span></span><br><span class="line">    <span class="number">1</span>) 也就是说，无线传感器网络是无线局域网的一个具体应用。</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 已经有了 蓝牙 和 wifi 为什么还要用 zigbee:</span><br><span class="line">    <span class="number">1</span>) 蓝牙：功耗低，但是组件网络的节点数少 <span class="number">7</span>~<span class="number">8</span>个。</span><br><span class="line">    <span class="number">2</span>) wifi：通信功率 比较大， 功耗大。</span><br><span class="line">    <span class="number">3</span>) zigbee：可以组将大概模网络，节点可以上万个！功耗低(cc <span class="number">2530</span> 正常工作电流<span class="number">8</span>mA, 最低工作达到几个uA)。</span><br><span class="line">    	缺点：通信速率比较小，<span class="number">250</span> kbs。比较适合传感器的信息传送。</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 应用方面:</span><br><span class="line">    <span class="number">1</span>) 家具方面：可以用电池，或者太阳能供电。</span><br><span class="line">    <span class="number">2</span>) 工业方面：传统使用总线组将局域网，如果有zigbee的话，就可以无线组网。</span><br><span class="line">    <span class="number">3</span>) 农业方面：组将无线传感器网络，温湿度传感器，二氧化碳浓度等传感器的数据组网收集。</span><br><span class="line">    <span class="number">4</span>) 医疗方面：......</span><br><span class="line">    <span class="number">5</span>) 物联网时代，zigbee 使用十分频繁。</span><br><span class="line"></span><br><span class="line"><span class="number">7.</span> zigbee 模块一般配合上位机构建控制系统:</span><br><span class="line">    <span class="number">1</span>) 上位机可以是 pc，也可以是通过互联网的远程服务器。</span><br><span class="line">    <span class="number">2</span>) 上位机可以实现对 zigbee 系统中的元件控制。</span><br><span class="line">    <span class="number">3</span>) 主 zigbee 与 计算机之间 是<span class="string">&#x27;采用串口进行通信&#x27;</span>的。也就是和 arduino 串口通信一样，需要使用一根数据线连接电脑。计算机获取数据。 </span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">zigbee</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hexo 默认文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/09/03/hexo%20%E9%BB%98%E8%AE%A4%E6%96%87%E7%AB%A0/" target="_blank">Hello world</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/09/03/hexo%20%E9%BB%98%E8%AE%A4%E6%96%87%E7%AB%A0/" class="archive-article-date">
-        <time datetime="2020-09-03T09:42:39.545Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-03</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-    
-    <a class="article-more-a" href="/2020/09/03/hexo%20%E9%BB%98%E8%AE%A4%E6%96%87%E7%AB%A0/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">个人博客搭建</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/03/hexo%20%E9%BB%98%E8%AE%A4%E6%96%87%E7%AB%A0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.08.24 PKI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/24/2020.08.24%20PKI/" target="_blank">PKI</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/24/2020.08.24%20PKI/" class="archive-article-date">
-        <time datetime="2020-08-24T14:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-24</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="PKI"><a href="#PKI" class="headerlink" title="PKI"></a>PKI</h1><h2 id="什么是-PKI"><a href="#什么是-PKI" class="headerlink" title="什么是 PKI"></a>什么是 PKI</h2>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> Public Key Infrastructure：公钥基础设施</span><br><span class="line">    <span class="number">1</span>) 作用：通过加密技术 和 数字签名 保证信息的安全。例如：互联网中数据传输过程中进行加密、</span><br><span class="line">    <span class="number">2</span>) 组成：<span class="string">&#x27;公钥加密技术、数字证书、CA&#x27;</span>、RA......</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 信息安全三要素:</span><br><span class="line">    <span class="number">1</span>) <span class="string">&#x27;机密性&#x27;</span>：别人拿到数据，但是看不懂，破不开。</span><br><span class="line">    <span class="number">2</span>) <span class="string">&#x27;完整性&#x27;</span>：要防止接受到的数据不能被是被中间人破坏，篡改的。如果被破坏了，接收方不能获取，需要重新发送。</span><br><span class="line">    <span class="number">3</span>) <span class="string">&#x27;身份验证/操作的不可否认性&#x27;</span>：检查接收方获得的数据是否是由发送方发出的。防止数据被伪造发送，就像伪 DHCP 服务器发送 Offer 包，导致客户机获取网络配置失败。</span><br><span class="line">	<span class="comment"># 这些三种技术，都包含在 PKI 技术范畴。无论那种加密技术，都有包含 PKI 技术。</span></span><br><span class="line">    </span><br><span class="line"><span class="number">3.</span> 应用领域:</span><br><span class="line">    <span class="number">1</span>) SSL/HTTPS ：网页信息技术。（https = http ssl）</span><br><span class="line">    <span class="number">2</span>) IPsecVPN：很多网络公司用到的 vpn。</span><br><span class="line">    <span class="number">3</span>) 以及部分远程访问 VPN。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/08/24/2020.08.24%20PKI/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/24/2020.08.24%20PKI/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.08.22 BFS广度优先遍历" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/22/2020.08.22%20BFS%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/" target="_blank">BFS广度搜索</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/22/2020.08.22%20BFS%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/" class="archive-article-date">
-        <time datetime="2020-08-22T09:14:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-22</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="BFS-广度优先遍历"><a href="#BFS-广度优先遍历" class="headerlink" title="BFS 广度优先遍历"></a>BFS 广度优先遍历</h1><h2 id="经验"><a href="#经验" class="headerlink" title="经验"></a>经验</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 不同于 深度优先遍历dfs ———— 递归式遍历(所问即所答)。</span><br><span class="line">	<span class="number">1</span>) 广度优先遍历采用的是 迭代遍历的方式，非递归只有循环.   </span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 该算法主要思想是:</span><br><span class="line">    <span class="number">1</span>) 从<span class="string">&#x27;最开始&#x27;</span>的<span class="string">&#x27;第一个节点&#x27;</span>，按照一种固定的规律，<span class="string">&#x27;遍历出&#x27;</span>与之<span class="string">&#x27;相邻的节点&#x27;</span>。</span><br><span class="line">    <span class="number">2</span>) 采用的存储数据结构是 ———— <span class="string">&#x27;队列&#x27;</span>。有时根据题目需求和效率需求，会采用 c++ stl容器 ———— <span class="string">&#x27;优先队列&#x27;</span>( Priority queue )。</span><br><span class="line">    <span class="number">3</span>) <span class="string">&#x27;手动添加第一个&#x27;</span>结点到队列，然后进入循环体，<span class="string">&#x27;直到队列为空&#x27;</span>或<span class="string">&#x27;找到目标&#x27;</span>结束遍历。遍历的同时，<span class="string">&#x27;会向&#x27;</span>队列中<span class="string">&#x27;添加新的节点&#x27;</span>，<span class="string">&#x27;删除已经遍历过的节点&#x27;</span>。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 结构体队列:</span><br><span class="line">    <span class="number">1</span>) 大多数情况下，我们采用的对象并不是简单的级别数据类型。需要我们<span class="string">&#x27;自己设定抽象数据类型&#x27;</span>。</span><br><span class="line">    <span class="number">2</span>) 比如跑图的时候，需要记录 <span class="string">&#x27;步数step、坐标xy、路径string&#x27;</span>。这些记录每走一步，都需要记录下来，所以定义一个结构体，然后<span class="string">&#x27;采用结构体队列&#x27;</span>来存储遍历时的<span class="string">&#x27;中间结果&#x27;</span>。</span><br><span class="line">    </span><br><span class="line"><span class="number">4.</span> 结构体声明:</span><br><span class="line">    struct node&#123;</span><br><span class="line">        int x, y;</span><br><span class="line">        node( int x1, int y1 )&#123;</span><br><span class="line">            x = x1;</span><br><span class="line">            y = y1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    构造方法的使用:</span><br><span class="line">        node t( <span class="number">1</span>, <span class="number">1</span>);   <span class="comment"># 声明了一个结构体变量，初始化成员 x = 1, y = 1 </span></span><br><span class="line">    </span><br><span class="line"><span class="number">5.</span> 队列的操作:</span><br><span class="line">    queue&lt;node&gt; q;		<span class="comment"># 定义一个结构体队列</span></span><br><span class="line">    q.push( node t );	<span class="comment"># 添加一个节点到队列</span></span><br><span class="line">    q.pop( node t );	<span class="comment"># 从队列删除一个节点</span></span><br><span class="line">    q.front();		    <span class="comment"># 读出队列一个节点</span></span><br><span class="line">    q.empty();		    <span class="comment"># 判断队列是否为空 true/false</span></span><br><span class="line">    q.size();		   	<span class="comment"># 读取队列中元素个数</span></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/08/22/2020.08.22%20BFS%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/#more">more >></a>
-    
-    
-
-    
-
     
 
   </div>
@@ -996,16 +561,85 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/22/2020.08.22%20BFS%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/">展开全文 >></a>
-    </p>
+
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.fangning.xyz.com/2020/10/15/2020.10.15%20DP/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+    <a href="/2020/10/19/2020.09.28%20%E4%B8%B2%E5%8F%A3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          串口
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/10/07/2020.10.07%20DFS%E6%B7%B1%E6%90%9C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">DFS</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -1026,100 +660,14 @@
 
 
 
-  
-    <article id="post-2020.08.20 域3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/20/2020.08.20%20%E5%9F%9F3/" target="_blank">域3</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/20/2020.08.20%20%E5%9F%9F3/" class="archive-article-date">
-        <time datetime="2020-08-20T11:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="域3"><a href="#域3" class="headerlink" title="域3"></a>域3</h1><h2 id="将域用户获得成员机的完全控制权限"><a href="#将域用户获得成员机的完全控制权限" class="headerlink" title="将域用户获得成员机的完全控制权限"></a>将域用户获得成员机的完全控制权限</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 新建的域用户虽然可以登陆任何的计算机，但是<span class="string">&#x27;没有本地计算机的完全控制权限&#x27;</span>。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 如果需要让某个域用户获得某台计算机的完全控制权限。</span><br><span class="line">	<span class="number">1</span>) 需要将该用户<span class="string">&#x27;加入&#x27;</span>本地计算机的 <span class="string">&#x27;administrators 组&#x27;</span>当中，而不是加入 域管理员组Domain admins。</span><br><span class="line">    <span class="number">2</span>) 方法就是，先用 <span class="string">&#x27;域管理员账&#x27;</span>号 登陆 <span class="string">&#x27;该计算&#x27;</span>机，然后将 <span class="string">&#x27;普通域用户&#x27;</span> 添加到 <span class="string">&#x27;本地管理员组&#x27;</span>。</span><br><span class="line">    <span class="number">3</span>) 这样，该<span class="string">&#x27;普通域用户&#x27;</span>就<span class="string">&#x27;获得&#x27;</span>了<span class="string">&#x27;该本地计算机&#x27;</span>的<span class="string">&#x27;完全控制权限&#x27;</span>。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 所有的 Domain admins 用户都属于该域下所有计算机的 Administrators。可想而知，<span class="string">&#x27;域管理员的权限非常之大&#x27;</span>，是<span class="string">&#x27;所有计算机的管理员&#x27;</span>。</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/08/20/2020.08.20%20%E5%9F%9F3/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/20/2020.08.20%20%E5%9F%9F3/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
 
 
 
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
-  
+
+
+
+
 
 
           </div>
@@ -1159,8 +707,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

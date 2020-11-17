@@ -207,6 +207,270 @@
             
 
   
+    <article id="post-2020.08.19 域2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/08/19/2020.08.19%20%E5%9F%9F2/" target="_blank">域2</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/08/19/2020.08.19%20%E5%9F%9F2/" class="archive-article-date">
+        <time datetime="2020-08-19T07:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="部署安装活动目录"><a href="#部署安装活动目录" class="headerlink" title="部署安装活动目录"></a>部署安装活动目录</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 部署安装 win2008 虚拟机。配置静态 IP 地址。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> win2008 装管理工具，不需要从光盘中获取安装包.</span><br><span class="line">	1) 右击计算机 -&gt; 角色(服务器) -&gt; 添加角色 -&gt; DC服务 -&gt; 安装。  ##此方法不推荐使用，还有方法二</span><br><span class="line">    </span><br><span class="line">	<span class="number">2</span>) <span class="comment">#方法二:</span></span><br><span class="line">	<span class="number">3</span>) 安装<span class="string">&#x27;活动目录&#x27;</span>：</span><br><span class="line">    	<span class="number">0</span>) 配置之前，不要给该计算机指定 DNS 和 网关，<span class="string">&#x27;只需要给一个固定IP就行了&#x27;</span>。</span><br><span class="line">           给该服务器的计算机名改为 DC1。因为，AD配置完之后，会自动该计算机加入域。</span><br><span class="line">    	1) win + r -&gt; &#x27;dcpromo&#x27; 该命令可进行安装/卸载</span><br><span class="line">        <span class="number">2</span>) 高级模式不用勾选。</span><br><span class="line">        <span class="number">3</span>) 如果没指定 DNS 的话，它会有一个是否在该计算机上安装 DNS。<span class="string">&#x27;一步一定要勾选&#x27;</span>.</span><br><span class="line">        <span class="number">4</span>) <span class="comment">#域树:</span></span><br><span class="line">            	如果当前有一个域，位于一棵树的根部 root，我们可以称之为<span class="string">&#x27;根域&#x27;</span>。与根域相连的可能是若干个<span class="string">&#x27;子域&#x27;</span>，子域与根域之间通过<span class="string">&#x27;专线&#x27;</span>连接，现实中可能是公司内部建立的<span class="string">&#x27;独立通信线路&#x27;</span>，以便<span class="string">&#x27;跨区域实现局域网&#x27;</span>。而，根域可能是一个公司的总部，<span class="string">&#x27;子域可能&#x27;</span>是一个公司在其他地区的<span class="string">&#x27;分部&#x27;</span>，但是他们<span class="string">&#x27;同属一个域&#x27;</span>。例如 根域域控: qf.com 子域域控: shanghai.qf.com(表示上海分布)。</span><br><span class="line">           <span class="comment">#域林:</span></span><br><span class="line">            	一个公司内部两个不太相关的业务，建立<span class="string">&#x27;两个独立&#x27;</span>的<span class="string">&#x27;根域&#x27;</span> ———— 如 weixin.com 和 qq.com 。两者都属于腾讯公司内部业务，但是互不包含，<span class="string">&#x27;都是根域级别&#x27;</span>。两棵域树，或者<span class="string">&#x27;多棵域树的集合&#x27;</span>，就是<span class="string">&#x27;域林&#x27;</span>。一般，国内很少有公司使用域林管理结构，顶多就是域树级别。</span><br><span class="line">        <span class="number">5</span>) 设置根域名：fn222.com，<span class="comment">#与此同时也表示 DC 的计算机名为 fn222</span></span><br><span class="line">        <span class="number">6</span>) 设置林功能级别：windows server <span class="number">2003</span>。也就是规定，整个林中，所有域服务器版本不能低于 win2003。</span><br><span class="line">        <span class="number">7</span>) 设置域功能级别：windows server <span class="number">2008</span>。也就是规定，整个域中，所有子域服务器版本不能低于 win2008。</span><br><span class="line">        <span class="number">8</span>) 设置数据库(活动目录AD)、日志、策略存储路径，这里选默认就好。</span><br><span class="line">        <span class="number">9</span>) 设置 AD 还原密码，一般用不到。用来还原活动目录。</span><br><span class="line">            </span><br><span class="line">	<span class="number">4</span>) 重启安装完成后，登陆域 fn222/administrator 原来的 <span class="string">&#x27;本地管理员&#x27;</span> 已经<span class="string">&#x27;升级&#x27;</span>为 <span class="string">&#x27;域管理员&#x27;</span>。</span><br><span class="line">	<span class="number">5</span>) 查看管理工具，DNS管理工具，发现自动生成了一个域名解析区域，以及主机A记录。如果需要设置转发器，可以进行进一步修改。</span><br><span class="line">	<span class="number">6</span>) 查看 <span class="string">&#x27;Active Director 用户和计算机&#x27;</span>。<span class="string">&#x27;验证&#x27;</span>Domain Controllers 和 Users中的分组。用户，管理员等<span class="string">&#x27;用户和组&#x27;</span>都<span class="string">&#x27;升级&#x27;</span>了，变成了<span class="string">&#x27;域用户，域组&#x27;</span>。</span><br><span class="line">        Computer：普通域成员机列表</span><br><span class="line">        Domain Controller：DC列表</span><br><span class="line">        Users：域用户/组</span><br><span class="line">    </span><br><span class="line"><span class="number">3.</span> <span class="comment">#加入域添加成员机:</span></span><br><span class="line">    <span class="number">1</span>) 配置 IP 与域控同属一个局域网；给员工计算机指定 DNS 到 域控地址。</span><br><span class="line">    2) 修改计算机属性，计算机名 -&gt; 更改 -&gt; 隶属于域 fn222.com -&gt; 使用域管理员登陆fn222.com/administrator。</span><br><span class="line">    <span class="number">3</span>) 查看活动目录用户管理工具，是否新添加了 成员机。</span><br><span class="line">    4) 在活动目录用户管理工具 -&gt; user 中为该成员机添加一个 域用户。右击，添加用户，填写相应信息即可。用户登陆名一般为 &#x27;名.姓&#x27; eg: &#x27;ning.fang&#x27; @fn222 。</span><br><span class="line">    <span class="number">5</span>) 成员机，使用<span class="string">&#x27;域用户&#x27;</span>登陆计算机检查是否能够登陆成功。</span><br><span class="line">    </span><br><span class="line"><span class="string">&#x27;注意&#x27;</span>: 一旦计算机处于域环境中:</span><br><span class="line">    <span class="comment">#那么  域管理员组 会自动加入本地计算机的  管理员adminitrators组。</span></span><br><span class="line">    <span class="comment">#另外  域用户组   会自动加入本地计算机的  用户users组。</span></span><br><span class="line">    因此在设置一些访问控制列表权限的时候，一定要注意考虑这两个组的位置，以免权限产生相互影响。</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2020/08/19/2020.08.19%20%E5%9F%9F2/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/08/19/2020.08.19%20%E5%9F%9F2/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2020.08.17 域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/08/17/2020.08.17%20%E5%9F%9F/" target="_blank">域</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/08/17/2020.08.17%20%E5%9F%9F/" class="archive-article-date">
+        <time datetime="2020-08-17T07:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-17</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="域"><a href="#域" class="headerlink" title="域"></a>域</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> Domain 英文名。</span><br><span class="line">	<span class="number">1</span>) 很多方面都需要用到域，并且域的重要性很高。或者说是，域管理器的重要性很高。就像，对于DHCP网络连接来讲，dhcp服务器很重要。</span><br><span class="line">    <span class="number">2</span>) 越是大型的公司，对于域的依赖性也就越高。有些公司会专门聘请 域管理员，并且资薪也特别高。不过，这种职业需求很少。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 对于内外环境:</span><br><span class="line">    <span class="number">1</span>) 工作组：默认模式，特点是<span class="string">&#x27;人人平等&#x27;</span>，但是不利于管理。</span><br><span class="line">    <span class="number">2</span>) 域：<span class="string">&#x27;人人不平等&#x27;</span>，可以<span class="string">&#x27;实现集中管理，统一管理&#x27;</span>。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 域的组成:</span><br><span class="line">    <span class="number">1</span>) 域控制器：老大。是一种服务器，电脑，简称<span class="string">&#x27;域控&#x27;</span> —— DC（Domain Contronller）。</span><br><span class="line">    <span class="number">2</span>) 成员机：普通用户，相互平等。</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 域的部署:</span><br><span class="line">    <span class="number">1</span>) 首先用一台服务器，安装域管理软件，这时，域就形成了。</span><br><span class="line">       但是，在形成之初，域中只有 DC，也就是域控一台计算机。</span><br><span class="line">       接下来，就需要一个个进行<span class="string">&#x27;加入域&#x27;</span>操作。该操作只出现在公司成立之初，或者大型改造过程中。</span><br><span class="line">    <span class="number">2</span>) 安装域控制器 ———— 就生成了域环境。</span><br><span class="line">    <span class="number">3</span>) 安装活动目录 ———— 就生成了域控制器。以此，域的部署，要先从活动目录开始。</span><br><span class="line">    <span class="number">4</span>) 活动目录：Active Directory == AD</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 拓扑图中，域用一个三角形显示</span><br><span class="line">	<span class="number">1</span>) 每个域都有一个域名 ———— 一般以公司名命名，如 qf.com</span><br><span class="line">	<span class="number">2</span>) 域中每台计算机的计算机名，其实也是一个主机名。如: 计算机名为 FANGING 那么，它在<span class="string">&#x27;域中的名字标识就是 FANGNING.qf.com&#x27;</span> 并且 该域名与你这太计算机的 IP 地址进行绑定。</span><br><span class="line">	<span class="number">3</span>) 这种功能<span class="string">&#x27;类似于 DNS域名解析服务器&#x27;</span>，但是全过程不需要安装 DNS管理工具，也不需要添加 A记录。<span class="string">&#x27;全程自动完成&#x27;</span>。可以说，<span class="string">&#x27;域控本身也是一台dns服务器&#x27;</span>。</span><br><span class="line">	<span class="number">4</span>) 域环境中，<span class="string">&#x27;只需要知道员工的姓名&#x27;</span>，就可以知道他的域名，通过 dc 进行解析，<span class="string">&#x27;就可以知道他的 IP 地址&#x27;</span>，通过交换机还可以知道他的 mac地址。公司内部的计算机，不能随意改动计算机名。</span><br><span class="line">    </span><br><span class="line"><span class="number">6.</span> 活动目录特点:</span><br><span class="line">    <span class="number">1</span>) 域控的<span class="string">&#x27;核心&#x27;</span>，其实就是依赖于<span class="string">&#x27;活动目录&#x27;</span>。所以，活动目录是<span class="string">&#x27;域环境中最重要的部分&#x27;</span> ———— 集中/统一 管理。</span><br><span class="line">    <span class="number">2</span>) 活动目录是一张表。存放着整个公司的<span class="string">&#x27;公共资源&#x27;</span>，也成为<span class="string">&#x27;域资源&#x27;</span>.</span><br><span class="line">    	(<span class="number">1</span>) 域账号：区别于计算机的本地账号。可以<span class="string">&#x27;通过该域账号&#x27;</span>，<span class="string">&#x27;登陆&#x27;</span>处于域中的<span class="string">&#x27;成员机&#x27;</span>.</span><br><span class="line">        	<span class="number">1</span>)首次通过域账号密码登陆成员机时，计算机<span class="string">&#x27;不会直接判断账号密码错误&#x27;</span>。先会通过 DC域名 <span class="string">&#x27;解析出 DC地址&#x27;</span></span><br><span class="line">        	<span class="number">2</span>)然后，询问 DC，<span class="string">&#x27;活动目录中&#x27;</span>，是否有该<span class="string">&#x27;域账号&#x27;</span>，<span class="string">&#x27;进行核对&#x27;</span>。如果有，那么成员机就会<span class="string">&#x27;允许&#x27;</span>这个域账号进行登陆。</span><br><span class="line">        	<span class="number">3</span>)登陆成功后，成员机会在本地<span class="string">&#x27;创建&#x27;</span>对应该账号的<span class="string">&#x27;家目录&#x27;</span>。</span><br><span class="line">        (<span class="number">2</span>) 存储企业内部所有<span class="string">&#x27;公共服务器地址&#x27;</span>。一个企业中，有很多的服务器地址，例如域名解析服务器地址、动态主机配置服务器地址、ftp服务器地址、web服务器地址。这些地址很难记住，可以将其存储到活动目录中，创建一个成员机都可以访问的公共资源。这样<span class="string">&#x27;只需要记住活动目录地址&#x27;</span>。</span><br><span class="line"></span><br><span class="line"><span class="number">7.</span> 组策略 GPO:</span><br><span class="line">    <span class="number">1</span>) 与活动目录配合，进行集中管理。组策略很强大，并且设计了很多很多条。</span><br><span class="line">    <span class="number">2</span>) Group Policy ———— 组 策略</span><br><span class="line">    <span class="number">3</span>) 一个组策略就像是一个<span class="string">&#x27;能实现某种功能的批处理指令&#x27;</span>。它可以对活动目录中的一组域账号统一下达某种指令。</span><br><span class="line">    例如统一修改成员机桌面图标。只需要<span class="string">&#x27;在活动目录中&#x27;</span>添加相应的<span class="string">&#x27;一条组策略&#x27;</span>，然后<span class="string">&#x27;应用&#x27;</span>就行了。</span><br><span class="line"></span><br><span class="line"><span class="number">8.</span> 将计算机通过域账号登陆时:</span><br><span class="line">    <span class="number">1</span>) 首先会<span class="string">&#x27;询问 DC&#x27;</span>，是否对我下达了什么指令</span><br><span class="line">    <span class="number">2</span>) DC 通过访问活动目录发现，该<span class="string">&#x27;成员机所属的分组内，有一条组策略&#x27;</span>。</span><br><span class="line">    <span class="number">3</span>) 该成员机通过读取该组策略，<span class="string">&#x27;就会按照要求执行&#x27;</span>。</span><br><span class="line">    <span class="number">4</span>) 这就实现了一种 集中/统一 管理。全靠活动目录！</span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2020/08/17/2020.08.17%20%E5%9F%9F/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/08/17/2020.08.17%20%E5%9F%9F/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2020.08.16 IIS 之 FTP 服务器2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/08/16/2020.08.16%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A82/" target="_blank">FTP服务器搭建2</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/08/16/2020.08.16%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A82/" class="archive-article-date">
+        <time datetime="2020-08-16T14:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-16</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="FTP-服务器2"><a href="#FTP-服务器2" class="headerlink" title="FTP 服务器2"></a>FTP 服务器2</h1><h2 id="ftp-主被动模式"><a href="#ftp-主被动模式" class="headerlink" title="ftp 主被动模式"></a>ftp 主被动模式</h2><h3 id="知识储备"><a href="#知识储备" class="headerlink" title="知识储备"></a>知识储备</h3><p>![ftp主被动模式过程](<a target="_blank" rel="noopener" href="http://images.fangning.xyz//ftp">http://images.fangning.xyz//ftp</a> 主被动模式过程.png)**</p>
+    
+    <a class="article-more-a" href="/2020/08/16/2020.08.16%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A82/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/08/16/2020.08.16%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A82/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2020.08.16 最大子序列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -838,275 +1102,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/08/02/2020.08.02%20DNS%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A8/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.08.01 转发关于VMware的网络状态" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/01/2020.08.01%20%E8%BD%AC%E5%8F%91%E5%85%B3%E4%BA%8EVMware%E7%9A%84%E7%BD%91%E7%BB%9C%E7%8A%B6%E6%80%81/" target="_blank">虚拟机三种网络模式</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/01/2020.08.01%20%E8%BD%AC%E5%8F%91%E5%85%B3%E4%BA%8EVMware%E7%9A%84%E7%BD%91%E7%BB%9C%E7%8A%B6%E6%80%81/" class="archive-article-date">
-        <time datetime="2020-08-01T10:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-01</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h2><p>很多人安装虚拟机的时候，经常遇到不能上网的问题，而vmware有三种网络模式,对初学者来说也比较眼花聊乱，今天我就来基于虚拟机3种网络模式，帮大家普及下虚拟机上网的背景知识。(博文原创自<a target="_blank" rel="noopener" href="http://www.cnblogs.com/ggjucheng/archive/2012/08/19/2646007.html">http://www.cnblogs.com/ggjucheng/archive/2012/08/19/2646007.html</a>)</p>
-<h2 id="虚拟机网络模式"><a href="#虚拟机网络模式" class="headerlink" title="虚拟机网络模式"></a><strong>虚拟机网络模式</strong></h2><p>无论是vmware,virtual box,virtual pc等虚拟机软件，一般来说，虚拟机有三种网络模式:</p>
-<p>1.桥接</p>
-<p>2.NAT</p>
-<p>3.Host-Only</p>
-<p>初学者看到虚拟机有三种网络，估计就慌了，笔者也是。哪一种网络是适合自己的虚拟机呢？</p>
-    
-    <a class="article-more-a" href="/2020/08/01/2020.08.01%20%E8%BD%AC%E5%8F%91%E5%85%B3%E4%BA%8EVMware%E7%9A%84%E7%BD%91%E7%BB%9C%E7%8A%B6%E6%80%81/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">转发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/01/2020.08.01%20%E8%BD%AC%E5%8F%91%E5%85%B3%E4%BA%8EVMware%E7%9A%84%E7%BD%91%E7%BB%9C%E7%8A%B6%E6%80%81/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.07.31 DHCP部署与安全2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/31/2020.07.31%20DHCP%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A82/" target="_blank">DHCP 部署与安全</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/07/31/2020.07.31%20DHCP%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A82/" class="archive-article-date">
-        <time datetime="2020-07-31T15:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="第十二章、DHCP部署与安全"><a href="#第十二章、DHCP部署与安全" class="headerlink" title="第十二章、DHCP部署与安全"></a>第十二章、DHCP部署与安全</h1><h2 id="部署DHCP服务器"><a href="#部署DHCP服务器" class="headerlink" title="部署DHCP服务器"></a>部署DHCP服务器</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 首先 DHCP服务器 和 客户机 需要桥接到同一段网络。如果是虚拟环境，就是两台虚拟机连接进入同一台交换机，比如 VMnet1。然后配置同一网段的 IP。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 部署一台服务器需要服务器软件，打开相应的端口。所有微软自带的服务器软件都在<span class="string">&quot;管理工具&quot;</span>里面。</span><br><span class="line">	(<span class="number">1</span>) 如果没有。对于 windows2003 以及之前的系统，<span class="string">&quot;需要重新插入系统光盘&quot;</span>，然后可以打开光盘文件。</span><br><span class="line">    	选择<span class="string">&quot;络信息服务(IIS)&quot;</span>，打开，然后从里面找到需要的<span class="string">&quot;动态主机配置协议 DHCP&quot;</span>进行安装。</span><br><span class="line">    (<span class="number">2</span>) 如果是 win10 或则 win2008 改程序默认是可能是安装了的，也可能是没有。</span><br><span class="line">    	如果没有安装，去控制面板，windows程序启动里面找。</span><br><span class="line">        如果安装了该服务，去 services.msc 里面进行激活。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 这一步可能安装失败，因为你需要部署DHCP的服务器自身的地址是需要自己<span class="string">&quot;手动配置&quot;</span>的。所以，先得给自己配好 IP。自己的 IP 也必须和员工的 IP 同属于一个网段。</span><br><span class="line">   (<span class="number">1</span>) 并且，在地址池里面不能存自己的这个 IP。公司里面如果还有其他需要，或者部署多台 DHCP 服务器，或者其他服务器。都需要<span class="string">&quot;预留&quot;</span>一些 IP 地址。也就是，员工的 IP 可以设置从 <span class="number">10</span> 或者 <span class="number">20</span> 开始。</span><br><span class="line">   (<span class="number">2</span>) 当你给服务器本身配置好之后，DHCP服务软件就可以安装成功了。</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 此时用 netstat /n 查看端口号的时候，会发现多了<span class="string">&quot;UDP67&quot;</span> 和 <span class="string">&quot;UDP68&quot;</span> 两个端口号。这<span class="string">&quot;两个都是动态主机配置协议服务&quot;</span>所属的端口号。</span><br><span class="line">	(<span class="number">1</span>) 客户机的 DHCP Discovery 和 DHCP Requst 是通过这两个端口入站的。</span><br><span class="line">	(<span class="number">2</span>) 服务器的 DHCP offer 包 和 DHCP ACK 包也都是从这两个端口出战的。</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span>  启动地址池(微软叫<span class="string">&quot;作用域&quot;</span>):</span><br><span class="line">    (<span class="number">1</span>) 打开刚刚所安装的 DHCP 服务软件。这里面可以选择关闭该服务。</span><br><span class="line">    (<span class="number">2</span>) 选择服务器图标，右击<span class="string">&quot;新建作用域&quot;</span>。最好最前面预留一部分，最后面预留一部分。注意排除广播地址和 网段地址，以及网关地址。</span><br><span class="line">    (<span class="number">3</span>) 设置地址分配范围。</span><br><span class="line">    (<span class="number">4</span>) 设置子网掩码。</span><br><span class="line">    (<span class="number">5</span>) 设置租期策略，设置一个合适的 IP 租约长度。</span><br><span class="line">    (<span class="number">6</span>) 配置 DHCP选项，也就是网关，DNS服务器等。对于DNS配置的话，你的公司向 <span class="string">&quot;网络服务提供商（ISP）&quot;</span>买网的时候，他会给你的一个固定的公网 IP。并且提供一个说明文档，里面有写这一片区域所部署的 DNS 服务器地址.</span><br><span class="line">    (<span class="number">7</span>) 如果需要配置 WINS 服务器，以及父域这种。都不需要配置，这些已经淘汰。</span><br><span class="line">    (<span class="number">8</span>) 是否激活作用域，一般建议先不激活作用域。</span><br><span class="line">        退出检查地址池，地址租约，作用域选项一切检查没有错误，再进行激活。</span><br><span class="line">    </span><br><span class="line"><span class="number">6.</span> 部署号 DHCP 服务器后，打开客户机进行检查验证一下。</span><br><span class="line">	(<span class="number">1</span>) 停用一下客户机的网卡，然后再启用，这时候计算机就会再次请求 IP。发送 Discovery 包。</span><br><span class="line">    (<span class="number">2</span>) 然后查看网络详细信息，检查IP，DNS，网关，等等信息。</span><br><span class="line">    (<span class="number">3</span>) 若客户机所在局域网内没有 DHCP 服务器，或者 DHCP 服务器没有配置有效的地址池。那么就会自动获取 IP 失败。此时会获得一个无效的IP地址<span class="string">&quot;169.254.233.86&quot;</span>。</span><br><span class="line"></span><br><span class="line"><span class="number">7.</span> <span class="string">&quot;注意&quot;</span>: 如果在虚拟机中做该实验，必须先关闭虚拟机交换机所提供的 DHCP 服务，免得与自己部署的 DHCP 服务产生冲突。</span><br><span class="line">    (<span class="number">1</span>) 点击 VMware 的虚拟网络编辑器。使用管理员身份打开。选中使用的交换机。</span><br><span class="line">    (<span class="number">2</span>) 将使用本低 DHCP 服务取消勾选。</span><br><span class="line">    </span><br><span class="line"><span class="number">8.</span> 保留功能：</span><br><span class="line">	(<span class="number">1</span>) 在企业公司内，一般情况下，有些客户机的 IP 是要求固定的。也就是，每天下班，上班打开计算机，内部的IP总不能经常变动。</span><br><span class="line">    (<span class="number">2</span>) 所以，这就可以利用DHCP服务器管理工具里面的<span class="string">&quot;保留功能&quot;</span>。将客户机的MAC地址，与地址池里面特定的IP进行绑定。</span><br><span class="line"></span><br><span class="line"><span class="number">9.</span> DHCP服务器备份：</span><br><span class="line">	(<span class="number">1</span>) 无论是在学校还是公司企业，都不可能只有一个局域网。这种情况只需要在一台 DHCP 服务器上部署多个作用域就行了。</span><br><span class="line">    (<span class="number">2</span>) 这样，一旦服务器崩溃，重新布置会很麻烦。所以给 <span class="string">&quot;DHCP配置做备份就很必要&quot;</span>。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/07/31/2020.07.31%20DHCP%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A82/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/31/2020.07.31%20DHCP%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A82/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.07.31 DHCP部署与安全" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/31/2020.07.31%20DHCP%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A8/" target="_blank">DHCP 部署与安全</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/07/31/2020.07.31%20DHCP%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A8/" class="archive-article-date">
-        <time datetime="2020-07-31T10:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="第十二章、DHCP部署与安全"><a href="#第十二章、DHCP部署与安全" class="headerlink" title="第十二章、DHCP部署与安全"></a>第十二章、DHCP部署与安全</h1><h2 id="DHCP作用，概念，优点，原理-租约过程"><a href="#DHCP作用，概念，优点，原理-租约过程" class="headerlink" title="DHCP作用，概念，优点，原理(租约过程)"></a>DHCP作用，概念，优点，原理(租约过程)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 作用：</span><br><span class="line">	(<span class="number">1</span>) Dynamic Host Configure Protocol：好理解一点就是动态域名配置协议！</span><br><span class="line">	(<span class="number">2</span>) 自动分配 iP 地址。 </span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 地址池/作用域：</span><br><span class="line">	(<span class="number">1</span>) 存放ip地址等信息的服务器。IP、子网掩码、网关、DNS、<span class="string">&quot;租期&quot;</span>。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> DHCP优点：</span><br><span class="line">	(<span class="number">1</span>) 减少工作量(自动获取IP)、避免 iP 冲突、提高地址利用率(减少租期)。</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> <span class="string">&quot;DHCP 原理&quot;</span>:</span><br><span class="line">    也就是 DHCP 租约过程，分为 <span class="number">4</span> 个步骤：</span><br><span class="line">    (<span class="number">1</span>) 客户端 发送 DHCP Discovery 广播包。</span><br><span class="line">    	客户机广播请求 IP 地址（包含客户机的 MAC 物理地址）。</span><br><span class="line">        也就是说需要先找到动态域名配置服务器做出请求，并且告诉它，我的唯一标识。此时<span class="string">&quot;一台客户机可能会伪造多个mac地址&quot;</span>。</span><br><span class="line">        </span><br><span class="line">    (<span class="number">2</span>) 服务器 响应 DHCP Offer 广播包。</span><br><span class="line">    	服务器响应提供 IP 地址（但无子网掩码，网关，DNS域名解析等信息）。</span><br><span class="line">        此时可能<span class="string">&quot;不止一台服务器响应&quot;</span>，也许有多台服务器为该物理地址提供 offer包。</span><br><span class="line">        先给你看看 IP ，如果觉得可行了，被接受了，再给你后续掩码和域名解析。</span><br><span class="line">        </span><br><span class="line">    (<span class="number">3</span>) 客户端 发送 DHCP Request 广播包。</span><br><span class="line">    	此时，当客户端收到多份 offer包 时，进行选择IP。</span><br><span class="line">        做完选择后，我继续发送请求，请求子网掩码，网关等后续信息参数。</span><br><span class="line">        此时，未被选择的 dhcp服务器，可能有些不回话，有些回话。</span><br><span class="line">        </span><br><span class="line">    (<span class="number">4</span>) 服务器 发送 DHCP ACK 广播包</span><br><span class="line">    	服务器确定了租约，并且提供网卡详细参数 IP、掩码、网关、DNS、<span class="string">&quot;租期&quot;</span>等。</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> <span class="string">&quot;DHCP&quot;</span>续约原理；        </span><br><span class="line">    (<span class="number">5</span>) 获得 ACK 包后，会有一个 iP 有效期（租期）。当租期过半 <span class="number">50</span>% 后，客户机会继续向原来的 DHCP 服务器发送 Request 包。请求续约。</span><br><span class="line">        如果续约成功，之前的租期作废，新的租期从重新获得 ACK 包开始计时。</span><br><span class="line">        如果请求未得到响应，在租期过 <span class="number">87.5</span>%。也就是只剩 <span class="number">1</span>/<span class="number">8</span> 的时间，再次发送 DHCP Request 包，进行请求续约。如果还没得到回应，那么该客户机将重新发送 DHCP Discovery 广播包，请求IP地址。</span><br><span class="line">        若无任何其他 DHCP服务器响应，客户机自动给自己分配一个 <span class="number">169.254</span>.x.x/<span class="number">16</span> 无效的ip地址。如果该局域网其他客户机也被自动分配了该网段的无效地址。还是可以 ping 通<span class="string">&quot;进行局域网通信&quot;</span>。但是不能连接互联网。</span><br><span class="line">        </span><br><span class="line">        <span class="string">&quot;注&quot;</span>：关于租期的长短设置，如果是公共场所，人流量比较大的话，最好设置租期短一些，以免造成 iP 地址浪费。如果是企业公司里面，人员比较固定，可以把租期设长一些，减小 DHCP 服务器分配ip的压力。</span><br><span class="line">    </span><br><span class="line">    (<span class="number">6</span>) 当客户机不再需要 IP 地址时，便会通知服务器已<span class="string">&quot;释放了 IP 地址&quot;</span>。此通知一般在<span class="string">&quot;改手动配置ip时发送&quot;</span>，也可以<span class="string">&quot;手动发送&quot;</span>（ipconfig /release）。</span><br><span class="line">    	</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/07/31/2020.07.31%20DHCP%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A8/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/31/2020.07.31%20DHCP%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A8/">展开全文 >></a>
     </p>
     
 
