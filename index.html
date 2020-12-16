@@ -207,6 +207,233 @@
             
 
   
+    <article id="post-2020.12.05 开始 java 征程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/12/05/2020.12.05%20%E5%BC%80%E5%A7%8B%20java%20%E5%BE%81%E7%A8%8B/" target="_blank">java基础</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/12/05/2020.12.05%20%E5%BC%80%E5%A7%8B%20java%20%E5%BE%81%E7%A8%8B/" class="archive-article-date">
+        <time datetime="2020-12-05T12:00:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-05</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="java"><a href="#java" class="headerlink" title="java"></a>java</h1><h2 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h2><ul>
+<li><strong>C</strong>：底层，嵌入式开发。</li>
+<li>**C/C++**：操作系统，游戏引擎，服务器，Linux。面向对象。</li>
+<li><strong>java</strong>：企业级软件开发，安卓移动软件，很多方面。</li>
+<li><strong>PHP</strong>：适用于中小型网站开发。</li>
+<li>Object-C/Swift：苹果应用开发，ios。</li>
+<li><strong>javaScript</strong>：与java没关系，用于浏览器端效果开发，H5前端开发。Node.js等等。</li>
+<li><strong>Python</strong>：人生苦短，我学python。Web编程，多媒体应用，引擎；机器学习，人工智能，图像处理，信息安全。</li>
+<li>C#：微软发布的语言，面向对象，类似于java，闭源，运行于.NET Framework之上。开发基于windows平台的桌面软件首选。</li>
+<li><strong>GO</strong>：Golang，与C语法类似，专为并发而生？</li>
+</ul>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>JavaEE（java Enterprise Edition）：java企业版，服务器开发。</li>
+<li>JavaSE：JavaEE包含JavaSE，定位个人计算机的应用。</li>
+<li>javaME（java Micro Edition）：微型版本。不常用，不用学。</li>
+</ul>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
+<li>前期学习简单，难在后期的协作与管理架构等等……</li>
+<li>面向对象，高性能，分布式，多线程，跨平台，安全性，健壮性。</li>
+<li>java是<strong>编译型</strong>与<strong>解释型语言</strong>的结合。注意，不是说java是运行时编译。</li>
+<li>java源程序-&gt;编译生成-&gt;字节码-&gt;提供给java虚拟机JVM-&gt;解释运行。</li>
+</ul>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li>JVM ：java运行时环境，因为<strong>有适用于各个平台的虚拟机，所以java程序可跨平台！</strong>。</li>
+<li>JRE ：包含JVM，及相关包，类。</li>
+<li>JDK ：包含JRE，和编译器与调试器，等开发程序文件。</li>
+</ul>
+<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><h2 id="JDK-下载、安装、配置"><a href="#JDK-下载、安装、配置" class="headerlink" title="JDK 下载、安装、配置"></a>JDK 下载、安装、配置</h2><ul>
+<li><p>官网下载 JDK 包，然后进行安装。java SE development kit</p>
+</li>
+<li><p>安装目录在 “<strong>C:\program\java</strong>“</p>
+</li>
+<li><p>配置系统环境变量</p>
+<ul>
+<li>环境变量包括：系统环境变量，与用户环境变量。两者区别是适用范围不同。</li>
+</ul>
+</li>
+<li><p>JAVA_HOME变量，添加jdk主目录：”C:\Program\java\jdk1.8.0;”</p>
+<ul>
+<li>CLASSPATH变量，添加lib和jar目录：<strong>JDK1.5以上不需要配置。</strong></li>
+<li>“%JAVA_HOME%\lib;”<ul>
+<li>“%JAVA_HOME%\lib\tools.jar;”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Path变量，添加两条bin目录：</p>
+<ul>
+<li>“%JAVA_HOME%\bin;”<ul>
+<li>“%JAVA_HOME%\jre\bin;”</li>
+<li>注意，将两条记录放置到 <strong>path 目录最前面</strong>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>以后如果换 JDK 版本的话，<strong>只需要改 JAVA_HOME变量就行了</strong>，其他两个都是引用了该变量的。</p>
+</li>
+</ul>
+<h2 id="第一个程序"><a href="#第一个程序" class="headerlink" title="第一个程序"></a>第一个程序</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Welcome</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">clss welcome2&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello World2&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>public 是访问修饰符，表示外部程序可以如何访问改类。</p>
+</li>
+<li><p>class 为定义一个类。java是面向对象的语言。<strong>所有的代码都必须在类中。</strong></p>
+</li>
+<li><p>一个源文件，<strong>至多只能有一个 public class类，且文件名，必须与 public 类类名一致。</strong> 文件名以 .java 扩展名结尾。</p>
+</li>
+<li><p>一个源文件可以有多个 class。</p>
+</li>
+<li><p><strong>编译</strong> .java <strong>生成</strong>的<strong>字节码文件</strong>以 <strong>.class</strong> 结尾。</p>
+<h2 id="集成开发环境"><a href="#集成开发环境" class="headerlink" title="集成开发环境"></a>集成开发环境</h2></li>
+</ul>
+<h3 id="常见ide"><a href="#常见ide" class="headerlink" title="常见ide"></a>常见ide</h3><ul>
+<li>eclipse</li>
+<li>netbeans</li>
+<li>idea</li>
+</ul>
+<h3 id="配置使用-eclipse"><a href="#配置使用-eclipse" class="headerlink" title="配置使用 eclipse"></a>配置使用 eclipse</h3><ul>
+<li>eclipse 的版本选择，<strong>取决于 JDK</strong> 而不是计算机操作系统。</li>
+<li>New 一个 java project，名称顺便取。<ul>
+<li>src 中保存我们所编写的源文件</li>
+<li>bin 中保存源码编译所生成的字节码 .class</li>
+<li>JRE 中自带一些程序运行，所需要的一些字节码。</li>
+</ul>
+</li>
+<li>在 src 中右击，新建一个类文件，自动保存在 src 文件夹中 .java。</li>
+<li>ctrl + F11 运行，自动生成 .class 在bin中。</li>
+</ul>
+<h1 id="桌球游戏代码"><a href="#桌球游戏代码" class="headerlink" title="桌球游戏代码"></a>桌球游戏代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.awt.*;</span><br><span class="line"><span class="keyword">import</span> javax.swing.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BallGame4</span> <span class="keyword">extends</span> <span class="title">JFrame</span></span>&#123;</span><br><span class="line">	Image ball = Toolkit.getDefaultToolkit().getImage(<span class="string">&quot;images/ball.png&quot;</span>);</span><br><span class="line">	Image desk = Toolkit.getDefaultToolkit().getImage(<span class="string">&quot;images/desk.png&quot;</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">double</span> x = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">double</span> y = <span class="number">100</span>;</span><br><span class="line">	<span class="comment">// 自定义为，运动方向与x轴的夹角。</span></span><br><span class="line">	<span class="keyword">double</span> degree = <span class="number">3.14</span>/<span class="number">3</span>; <span class="comment">//角度 , 幅度表示 180° = 3.14</span></span><br><span class="line">	<span class="keyword">double</span> speed = <span class="number">10</span>; <span class="comment">// 速度</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//画窗口的方法</span></span><br><span class="line">    <span class="comment">//该方法，在调用完 launchFrame() 后自动被调用</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">paint</span><span class="params">(Graphics g)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;窗口被画了一次&quot;</span>);</span><br><span class="line">		g.drawImage(desk, <span class="number">0</span>, <span class="number">0</span>, <span class="keyword">null</span>);</span><br><span class="line">		g.drawImage(ball, (<span class="keyword">int</span>)x, (<span class="keyword">int</span>)y, <span class="keyword">null</span>);</span><br><span class="line">		</span><br><span class="line">        <span class="comment">// 改变下一次球所在坐标。</span></span><br><span class="line">		x += speed*Math.cos(degree);</span><br><span class="line">		y += speed*Math.sin(degree);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 上下碰撞，调方向</span></span><br><span class="line">		<span class="keyword">if</span>( y &gt; <span class="number">500</span>-<span class="number">40</span>-<span class="number">30</span> || y &lt; <span class="number">40</span>+<span class="number">40</span> )</span><br><span class="line">			degree *= -<span class="number">1</span>;</span><br><span class="line">		<span class="comment">// 左右碰撞，调方向</span></span><br><span class="line">		<span class="keyword">if</span>( x &lt; <span class="number">40</span> || x &gt; <span class="number">856</span>-<span class="number">40</span>-<span class="number">30</span> )</span><br><span class="line">			degree = <span class="number">3.14</span>-degree;</span><br><span class="line">        </span><br><span class="line">		<span class="comment">// 调速度，每次加载一次，速度都变慢。</span></span><br><span class="line">		<span class="keyword">if</span>(speed &gt; <span class="number">0</span>)</span><br><span class="line">			speed -= <span class="number">0.01</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 窗口加载</span></span><br><span class="line">    <span class="comment">// 该方法在main中被调用一次，随后，如果最小化再打开 figure 会再自动被调用一次</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">launchFrame</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		setSize(<span class="number">856</span>, <span class="number">500</span>);</span><br><span class="line">		setLocation(<span class="number">50</span>,<span class="number">50</span>);</span><br><span class="line">		setVisible(<span class="keyword">true</span>);</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">			repaint();<span class="comment">//重复调用 paint() 方法</span></span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				Thread.sleep(<span class="number">40</span>);</span><br><span class="line">			&#125;<span class="keyword">catch</span>(Exception e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 函数执行入口</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;欢迎来到桌球游戏&quot;</span>);</span><br><span class="line">		<span class="comment">//声明，初始化一个 BallGame4() 对象</span></span><br><span class="line">		BallGame4 game = <span class="keyword">new</span> BallGame4();</span><br><span class="line">		game.launchFrame();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>在运行一个类之前，必须先右击，Run As -&gt; Java Application<ul>
+<li>不能贸然使用快捷键 ctrl + F11 因为Tomcat 还没与项目进行关联好。</li>
+</ul>
+</li>
+<li>与传统的直角坐标系不同，在windows窗口中，左上角为(0,0)<ul>
+<li>越往下，y越大；</li>
+<li>越往右，x越大；</li>
+<li>所以 x+=10<em>cos夹角，y+=10</em>sin夹角时，球先往右下走，而不是右上走！</li>
+</ul>
+</li>
+<li>JFrame窗口，一旦被最小化，则停止加载，相当于中断，整个程序。<ul>
+<li>就停在那儿了，即使程序里面有死循环，仍然停止。</li>
+<li>而，一旦打开最小化的窗口，就会<strong>自动执行一次窗口加载方法（launchFrame）</strong>。</li>
+</ul>
+</li>
+<li>整个游戏界面相当于一个类（BallGame），该类的父类为 JFrame 窗口类。<ul>
+<li>背景图片，坐标，速度都是该类的一些成员变量。所有类方法都可以共用。</li>
+<li>对类的所有操作，封装成方法。比如，<strong>加载窗口方法</strong>，与<strong>添加元素方法</strong>比如背景图片，图片的位置。</li>
+</ul>
+</li>
+<li>疑问：<ul>
+<li>为什么，paint()方法不需要用代码实现调用，而是每次加载完窗口自动调用的？</li>
+<li>repaint()方法又是声明东西，没用被定义，咋还可以用？</li>
+</ul>
+</li>
+</ul>
+<h1 id="相关知识、经验"><a href="#相关知识、经验" class="headerlink" title="相关知识、经验"></a>相关知识、经验</h1><ul>
+<li>java中awt组件，swing组件<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_32725491/article/details/78701620">参考解释链接</a></li>
+<li>awt：抽象窗口工具包，早年编写图型界面应用程序的包。直接调用的是<strong>操作系统的图形库</strong>。<strong>优点：速度快，适用于硬件方面的嵌入式开发。包名java.awt</strong></li>
+<li>swing：包含awt的所用功能，还对其功能进行了大幅度优化扩充。<strong>对平台无依赖，具有跨平台性</strong>。**速度慢，效果好，一般推荐使用。包名javax.swing **</li>
+</ul>
+</li>
+<li>extends JFrame<ul>
+<li>在java中，JFrame是官方提供的一个类，这个类的主要功能是使用该类可以快速的开发出Java界面应用程序（c/s架构），属于java.swing知识体系；它是屏幕上window的对象，能够最大化、最小化、关闭。</li>
+</ul>
+</li>
+<li>Image类与图片加载方法<ul>
+<li>导入：<strong>Toolkit.getDefaultToolkit().getImage(“Image/pic.jpg”);</strong><ul>
+<li>公共工具包</li>
+<li>默认工具包中的加载图片方法。</li>
+<li>一般将图片移动到工程文件夹内，新建的图片文件夹内。</li>
+</ul>
+</li>
+<li>存储：使用<strong>Image</strong>抽象护具类型</li>
+<li>放置：<strong>g.drawImage(desk, 0, 0, null);</strong> 其中，g 是一个 <strong>Graphics</strong> 对象，desk为一个 Image 对象，然后是坐标轴。</li>
+</ul>
+</li>
+</ul>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/12/05/2020.12.05%20%E5%BC%80%E5%A7%8B%20java%20%E5%BE%81%E7%A8%8B/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2020.10.27 变量与基本类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1461,111 +1688,6 @@
 
 
   
-    <article id="post-2020.09.19 Altium Designer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/09/19/2020.09.19%20Altium%20Designer/" target="_blank">Altium Designer</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/09/19/2020.09.19%20Altium%20Designer/" class="archive-article-date">
-        <time datetime="2020-09-19T14:11:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-19</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="安装与注册"><a href="#安装与注册" class="headerlink" title="安装与注册"></a>安装与注册</h1><p><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1bqSYZbXgsIJ_11mrKu74pg">https://pan.baidu.com/s/1bqSYZbXgsIJ_11mrKu74pg</a>  密码：jykg</p>
-<p>这个是从微信 “火耳软件” 找到资源，AD 2019 。</p>
-<h1 id="学习途径"><a href="#学习途径" class="headerlink" title="学习途径"></a>学习途径</h1><p>额，我目前所学的是 ”bilibili 凡亿教育“ 发表的免费学习视频。</p>
-<p>他们这个教育机构做得感觉还是不错的，如果感觉白嫖的不足以满足自己，可以去花一点钱，多学点知识。</p>
-<ul>
-<li>淘宝课程店：<a href="fanyedu.taobao.com">fanyedu.taobao.com</a></li>
-<li>官网：<a href="fanyedu.com">fanyedu.com</a> ——- 里面也有很多免费的课程</li>
-</ul>
-<p>其他学习 PCB 设计交流的联盟论坛：</p>
-<ul>
-<li>PCB联盟网：<a href="pcbbar.com">pcbbar.com</a>   —— 可进行一些资料的下载，以及问题的提问。</li>
-<li><a href="mailto:&#112;&#x63;&#98;&#x71;&#97;&#64;&#102;&#x61;&#110;&#x79;&#45;&#101;&#x64;&#97;&#46;&#99;&#x6f;&#x6d;">&#112;&#x63;&#98;&#x71;&#97;&#64;&#102;&#x61;&#110;&#x79;&#45;&#101;&#x64;&#97;&#46;&#99;&#x6f;&#x6d;</a>   ———- PCB图纸公益评审提交邮箱</li>
-</ul>
-<p>PCB 生产，外包，制版的话</p>
-<ul>
-<li>嘉立创</li>
-<li>凡亿PCB</li>
-</ul>
-    
-    <a class="article-more-a" href="/2020/09/19/2020.09.19%20Altium%20Designer/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PCB</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/19/2020.09.19%20Altium%20Designer/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1728,6 +1850,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
