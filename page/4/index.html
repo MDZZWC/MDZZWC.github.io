@@ -207,94 +207,6 @@
             
 
   
-    <article id="post-2020.08.04 DNS部署与安全2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/04/2020.08.04%20DNS%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A82/" target="_blank">DNS部署与安全2</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/04/2020.08.04%20DNS%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A82/" class="archive-article-date">
-        <time datetime="2020-08-04T09:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-04</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="第十一章、DNS部署与安全2"><a href="#第十一章、DNS部署与安全2" class="headerlink" title="第十一章、DNS部署与安全2"></a>第十一章、DNS部署与安全2</h1><h2 id="主DNS服务器部署步骤："><a href="#主DNS服务器部署步骤：" class="headerlink" title="主DNS服务器部署步骤："></a>主DNS服务器部署步骤：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 打开 windows 镜像文件所在光盘。按照组件，找到域名系统（DNS）。进行安装。</span><br><span class="line">	<span class="number">1</span>) 一旦安装完成之后。计算机 TCP53 和 UDP53 两个端口都被打开了。</span><br><span class="line">	<span class="number">2</span>) 即使你没有修改 DNS 配置，但是它自带访问根域的地址。所以，只要你这太域名解析服务器能够上网，他就能给客户机提供域名解析服务(虽然工作效率慢了点)。</span><br><span class="line">    </span><br><span class="line"><span class="number">2.</span> 正向查找区域：</span><br><span class="line">	<span class="number">1</span>) 新建一个区域。主要区域(该区域负责该域名，也就是进行权威解析)，辅助区域(主要区域的备份或辅助工作)，根域(用不到)。</span><br><span class="line">    <span class="number">2</span>) 创建区域解析文件(.dns 结尾)。所有该域名，和子域名的 DNS解析文件，都保存在此文件中。</span><br><span class="line">    <span class="number">3</span>) 自动更新，保持不变就行。此操作设计到 域 知识。</span><br><span class="line">    <span class="number">4</span>) 新建成功后几个参数的含义；</span><br><span class="line">    	(<span class="number">1</span>) <span class="string">&quot;起始授权机构（SOA）&quot;</span>：表示该域名的负责服务器是谁。</span><br><span class="line">        (<span class="number">2</span>) <span class="string">&quot;名称服务器(NS)&quot;</span>：表示可以给该域名做解析的 DNS 服务器有那些。一般有主域服务器，和辅助服务器。通俗的讲就是我认为合法的服务器。</span><br><span class="line">        (<span class="number">3</span>) 别名（<span class="string">&quot;CNAME&quot;</span>）：表示给正向解析记录，新建的一个别名解析。比如，给 www.fangning.com 新建另外一个名称 www2.fangning.com。两个域名指的是同一条解析记录。</span><br><span class="line">        别名也叫 Aliases。其实百度服务器的别名是，www.baidu.com。真名叫 www.a.shifen.com。</span><br><span class="line">        (<span class="number">4</span>) <span class="string">&quot;主机A&quot;</span>：正向解析记录。</span><br><span class="line">        (<span class="number">5</span>) <span class="string">&quot;PTR&quot;</span>记录：反向解析记录。</span><br><span class="line">        (<span class="number">6</span>) <span class="string">&quot;MX&quot;</span>：邮件交换记录。邮箱地址也是相当于一种域名，所以也需要进行解析。发送邮箱的时候，需要对目标邮箱进行解析。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 新建一个正向解析记录(A记录)：</span><br><span class="line">	1) 右键-&gt;新建主机。就是给主域名增加一个对辅助域名的正向解析记录。比如给 zzuli.edu.cn 增加一个 acm.zzuli.edu.cn 服务主机的域名解析。</span><br><span class="line">    <span class="number">2</span>) 配置以下虚拟机的 DNS服务器指向，然后用命令行 nslookup 或 ping 检验一下。</span><br><span class="line">    <span class="number">3</span>) 如果需要给公司所有人修改，那么就需要修改 DHCP 地址池的 DNS配置。</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 在使用 nslookup 进行域名解析的时候，如果想要显示被访问的 DNS 服务器名称。将 UnKnown 该成服务器名称。</span><br><span class="line">	<span class="number">1</span>) 先需要在正向解析里面，添加一个主机(A记录)，地址填该服务器的地址，主机名称一般取 dns1。</span><br><span class="line">    2) 建立的时候，需要勾选同时建立反向解析指针(PTR)。这时就会出现一条域名解析记录 dns1.fangning.com -&gt; 192.168.190.2</span><br><span class="line">    <span class="number">3</span>) 需要添加一个<span class="string">&quot;反向查找区域&quot;</span>。反向查询区域，要设置成 DNS服务器所在的网段。</span><br><span class="line">    <span class="number">4</span>) 在该区域列表中，新建一个方向解析指针 PTR。所指对象，从正向解析主机记录列表里面进行查找。</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 另外一台客户机，进行DNS验证时，必须保证能够ping通该域名解析服务器。</span><br><span class="line">并且设置DNS地址为需要验证的服务器地址。</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 配置 DNS 转发器：</span><br><span class="line">	1) 在 DNS服务器管理工具中，右击服务器-&gt;属性</span><br><span class="line">    <span class="number">2</span>) 填写配置好的另外一台被转发的 DNS服务器。</span><br><span class="line">    <span class="number">3</span>) 注意，两台通过DNS转发器连接的服务器之间，相互必须要求可以ping通。所属同一局域网，或者能够连接 Internet。</span><br><span class="line">    <span class="number">4</span>) 在本地DNS服务器解决不了的时候，就通过DNS转发器，进行递归查询。</span><br><span class="line">    5) 同时另外一台DNS服务器上面，需要添加好所需要的主机(A记录)。这样子，就可以通过客户机，指向 DNS1，再通过转发器访问 DNS2 -&gt; 从而获取第二台服务器上面的解析记录。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/08/04/2020.08.04%20DNS%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A82/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/04/2020.08.04%20DNS%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A82/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-2020.08.02 DNS部署与安全" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1080,6 +992,109 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/07/26/2020.07.26%20%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2020.07.25 用户与组管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/07/25/2020.07.25%20%E7%94%A8%E6%88%B7%E4%B8%8E%E7%BB%84%E7%AE%A1%E7%90%86/" target="_blank">用户与组管理</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/07/25/2020.07.25%20%E7%94%A8%E6%88%B7%E4%B8%8E%E7%BB%84%E7%AE%A1%E7%90%86/" class="archive-article-date">
+        <time datetime="2020-07-25T08:36:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-25</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="第六章-、用户与组管理"><a href="#第六章-、用户与组管理" class="headerlink" title="第六章 、用户与组管理"></a>第六章 、用户与组管理</h1><h1 id="1、用户"><a href="#1、用户" class="headerlink" title="1、用户"></a>1、用户</h1><h2 id="用户概述："><a href="#用户概述：" class="headerlink" title="用户概述："></a>用户概述：</h2><ul>
+<li>每个用户登陆系统后，都会拥有一个不同的操作权限。</li>
+<li>每个用户都有自己的一个 SID(安全标识符)。</li>
+</ul>
+<p><img src="http://images.fangning.xyz//image-20200725183002321.png" alt="获取SID"></p>
+<ul>
+<li><p>用户 SID: S-1-5-21-2112674742-10913682-775799340-1001<br>系统 SID: S-1-5-21-2112674742-10913682-775799340</p>
+<blockquote>
+<p>用户 SID = 系统SID-用户的UID</p>
+<p>UID: 500</p>
+<p>Administrator的 UID：500</p>
+<pre><code>    普通用户的 UID：从1000开始。</code></pre>
+<p>Linux系统管理员root 的 UID：0 </p>
+</blockquote>
+</li>
+</ul>
+    
+    <a class="article-more-a" href="/2020/07/25/2020.07.25%20%E7%94%A8%E6%88%B7%E4%B8%8E%E7%BB%84%E7%AE%A1%E7%90%86/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/07/25/2020.07.25%20%E7%94%A8%E6%88%B7%E4%B8%8E%E7%BB%84%E7%AE%A1%E7%90%86/">展开全文 >></a>
     </p>
     
 
