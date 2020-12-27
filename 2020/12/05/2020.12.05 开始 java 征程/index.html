@@ -18,7 +18,7 @@
 <meta property="og:description" content="java编程语言 C：底层，嵌入式开发。 **C&#x2F;C++**：操作系统，游戏引擎，服务器，Linux。面向对象。 java：企业级软件开发，安卓移动软件，很多方面。 PHP：适用于中小型网站开发。 Object-C&#x2F;Swift：苹果应用开发，ios。 javaScript：与java没关系，用于浏览器端效果开发，H5前端开发。Node.js等等。 Python：人生苦短，我学python。Web编">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-12-05T12:00:30.000Z">
-<meta property="article:modified_time" content="2020-12-17T10:40:55.970Z">
+<meta property="article:modified_time" content="2020-12-21T07:56:49.697Z">
 <meta property="article:author" content="方宁">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -236,7 +236,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.8k字</span>
+      <span class="post-count">2.1k字</span>
     </span>
   </span>
 
@@ -245,7 +245,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">7分</span>
+      <span class="post-count">8分</span>
     </span>
   </span>
 </div>
@@ -281,9 +281,18 @@
 <li>java源程序-&gt;编译生成-&gt;字节码-&gt;提供给java虚拟机JVM-&gt;解释运行。</li>
 </ul>
 <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
-<li>JVM ：java运行时环境，因为<strong>有适用于各个平台的虚拟机，所以java程序可跨平台！</strong>。</li>
-<li>JRE ：包含JVM，及相关包，类。</li>
-<li>JDK ：包含JRE，和编译器与调试器，等开发程序文件。</li>
+<li>JVM ：java运行时环境，因为<strong>有适用于各个平台的虚拟机，所以java程序可跨平台！</strong>。<ul>
+<li>java————”<strong>编译一次到处运行</strong>“；就是因为JVM的存在。</li>
+<li>java唯一认识的操作系统就是 JVM。而，.class字节码就是JVM该虚拟机的可执行文件。</li>
+<li>java<strong>程序</strong>，编译生成<strong>字节码.class</strong>，字节码由<strong>JVM解释</strong>成对于<strong>各操作系统所认识的机械码</strong>。</li>
+</ul>
+</li>
+<li>JRE ：Java Runtime Enviroment，包含JVM，及相关java SE API。</li>
+<li>JDK ：包含JRE，和编译器与调试器，等编译程序的工具程序。<ul>
+<li>要将 .java 变成 .class 肯定需要一方来完成，它就是 JDK!! —— Java Development kit!</li>
+<li>开发人员所需要用到各种 JDK 中的工具，而各种集成开发环境IDE，也是通过调用JDK中的各种指令工具。</li>
+</ul>
+</li>
 </ul>
 <h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><h2 id="JDK-下载、安装、配置"><a href="#JDK-下载、安装、配置" class="headerlink" title="JDK 下载、安装、配置"></a>JDK 下载、安装、配置</h2><ul>
 <li><p>官网下载 JDK 包，然后进行安装。java SE development kit</p>
@@ -297,20 +306,21 @@
 </li>
 <li><p>JAVA_HOME变量，添加jdk主目录：”C:\Program\java\jdk1.8.0;”</p>
 <ul>
-<li>CLASSPATH变量，添加lib和jar目录：<strong>JDK1.5以上不需要配置。</strong></li>
-<li>“%JAVA_HOME%\lib;”<ul>
-<li>“%JAVA_HOME%\lib\tools.jar;”</li>
+<li>CLASSPATH变量，添加lib和jar目录：<strong>JDK1.5以上不需要配置。</strong><ul>
+<li>java Hello 指令表示启动 JVM 执行 Hello.class然而，如果你不告诉它Hello.class所在路径的话，它是找不到的。所以需要设置默认 CLASSPATH 变量。</li>
+<li>java C:\uses\22157\desktop\Hello.class 是错误的。JVM不认识windows下的路径</li>
+<li>java -classpath C:\users\22157\desktop Hello 是正确的</li>
 </ul>
 </li>
+<li>“%JAVA_HOME%\lib;”</li>
+<li>“%JAVA_HOME%\lib\tools.jar;”</li>
 </ul>
 </li>
 <li><p>Path变量，添加两条bin目录：</p>
 <ul>
-<li>“%JAVA_HOME%\bin;”<ul>
+<li>“%JAVA_HOME%\bin;”</li>
 <li>“%JAVA_HOME%\jre\bin;”</li>
 <li>注意，将两条记录放置到 <strong>path 目录最前面</strong>。</li>
-</ul>
-</li>
 </ul>
 </li>
 <li><p>以后如果换 JDK 版本的话，<strong>只需要改 JAVA_HOME变量就行了</strong>，其他两个都是引用了该变量的。</p>
@@ -319,18 +329,15 @@
 <h2 id="第一个程序"><a href="#第一个程序" class="headerlink" title="第一个程序"></a>第一个程序</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Welcome</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">clss welcome2&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello World2&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><p>public 是访问修饰符，表示外部程序可以如何访问改类。</p>
-</li>
-<li><p>class 为定义一个类。java是面向对象的语言。<strong>所有的代码都必须在类中。</strong></p>
-</li>
-<li><p>一个源文件，<strong>至多只能有一个 public class类，且文件名，必须与 public 类类名一致。</strong> 文件名以 .java 扩展名结尾。</p>
-</li>
-<li><p>一个源文件可以有多个 class。</p>
-</li>
-<li><p><strong>编译</strong> .java <strong>生成</strong>的<strong>字节码文件</strong>以 <strong>.class</strong> 结尾。</p>
-<h2 id="集成开发环境"><a href="#集成开发环境" class="headerlink" title="集成开发环境"></a>集成开发环境</h2></li>
+<li>public 是访问修饰符，表示外部程序可以如何访问改类。</li>
+<li>class 为定义一个类。java是面向对象的语言。<strong>所有的代码都必须在类中。</strong></li>
+<li>一个源文件，<strong>至多只能有一个 public class类，且文件名，必须与 public 类类名一致。</strong> 文件名以 .java 扩展名结尾。</li>
+<li>一个源文件可以有多个 class。</li>
+<li><strong>编译</strong> .java <strong>生成</strong>的<strong>字节码文件</strong>以 <strong>.class</strong> 结尾。</li>
 </ul>
-<h3 id="常见ide"><a href="#常见ide" class="headerlink" title="常见ide"></a>常见ide</h3><ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">java -cp .;c:\jars\* cc.openhome.Hello  </span><br><span class="line">    <span class="comment"># 从当前目录下寻找并运行 cc/openhome/Hello.class 程序，链接C:\jars目录下所有库文件。</span></span><br><span class="line"></span><br><span class="line">javac -sourcepath src -d classers src/Hello.java </span><br><span class="line">    <span class="comment"># 从 .\src 中找到 Hello.java 并编译生成字节码 Hello.class 存放到 ./classers 中</span></span><br><span class="line">    <span class="comment"># windows 中路径使用反斜杠 \</span></span><br><span class="line">    <span class="comment"># JVM 中路径使用斜杠 / ，同Linux </span></span><br></pre></td></tr></table></figure>
+
+<h2 id="集成开发环境"><a href="#集成开发环境" class="headerlink" title="集成开发环境"></a>集成开发环境</h2><h3 id="常见ide"><a href="#常见ide" class="headerlink" title="常见ide"></a>常见ide</h3><ul>
 <li>eclipse</li>
 <li>netbeans</li>
 <li>idea</li>
@@ -347,8 +354,6 @@
 <li>ctrl + F11 运行，自动生成 .class 在bin中。</li>
 </ul>
 <h1 id="桌球游戏代码"><a href="#桌球游戏代码" class="headerlink" title="桌球游戏代码"></a>桌球游戏代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.awt.*;</span><br><span class="line"><span class="keyword">import</span> javax.swing.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BallGame4</span> <span class="keyword">extends</span> <span class="title">JFrame</span></span>&#123;</span><br><span class="line">	Image ball = Toolkit.getDefaultToolkit().getImage(<span class="string">&quot;images/ball.png&quot;</span>);</span><br><span class="line">	Image desk = Toolkit.getDefaultToolkit().getImage(<span class="string">&quot;images/desk.png&quot;</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">double</span> x = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">double</span> y = <span class="number">100</span>;</span><br><span class="line">	<span class="comment">// 自定义为，运动方向与x轴的夹角。</span></span><br><span class="line">	<span class="keyword">double</span> degree = <span class="number">3.14</span>/<span class="number">3</span>; <span class="comment">//角度 , 幅度表示 180° = 3.14</span></span><br><span class="line">	<span class="keyword">double</span> speed = <span class="number">10</span>; <span class="comment">// 速度</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//画窗口的方法</span></span><br><span class="line">    <span class="comment">//该方法，在调用完 launchFrame() 后自动被调用</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">paint</span><span class="params">(Graphics g)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;窗口被画了一次&quot;</span>);</span><br><span class="line">		g.drawImage(desk, <span class="number">0</span>, <span class="number">0</span>, <span class="keyword">null</span>);</span><br><span class="line">		g.drawImage(ball, (<span class="keyword">int</span>)x, (<span class="keyword">int</span>)y, <span class="keyword">null</span>);</span><br><span class="line">		</span><br><span class="line">        <span class="comment">// 改变下一次球所在坐标。</span></span><br><span class="line">		x += speed*Math.cos(degree);</span><br><span class="line">		y += speed*Math.sin(degree);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 上下碰撞，调方向</span></span><br><span class="line">		<span class="keyword">if</span>( y &gt; <span class="number">500</span>-<span class="number">40</span>-<span class="number">30</span> || y &lt; <span class="number">40</span>+<span class="number">40</span> )</span><br><span class="line">			degree *= -<span class="number">1</span>;</span><br><span class="line">		<span class="comment">// 左右碰撞，调方向</span></span><br><span class="line">		<span class="keyword">if</span>( x &lt; <span class="number">40</span> || x &gt; <span class="number">856</span>-<span class="number">40</span>-<span class="number">30</span> )</span><br><span class="line">			degree = <span class="number">3.14</span>-degree;</span><br><span class="line">        </span><br><span class="line">		<span class="comment">// 调速度，每次加载一次，速度都变慢。</span></span><br><span class="line">		<span class="keyword">if</span>(speed &gt; <span class="number">0</span>)</span><br><span class="line">			speed -= <span class="number">0.01</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 窗口加载</span></span><br><span class="line">    <span class="comment">// 该方法在main中被调用一次，随后，如果最小化再打开 figure 会再自动被调用一次</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">launchFrame</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		setSize(<span class="number">856</span>, <span class="number">500</span>);</span><br><span class="line">		setLocation(<span class="number">50</span>,<span class="number">50</span>);</span><br><span class="line">		setVisible(<span class="keyword">true</span>);</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">			repaint();<span class="comment">//重复调用 paint() 方法</span></span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				Thread.sleep(<span class="number">40</span>);</span><br><span class="line">			&#125;<span class="keyword">catch</span>(Exception e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 函数执行入口</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;欢迎来到桌球游戏&quot;</span>);</span><br><span class="line">		<span class="comment">//声明，初始化一个 BallGame4() 对象</span></span><br><span class="line">		BallGame4 game = <span class="keyword">new</span> BallGame4();</span><br><span class="line">		game.launchFrame();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
 
 <ul>
 <li>在运行一个类之前，必须先右击，Run As -&gt; Java Application<ul>
@@ -399,6 +404,7 @@
 <li>放置：<strong>g.drawImage(desk, 0, 0, null);</strong> 其中，g 是一个 <strong>Graphics</strong> 对象，desk为一个 Image 对象，然后是坐标轴。</li>
 </ul>
 </li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/bughui/p/7422304.html">编程规范</a></li>
 </ul>
 
     
@@ -535,6 +541,15 @@
 
 
 <nav id="article-nav">
+  
+    <a href="/2020/12/15/2020.12.15%20java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          java基础
+        
+      </div>
+    </a>
   
   
     <a href="/2020/11/02/2020.10.27%20%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" id="article-nav-older" class="article-nav-link-wrap">
@@ -733,6 +748,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SQLServer</a>
               </li>
              
               <li class="article-tag-list-item">

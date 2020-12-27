@@ -207,6 +207,449 @@
             
 
   
+    <article id="post-2020.09.10 搭建开发环境编写及仿真" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/" target="_blank">zigbee环境搭建</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/" class="archive-article-date">
+        <time datetime="2020-09-10T12:46:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-10</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="软件安装，程序编写运行，烧录"><a href="#软件安装，程序编写运行，烧录" class="headerlink" title="软件安装，程序编写运行，烧录"></a>软件安装，程序编写运行，烧录</h1><h2 id="IAR安装"><a href="#IAR安装" class="headerlink" title="IAR安装"></a>IAR安装</h2> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> IAR程序下载:</span><br><span class="line">    <span class="number">1</span>) 不要从脚本之家之类的网站下载软件。否则，你的浏览器会被恶意串改主页。并且，电脑上会被恶意下载软件。</span><br><span class="line">    <span class="number">2</span>) 从官网下载最新版的 IAR <span class="keyword">for</span> <span class="number">8051</span> 就行了。</span><br><span class="line">    </span><br><span class="line"><span class="number">2.</span> IAR程序破解:   教程：<span class="string">&quot; https://blog.csdn.net/qq_38351824/article/details/85005672 &quot;</span></span><br><span class="line">    <span class="number">1</span>) 从可靠途径获得破解软件。</span><br><span class="line">    <span class="number">2</span>) 运行破解软件，选择所需要破解的版本。生成密钥</span><br><span class="line">    <span class="number">3</span>) 将密钥复制到 IAR程序密钥验证 步骤中，注意断网。</span><br><span class="line">    <span class="number">4</span>) IAR 会在生成一个文本，给它放在桌面。</span><br><span class="line">    <span class="number">5</span>) 将该文本路径填写到 破解软件 第二栏中，生成另外一个破解 文本。</span><br><span class="line">    <span class="number">6</span>) 将破解文本填写到 IAR程序 注册所需文件中，然后一直下一步就行了。</span><br><span class="line">    <span class="comment"># 注意，最后提取库文件的时候会失败，因为 IAR库文件 是需要另外一套 password 的。</span></span><br><span class="line">    <span class="comment"># 但是也不需要担心，我们一般用不到库文件，或者即使要用，也是后期手动下载导入。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">zigbee</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2020.09.09 zigbee 概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/" target="_blank">zigbee概述</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/" class="archive-article-date">
+        <time datetime="2020-09-09T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-09</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="zigbee"><a href="#zigbee" class="headerlink" title="zigbee"></a>zigbee</h1><h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> zigbee 不像 <span class="number">51</span>单片机 只需要理解里面的寄存器就可以玩转:</span><br><span class="line">    <span class="number">1</span>) zigbee 最主要的是协议栈。它包含了很多的协议站，以及相关代码。这是最难的。</span><br><span class="line">    <span class="number">2</span>) 资料方面，互联网上关于 zigbee 相关的深入浅出的资料很少。特别是关于讲解<span class="string">&#x27;协议栈&#x27;</span>这一方面。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 术语:</span><br><span class="line">    <span class="number">1</span>) zigbee, zigbee通信方式，zigbee协议 三者都是一个意思。</span><br><span class="line">    <span class="number">2</span>) 节点，无线模块，无线设备，三者都是一个意思。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 计算机之间，局域网采用以太网协议:</span><br><span class="line">    <span class="number">1</span>) zigbee之间通信，同样的，采用zigbee协议</span><br><span class="line">    <span class="number">2</span>) 作用：<span class="string">&#x27;构建无线局域网！！&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 如果一个无线局域网用于传感器的数据收集和监控，那么这个网络就叫做<span class="string">&#x27;无线传感器网络&#x27;</span></span><br><span class="line">    <span class="number">1</span>) 也就是说，无线传感器网络是无线局域网的一个具体应用。</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 已经有了 蓝牙 和 wifi 为什么还要用 zigbee:</span><br><span class="line">    <span class="number">1</span>) 蓝牙：功耗低，但是组件网络的节点数少 <span class="number">7</span>~<span class="number">8</span>个。</span><br><span class="line">    <span class="number">2</span>) wifi：通信功率 比较大， 功耗大。</span><br><span class="line">    <span class="number">3</span>) zigbee：可以组将大概模网络，节点可以上万个！功耗低(cc <span class="number">2530</span> 正常工作电流<span class="number">8</span>mA, 最低工作达到几个uA)。</span><br><span class="line">    	缺点：通信速率比较小，<span class="number">250</span> kbs。比较适合传感器的信息传送。</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 应用方面:</span><br><span class="line">    <span class="number">1</span>) 家具方面：可以用电池，或者太阳能供电。</span><br><span class="line">    <span class="number">2</span>) 工业方面：传统使用总线组将局域网，如果有zigbee的话，就可以无线组网。</span><br><span class="line">    <span class="number">3</span>) 农业方面：组将无线传感器网络，温湿度传感器，二氧化碳浓度等传感器的数据组网收集。</span><br><span class="line">    <span class="number">4</span>) 医疗方面：......</span><br><span class="line">    <span class="number">5</span>) 物联网时代，zigbee 使用十分频繁。</span><br><span class="line"></span><br><span class="line"><span class="number">7.</span> zigbee 模块一般配合上位机构建控制系统:</span><br><span class="line">    <span class="number">1</span>) 上位机可以是 pc，也可以是通过互联网的远程服务器。</span><br><span class="line">    <span class="number">2</span>) 上位机可以实现对 zigbee 系统中的元件控制。</span><br><span class="line">    <span class="number">3</span>) 主 zigbee 与 计算机之间 是<span class="string">&#x27;采用串口进行通信&#x27;</span>的。也就是和 arduino 串口通信一样，需要使用一根数据线连接电脑。计算机获取数据。 </span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">zigbee</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hexo 默认文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/09/03/hexo%20%E9%BB%98%E8%AE%A4%E6%96%87%E7%AB%A0/" target="_blank">Hello world</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/09/03/hexo%20%E9%BB%98%E8%AE%A4%E6%96%87%E7%AB%A0/" class="archive-article-date">
+        <time datetime="2020-09-03T09:42:39.545Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-03</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+    
+    <a class="article-more-a" href="/2020/09/03/hexo%20%E9%BB%98%E8%AE%A4%E6%96%87%E7%AB%A0/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">个人博客搭建</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/09/03/hexo%20%E9%BB%98%E8%AE%A4%E6%96%87%E7%AB%A0/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2020.08.24 PKI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/08/24/2020.08.24%20PKI/" target="_blank">PKI</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/08/24/2020.08.24%20PKI/" class="archive-article-date">
+        <time datetime="2020-08-24T14:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-24</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="PKI"><a href="#PKI" class="headerlink" title="PKI"></a>PKI</h1><h2 id="什么是-PKI"><a href="#什么是-PKI" class="headerlink" title="什么是 PKI"></a>什么是 PKI</h2>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> Public Key Infrastructure：公钥基础设施</span><br><span class="line">    <span class="number">1</span>) 作用：通过加密技术 和 数字签名 保证信息的安全。例如：互联网中数据传输过程中进行加密、</span><br><span class="line">    <span class="number">2</span>) 组成：<span class="string">&#x27;公钥加密技术、数字证书、CA&#x27;</span>、RA......</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 信息安全三要素:</span><br><span class="line">    <span class="number">1</span>) <span class="string">&#x27;机密性&#x27;</span>：别人拿到数据，但是看不懂，破不开。</span><br><span class="line">    <span class="number">2</span>) <span class="string">&#x27;完整性&#x27;</span>：要防止接受到的数据不能被是被中间人破坏，篡改的。如果被破坏了，接收方不能获取，需要重新发送。</span><br><span class="line">    <span class="number">3</span>) <span class="string">&#x27;身份验证/操作的不可否认性&#x27;</span>：检查接收方获得的数据是否是由发送方发出的。防止数据被伪造发送，就像伪 DHCP 服务器发送 Offer 包，导致客户机获取网络配置失败。</span><br><span class="line">	<span class="comment"># 这些三种技术，都包含在 PKI 技术范畴。无论那种加密技术，都有包含 PKI 技术。</span></span><br><span class="line">    </span><br><span class="line"><span class="number">3.</span> 应用领域:</span><br><span class="line">    <span class="number">1</span>) SSL/HTTPS ：网页信息技术。（https = http ssl）</span><br><span class="line">    <span class="number">2</span>) IPsecVPN：很多网络公司用到的 vpn。</span><br><span class="line">    <span class="number">3</span>) 以及部分远程访问 VPN。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2020/08/24/2020.08.24%20PKI/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/08/24/2020.08.24%20PKI/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2020.08.22 BFS广度优先遍历" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/08/22/2020.08.22%20BFS%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/" target="_blank">BFS广度搜索</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/08/22/2020.08.22%20BFS%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/" class="archive-article-date">
+        <time datetime="2020-08-22T09:14:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-22</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="BFS-广度优先遍历"><a href="#BFS-广度优先遍历" class="headerlink" title="BFS 广度优先遍历"></a>BFS 广度优先遍历</h1><h2 id="经验"><a href="#经验" class="headerlink" title="经验"></a>经验</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 不同于 深度优先遍历dfs ———— 递归式遍历(所问即所答)。</span><br><span class="line">	<span class="number">1</span>) 广度优先遍历采用的是 迭代遍历的方式，非递归只有循环.   </span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 该算法主要思想是:</span><br><span class="line">    <span class="number">1</span>) 从<span class="string">&#x27;最开始&#x27;</span>的<span class="string">&#x27;第一个节点&#x27;</span>，按照一种固定的规律，<span class="string">&#x27;遍历出&#x27;</span>与之<span class="string">&#x27;相邻的节点&#x27;</span>。</span><br><span class="line">    <span class="number">2</span>) 采用的存储数据结构是 ———— <span class="string">&#x27;队列&#x27;</span>。有时根据题目需求和效率需求，会采用 c++ stl容器 ———— <span class="string">&#x27;优先队列&#x27;</span>( Priority queue )。</span><br><span class="line">    <span class="number">3</span>) <span class="string">&#x27;手动添加第一个&#x27;</span>结点到队列，然后进入循环体，<span class="string">&#x27;直到队列为空&#x27;</span>或<span class="string">&#x27;找到目标&#x27;</span>结束遍历。遍历的同时，<span class="string">&#x27;会向&#x27;</span>队列中<span class="string">&#x27;添加新的节点&#x27;</span>，<span class="string">&#x27;删除已经遍历过的节点&#x27;</span>。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 结构体队列:</span><br><span class="line">    <span class="number">1</span>) 大多数情况下，我们采用的对象并不是简单的级别数据类型。需要我们<span class="string">&#x27;自己设定抽象数据类型&#x27;</span>。</span><br><span class="line">    <span class="number">2</span>) 比如跑图的时候，需要记录 <span class="string">&#x27;步数step、坐标xy、路径string&#x27;</span>。这些记录每走一步，都需要记录下来，所以定义一个结构体，然后<span class="string">&#x27;采用结构体队列&#x27;</span>来存储遍历时的<span class="string">&#x27;中间结果&#x27;</span>。</span><br><span class="line">    </span><br><span class="line"><span class="number">4.</span> 结构体声明:</span><br><span class="line">    struct node&#123;</span><br><span class="line">        int x, y;</span><br><span class="line">        node( int x1, int y1 )&#123;</span><br><span class="line">            x = x1;</span><br><span class="line">            y = y1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    构造方法的使用:</span><br><span class="line">        node t( <span class="number">1</span>, <span class="number">1</span>);   <span class="comment"># 声明了一个结构体变量，初始化成员 x = 1, y = 1 </span></span><br><span class="line">    </span><br><span class="line"><span class="number">5.</span> 队列的操作:</span><br><span class="line">    queue&lt;node&gt; q;		<span class="comment"># 定义一个结构体队列</span></span><br><span class="line">    q.push( node t );	<span class="comment"># 添加一个节点到队列</span></span><br><span class="line">    q.pop( node t );	<span class="comment"># 从队列删除一个节点</span></span><br><span class="line">    q.front();		    <span class="comment"># 读出队列一个节点</span></span><br><span class="line">    q.empty();		    <span class="comment"># 判断队列是否为空 true/false</span></span><br><span class="line">    q.size();		   	<span class="comment"># 读取队列中元素个数</span></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2020/08/22/2020.08.22%20BFS%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/08/22/2020.08.22%20BFS%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2020.08.20 域3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -651,489 +1094,9 @@
 
 
   
-    <article id="post-2020.08.13 IIS 之 FTP 服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/13/2020.08.13%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A8/" target="_blank">FTP服务器搭建</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/13/2020.08.13%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="archive-article-date">
-        <time datetime="2020-08-13T11:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-13</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="FTP-服务器搭建"><a href="#FTP-服务器搭建" class="headerlink" title="FTP 服务器搭建"></a>FTP 服务器搭建</h1><h2 id="FTP服务器"><a href="#FTP服务器" class="headerlink" title="FTP服务器"></a>FTP服务器</h2><ul>
-<li>File Transfer Protocol：文件传输协议。</li>
-<li>端口号： TCP 20 / 21 </li>
-<li>FTP 工作方式：<ul>
-<li>主动(活动)模式。</li>
-<li>被动模式。</li>
-</ul>
-</li>
-</ul>
-    
-    <a class="article-more-a" href="/2020/08/13/2020.08.13%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A8/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/13/2020.08.13%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A8/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.08.12 IIS 之 Web 服务器3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/12/2020.08.12%20IIS%20%E4%B9%8B%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A83/" target="_blank">IIS之Web服务器3</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/12/2020.08.12%20IIS%20%E4%B9%8B%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A83/" class="archive-article-date">
-        <time datetime="2020-08-12T12:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="IIS-之-Web-服务器3"><a href="#IIS-之-Web-服务器3" class="headerlink" title="IIS 之 Web 服务器3"></a>IIS 之 Web 服务器3</h1><h2 id="站点类型"><a href="#站点类型" class="headerlink" title="站点类型"></a>站点类型</h2><ol>
-<li><p>静态网站： 一般由扩展名为 .html 或 .htm 构成。</p>
-<ol>
-<li><p>无后台数据库。</p>
-</li>
-<li><p>只要是不能和数据库进行数据交换，够通，连接的网页统称为 <strong>静态网页</strong>。</p>
-</li>
-</ol>
-</li>
-</ol>
-<ol start="2">
-<li><p>动态网站：一般扩展名为 .asp 或 .php 等</p>
-<ol>
-<li>asp 是微软自己的语言，由该语言开发的网站。一般情况下，只能在微软系统上发布。（Active Server Pages）</li>
-</ol>
-<p>​    <strong>在 IIS 中，点击 Web服务扩展，可以找到 asp 扩展进行启用。</strong></p>
-<ol start="2">
-<li><p>php 是通用的脚本语言。Linux 上不能用 asp，只能 php。</p>
-</li>
-<li><p>有后台数据库，asp/php 语言所编写的程序用来<strong>连接 前台页面 或 者 后台数据库</strong>。</p>
-</li>
-</ol>
-    
-    <a class="article-more-a" href="/2020/08/12/2020.08.12%20IIS%20%E4%B9%8B%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A83/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/12/2020.08.12%20IIS%20%E4%B9%8B%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A83/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.08.11 IIS 之 Web 服务器2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/11/2020.08.11%20IIS%20%E4%B9%8B%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A82/" target="_blank">IIS之Web服务器2</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/11/2020.08.11%20IIS%20%E4%B9%8B%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A82/" class="archive-article-date">
-        <time datetime="2020-08-11T11:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-11</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="IIS-之-Web-服务器2"><a href="#IIS-之-Web-服务器2" class="headerlink" title="IIS 之 Web 服务器2"></a>IIS 之 Web 服务器2</h1><h2 id="新建网站"><a href="#新建网站" class="headerlink" title="新建网站"></a>新建网站</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">1. 右键网站 -&gt; 新建一个网站</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 给网站绑定 IP 地址。</span><br><span class="line">	<span class="number">1</span>) 一台服务器上，可能有多个网卡，多个ip。所以需要指定一个 ip 地址来<span class="string">&#x27;作为该网站的IP&#x27;</span>。</span><br><span class="line">    <span class="number">2</span>) 如果未分配的话，该服务器上所有 iP 都可以作为该网站的ip地址。</span><br><span class="line">    <span class="number">3</span>) 客户可以通过与该网站所绑定的 ip 来进行访问。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 指定主目录路径。</span><br><span class="line">	<span class="number">1</span>) 用 HTML 语言写一个网页。存放到一个文件夹中。</span><br><span class="line">    <span class="number">2</span>) 该文件夹就是主目录路径。</span><br><span class="line">    </span><br><span class="line"><span class="number">4.</span> 设置网页的访问权限。</span><br><span class="line">	<span class="number">1</span>) 一般静态网页(也就是用户不能和你进行互动，只能浏览的网页。)</span><br><span class="line">    <span class="number">2</span>) 设置成只能读取。</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 正常情况下，访问一个网站是不需要登陆该网站的服务器的。如果显示需要登陆的话。<span class="string">&quot;可能是没有设置匿名访问&quot;</span></span><br><span class="line">	1) 右击网站 -&gt; 属性 -&gt; 目录安全性 -&gt; 允许匿名访问(编辑) -&gt; 启用</span><br><span class="line">    <span class="number">2</span>) 在你安装 IIS 管理工具的同时。windows 新建了一个新的用户 <span class="string">&quot;匿名用户 IUSR&quot;</span></span><br><span class="line">    <span class="number">3</span>) 在外网用户访问你所建立的网站时，<span class="string">&quot;默认&quot;</span>是通过你服务器的<span class="string">&quot;匿名用户&quot;</span>登陆服务器，然后进行访问的。</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 设置网站默认首页。</span><br><span class="line">	1) 右击网站 -&gt; 属性 -&gt; 文档.</span><br><span class="line">    <span class="number">2</span>) 添加自己所写的 index.html 作为默认首页。然后将其移动到最上面。</span><br><span class="line"></span><br><span class="line"><span class="number">7.</span> 一个网站可以添加多个网页。</span><br><span class="line">	<span class="number">1</span>) 在属性，文档中设置 html 文件的优先级。就可以实现优先访问。</span><br><span class="line"></span><br><span class="line"><span class="number">8.</span> 一台服务器新建多个网站——方法<span class="number">1</span> <span class="comment">## 同一个端口号，多个IP</span></span><br><span class="line">	<span class="number">1</span>) 注意，一个 IP 地址只能绑定一个网站。</span><br><span class="line">    <span class="number">2</span>) 如果你的服务器上面有多个网站，必须建立多个 ip 地址。</span><br><span class="line">    <span class="number">3</span>) 或者停用其他网站，只保留一个网站来绑定该服务器的 IP。</span><br><span class="line"></span><br><span class="line"><span class="number">9.</span> 一台服务器新建多个网站——方法<span class="number">2</span> <span class="comment">## 同一个IP，多个端口号</span></span><br><span class="line">	<span class="number">1</span>) 给一台服务器分配多个 IP 地址可能会造成不稳定。</span><br><span class="line">    <span class="number">2</span>) 还有一种方法，可以多个网站使用同一个 IP 地址。<span class="string">&quot;但是访问途径的端口号不同。&quot;</span></span><br><span class="line">    <span class="number">3</span>) 比如 网站<span class="number">1</span> 使用 TCP80 端口号。	网站<span class="number">2</span> 可以使用 TCP8080 端口号。</span><br><span class="line">    <span class="number">4</span>) 使用自定义端口号的时候，需要在 IP 地址后面添加 <span class="string">&quot;:8080&quot;</span> 才是正确的访问路径。</span><br><span class="line">    <span class="string">&quot;注意&quot;</span>：自定义功能端口号一般使用一千以上的端口号， 比如 <span class="number">8000</span>， <span class="number">8080</span>， 最好是 <span class="number">4</span> 位数。这种端口号没有默认功能。</span><br><span class="line"></span><br><span class="line"><span class="number">10.</span> 一台服务器新建多个网站——方法<span class="number">3</span> <span class="comment">## 实际运用，同一个IP，同一个端口号，不同的域名。</span></span><br><span class="line">	<span class="number">1</span>) 除 IP地址 和 访问端口号 以外，<span class="string">&quot;网站的第三个标识&quot;</span> —— <span class="string">&quot;主机头&quot;</span>。</span><br><span class="line">    <span class="number">2</span>) 利用不同的域名，将网站与域名进行绑定。只有输入正确的域名，才能访问该网站。</span><br><span class="line">    <span class="number">3</span>) DNS进行域名解析的时候，虽然解析的 IP 地址可能对应一台服务器上面的多个网站。但是网站还需要，对你所<span class="string">&quot;输入的域名这个参数&quot;</span>进行核对，是否和我的主机头相同。</span><br><span class="line"> <span class="comment"># 也就是说，你在地址栏输入域名的时候，服务器会获得三个标识参数。主机名(域名)、IP地址、端口号。</span></span><br><span class="line"> <span class="comment"># 主机名由用户输入、IP 地址由 DNS 服务器解析、端口号默认是80(也可强制指定)。</span></span><br><span class="line"></span><br><span class="line"><span class="number">11.</span> 一般情况下，使用方法 <span class="number">3</span> ，只能通过域名进行访问网站。而不能通过直接输入 IP 地址的方式来访问。 </span><br><span class="line">	<span class="number">1</span>) 想要像百度一样，既可以通过域名访问，也可以通过 IP 地址进行访问。</span><br><span class="line">    2) 很简单，网站 -&gt; 属性 -&gt; 网站标识 -&gt; 高级 -&gt; 添加。</span><br><span class="line">    <span class="number">3</span>) 添加进第 <span class="number">2</span> 种， 或 第 <span class="number">3</span> 种 访问方式都可以。但是要注意，不同的网站，不能用完全一样的网站标识。</span><br><span class="line">    比如相同的 IP + 相同的端口号。</span><br><span class="line">    <span class="number">4</span>) 甚至，如果你有多个域名，也可以一个网站绑定多个 <span class="string">&quot;主机头&quot;</span>。</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/08/11/2020.08.11%20IIS%20%E4%B9%8B%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A82/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/11/2020.08.11%20IIS%20%E4%B9%8B%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A82/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.08.10 IIS 之 Web 服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/10/2020.08.10%20IIS%20%E4%B9%8B%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/" target="_blank">IIS之Web服务器</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/10/2020.08.10%20IIS%20%E4%B9%8B%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="archive-article-date">
-        <time datetime="2020-08-10T09:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-10</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="IIS-之-Web-服务器"><a href="#IIS-之-Web-服务器" class="headerlink" title="IIS 之 Web 服务器"></a>IIS 之 Web 服务器</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<ol>
-<li><p>WEB 服务器也称为<strong>网页服务器</strong> 或则 <strong>HTTP 服务器</strong> 或者 <strong>www万维网服务器</strong>。</p>
-</li>
-<li><p>web 服务器，使用的是 HTTP 或 HTTPS 协议。</p>
-</li>
-<li><p>http协议端口号 ：<strong>TCP 80</strong></p>
-<p>https 协议端口号：<strong>TCP 443</strong></p>
-<p>FTP 协议端口号：<strong>TCP21</strong></p>
-</li>
-</ol>
-</blockquote>
-    
-    <a class="article-more-a" href="/2020/08/10/2020.08.10%20IIS%20%E4%B9%8B%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/10/2020.08.10%20IIS%20%E4%B9%8B%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.08.04 DNS部署与安全2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/04/2020.08.04%20DNS%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A82/" target="_blank">DNS部署与安全2</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/04/2020.08.04%20DNS%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A82/" class="archive-article-date">
-        <time datetime="2020-08-04T09:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-04</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="第十一章、DNS部署与安全2"><a href="#第十一章、DNS部署与安全2" class="headerlink" title="第十一章、DNS部署与安全2"></a>第十一章、DNS部署与安全2</h1><h2 id="主DNS服务器部署步骤："><a href="#主DNS服务器部署步骤：" class="headerlink" title="主DNS服务器部署步骤："></a>主DNS服务器部署步骤：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 打开 windows 镜像文件所在光盘。按照组件，找到域名系统（DNS）。进行安装。</span><br><span class="line">	<span class="number">1</span>) 一旦安装完成之后。计算机 TCP53 和 UDP53 两个端口都被打开了。</span><br><span class="line">	<span class="number">2</span>) 即使你没有修改 DNS 配置，但是它自带访问根域的地址。所以，只要你这太域名解析服务器能够上网，他就能给客户机提供域名解析服务(虽然工作效率慢了点)。</span><br><span class="line">    </span><br><span class="line"><span class="number">2.</span> 正向查找区域：</span><br><span class="line">	<span class="number">1</span>) 新建一个区域。主要区域(该区域负责该域名，也就是进行权威解析)，辅助区域(主要区域的备份或辅助工作)，根域(用不到)。</span><br><span class="line">    <span class="number">2</span>) 创建区域解析文件(.dns 结尾)。所有该域名，和子域名的 DNS解析文件，都保存在此文件中。</span><br><span class="line">    <span class="number">3</span>) 自动更新，保持不变就行。此操作设计到 域 知识。</span><br><span class="line">    <span class="number">4</span>) 新建成功后几个参数的含义；</span><br><span class="line">    	(<span class="number">1</span>) <span class="string">&quot;起始授权机构（SOA）&quot;</span>：表示该域名的负责服务器是谁。</span><br><span class="line">        (<span class="number">2</span>) <span class="string">&quot;名称服务器(NS)&quot;</span>：表示可以给该域名做解析的 DNS 服务器有那些。一般有主域服务器，和辅助服务器。通俗的讲就是我认为合法的服务器。</span><br><span class="line">        (<span class="number">3</span>) 别名（<span class="string">&quot;CNAME&quot;</span>）：表示给正向解析记录，新建的一个别名解析。比如，给 www.fangning.com 新建另外一个名称 www2.fangning.com。两个域名指的是同一条解析记录。</span><br><span class="line">        别名也叫 Aliases。其实百度服务器的别名是，www.baidu.com。真名叫 www.a.shifen.com。</span><br><span class="line">        (<span class="number">4</span>) <span class="string">&quot;主机A&quot;</span>：正向解析记录。</span><br><span class="line">        (<span class="number">5</span>) <span class="string">&quot;PTR&quot;</span>记录：反向解析记录。</span><br><span class="line">        (<span class="number">6</span>) <span class="string">&quot;MX&quot;</span>：邮件交换记录。邮箱地址也是相当于一种域名，所以也需要进行解析。发送邮箱的时候，需要对目标邮箱进行解析。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 新建一个正向解析记录(A记录)：</span><br><span class="line">	1) 右键-&gt;新建主机。就是给主域名增加一个对辅助域名的正向解析记录。比如给 zzuli.edu.cn 增加一个 acm.zzuli.edu.cn 服务主机的域名解析。</span><br><span class="line">    <span class="number">2</span>) 配置以下虚拟机的 DNS服务器指向，然后用命令行 nslookup 或 ping 检验一下。</span><br><span class="line">    <span class="number">3</span>) 如果需要给公司所有人修改，那么就需要修改 DHCP 地址池的 DNS配置。</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 在使用 nslookup 进行域名解析的时候，如果想要显示被访问的 DNS 服务器名称。将 UnKnown 该成服务器名称。</span><br><span class="line">	<span class="number">1</span>) 先需要在正向解析里面，添加一个主机(A记录)，地址填该服务器的地址，主机名称一般取 dns1。</span><br><span class="line">    2) 建立的时候，需要勾选同时建立反向解析指针(PTR)。这时就会出现一条域名解析记录 dns1.fangning.com -&gt; 192.168.190.2</span><br><span class="line">    <span class="number">3</span>) 需要添加一个<span class="string">&quot;反向查找区域&quot;</span>。反向查询区域，要设置成 DNS服务器所在的网段。</span><br><span class="line">    <span class="number">4</span>) 在该区域列表中，新建一个方向解析指针 PTR。所指对象，从正向解析主机记录列表里面进行查找。</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 另外一台客户机，进行DNS验证时，必须保证能够ping通该域名解析服务器。</span><br><span class="line">并且设置DNS地址为需要验证的服务器地址。</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 配置 DNS 转发器：</span><br><span class="line">	1) 在 DNS服务器管理工具中，右击服务器-&gt;属性</span><br><span class="line">    <span class="number">2</span>) 填写配置好的另外一台被转发的 DNS服务器。</span><br><span class="line">    <span class="number">3</span>) 注意，两台通过DNS转发器连接的服务器之间，相互必须要求可以ping通。所属同一局域网，或者能够连接 Internet。</span><br><span class="line">    <span class="number">4</span>) 在本地DNS服务器解决不了的时候，就通过DNS转发器，进行递归查询。</span><br><span class="line">    5) 同时另外一台DNS服务器上面，需要添加好所需要的主机(A记录)。这样子，就可以通过客户机，指向 DNS1，再通过转发器访问 DNS2 -&gt; 从而获取第二台服务器上面的解析记录。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/08/04/2020.08.04%20DNS%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A82/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/04/2020.08.04%20DNS%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%AE%89%E5%85%A82/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1297,6 +1260,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SQLServer</a>
               </li>
              
               <li class="article-tag-list-item">
