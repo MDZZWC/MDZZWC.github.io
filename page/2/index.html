@@ -207,227 +207,6 @@
             
 
   
-    <article id="post-2020.10.07 DFS深搜" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/10/07/2020.10.07%20DFS%E6%B7%B1%E6%90%9C/" target="_blank">DFS</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/10/07/2020.10.07%20DFS%E6%B7%B1%E6%90%9C/" class="archive-article-date">
-        <time datetime="2020-10-07T11:43:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-07</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="题1-：送外卖"><a href="#题1-：送外卖" class="headerlink" title="题1 ：送外卖"></a>题1 ：送外卖</h1><p>链接：<a target="_blank" rel="noopener" href="https://pre.ac.nowcoder.com/acm/problem/13224">https://pre.ac.nowcoder.com/acm/problem/13224</a><br>来源：牛客网</p>
-<p>时间限制：C/C++ 1秒，其他语言2秒<br> 空间限制：C/C++ 32768K，其他语言65536K<br> 64bit IO Format: %lld</p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>n 个小区排成一列，编号为从 0 到 n-1 。一开始，美团外卖员在第0号小区，目标为位于第 n-1 个小区的配送站。<br> 给定两个整数数列 a[0]<del>a[n-1] 和 b[0]</del>b[n-1] ，在每个小区 i 里你有两种选择：</p>
-<ol>
-<li><p>选择a：向前 a[i] 个小区。</p>
-</li>
-<li><p>选择b：向前 b[i] 个小区。</p>
-<p>把每步的选择写成一个关于字符 ‘a’ 和 ‘b’ 的字符串。求到达小区n-1的方案中，字典序最小的字符串。如果做出某个选择时，你跳出了这n个小区的范围，则这个选择不合法。<br>• 当没有合法的选择序列时，输出 “No solution!”。<br>• 当字典序最小的字符串无限长时，输出 “Infinity!”。<br>• 否则，输出这个选择字符串。</p>
-<p>字典序定义如下：串s和串t，如果串 s 字典序比串 t 小，则<br>• 存在整数 i ≥ -1，使得∀j，0 ≤ j ≤ i，满足s[j] = t[j] 且 s[i+1] &lt; t[i+1]。<br>• 其中，空字符 &lt; ‘a’ &lt; ‘b’。</p>
-</li>
-</ol>
-<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入有 <span class="number">3</span> 行。</span><br><span class="line">第一行输入一个整数 n (<span class="number">1</span> ≤ n ≤ <span class="number">10</span>^<span class="number">5</span>)。</span><br><span class="line">第二行输入 n 个整数，分别表示 a[i] 。</span><br><span class="line">第三行输入 n 个整数，分别表示 b[i] 。</span><br><span class="line">−n ≤ a[i], b[i] ≤ n</span><br></pre></td></tr></table></figure>
-
-<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出一行字符串表示答案。</span><br></pre></td></tr></table></figure>
-
-<h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">7</span></span><br><span class="line"><span class="number">5</span> <span class="number">-3</span> <span class="number">6</span> <span class="number">5</span> <span class="number">-5</span> <span class="number">-1</span> <span class="number">6</span></span><br><span class="line"><span class="number">-6</span> <span class="number">1</span> <span class="number">4</span> <span class="number">-2</span> <span class="number">0</span> <span class="number">-2</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abbbb</span><br></pre></td></tr></table></figure>
-
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ul>
-<li>刷题的时候，牛客把这题归类到 BFS。但是实际上用 DFS 最佳。</li>
-<li><strong>如何达到字典序列最小？</strong><ul>
-<li>如果是广搜，需要比较每次搜索结果得到的字符串大小。bfs搜索过程: a, b, aa, ab, ba, bb, aba, abb, baa, bab…….</li>
-<li>如果是用深搜，<strong>第一次搜索到的结果就是最优的</strong>。dfs过程: aaaaa, aaaab, aaaa, aaab, aaa, aab………</li>
-<li>显然，直接用深搜。</li>
-</ul>
-</li>
-<li>如何判断是否存在最优答案是无限长的？<ul>
-<li>如果一个点结果两次，并且能达到最后的终点，那就是答案无限长。比如: aaaaaaaa…aaaab</li>
-<li>加各 vis[] 数组，统计结果点的次数就好了。</li>
-</ul>
-</li>
-</ul>
-<h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> a[N], b[N], vis[N];		<span class="comment">// vis 用来标记搜索经过次数</span></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="built_in">string</span> ans;		<span class="comment">// 记录字典序最优的答案</span></span><br><span class="line"><span class="keyword">bool</span> f = <span class="literal">false</span>;  <span class="comment">// 判断是否有环，有 true ， 无 false</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">( <span class="keyword">int</span> pos )</span>	<span class="comment">//当前位置 pos</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pos &lt; <span class="number">1</span> || pos &gt; n) <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//先判是否超界</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(pos == n)                        <span class="comment">// 再判当前位置是否满足条件</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(vis[pos] &gt; <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;   <span class="comment">// 在判到达当前位置时，是否形成了环</span></span><br><span class="line"></span><br><span class="line">    vis[pos]++;                     <span class="comment">// 统计经过该 pos 次数</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>( dfs(pos + a[pos]) )&#123;<span class="comment">// 遍历另外两位置，如果子路径搜索到答案了，那么父路径返回 true</span></span><br><span class="line">        ans += <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">        <span class="keyword">if</span>(vis[pos] &gt; <span class="number">1</span>) f = <span class="literal">true</span>;<span class="comment">//子路径递归结束后，再判断该点经过的次数，大于1次拿肯定有环</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>( dfs(pos + b[pos]) )&#123;</span><br><span class="line">        ans += <span class="string">&#x27;b&#x27;</span>;</span><br><span class="line">        <span class="keyword">if</span>(vis[pos] &gt; <span class="number">1</span>) f = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;  <span class="comment">// 以上所有情况都没能返回 true，所以不存在路径。</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;b[i]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>( dfs(<span class="number">1</span>) ) <span class="comment">//是否可以搜索到最后一个小区？</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(f) <span class="built_in">puts</span>(<span class="string">&quot;Infinity!&quot;</span>); <span class="comment">//搜索过程中是否经历一个小区两次及以上？</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            reverse(ans.<span class="built_in">begin</span>(), ans.<span class="built_in">end</span>());</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;No solution!&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="代码解释"><a href="#代码解释" class="headerlink" title="代码解释"></a>代码解释</h2><ul>
-<li>string 类字符串的逆转方法：<ul>
-<li>reverse( string.begin(), string.end() ); </li>
-<li>执行完该语句后，string 字符串被逆转。</li>
-</ul>
-</li>
-<li>为什么要将答案逆转输出？<ul>
-<li>因为递归时，最外层的函数，最后才结束。</li>
-<li>所以，ans 在赋值的时候，是从搜索末端，赋值到搜索开始层。所以答案是反的。</li>
-</ul>
-</li>
-<li><strong>递归的思想，看上去很难，实际上我们只需要在意最外层，也就是当前节点所在位置的判断就行了。</strong><ul>
-<li><strong>就像 动态规划一样，一个大的问题，可以由两个小子问题得到。</strong></li>
-<li><strong>搜索中，当前层次的结果，由多个下一层的搜索结果返回。</strong></li>
-</ul>
-</li>
-</ul>
-<h1 id="题目2：周游世界"><a href="#题目2：周游世界" class="headerlink" title="题目2：周游世界"></a>题目2：周游世界</h1><p><a target="_blank" rel="noopener" href="https://pintia.cn/problem-sets/994805046380707840/problems/994805048482054144">pta题目链接30分</a></p>
-<p><a target="_blank" rel="noopener" href="https://lux-sun.blog.csdn.net/article/details/82290212">题解参考链接</a></p>
-<h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>周游世界是件浪漫事，但规划旅行路线就不一定了…… 全世界有成千上万条航线、铁路线、大巴线，令人眼花缭乱。所以旅行社会选择部分运输公司组成联盟，每家公司提供一条线路，然后帮助客户规划由联盟内企业支持的旅行路线。本题就要求你帮旅行社实现一个自动规划路线的程序，使得对任何给定的起点和终点，可以找出最顺畅的路线。所谓“最顺畅”，首先是指中途经停站最少；如果经停站一样多，则取需要换乘线路次数最少的路线。</p>
-<h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><p>输入在第一行给出一个正整数<em>N</em>（≤100），即联盟公司的数量。接下来有<em>N</em>行，第<em>i</em>行（<em>i</em>=1,⋯,<em>N</em>）描述了第<em>i</em>家公司所提供的线路。格式为：</p>
-<p><em>M</em> S[1] S[2] ⋯ S[<em>M</em>]</p>
-<p>其中<em>M</em>（≤100）是经停站的数量，S[<em>i</em>]（<em>i</em>=1,⋯,<em>M</em>）是经停站的编号（由4位0-9的数字组成）。这里假设每条线路都是简单的一条可以双向运行的链路，并且输入保证是按照正确的经停顺序给出的 —— 也就是说，任意一对相邻的S[<em>i</em>]和S[<em>i</em>+1]（<em>i</em>=1,⋯,<em>M</em>−1）之间都不存在其他经停站点。我们称相邻站点之间的线路为一个运营区间，每个运营区间只承包给一家公司。环线是有可能存在的，但不会不经停任何中间站点就从出发地回到出发地。当然，不同公司的线路是可能在某些站点有交叉的，这些站点就是客户的换乘点，我们假设任意换乘点涉及的不同公司的线路都不超过5条。</p>
-<p>在描述了联盟线路之后，题目将给出一个正整数<em>K</em>（≤10），随后<em>K</em>行，每行给出一位客户的需求，即始发地的编号和目的地的编号，中间以一空格分隔。</p>
-<h2 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h2><p>处理每一位客户的需求。如果没有现成的线路可以使其到达目的地，就在一行中输出“Sorry, no line is available.”；如果目的地可达，则首先在一行中输出最顺畅路线的经停站数量（始发地和目的地不包括在内），然后按下列格式给出旅行路线：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Go by the line of company #X1 from S1 to S2.</span><br><span class="line">Go by the line of company #X2 from S2 to S3.</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
-
-<p>其中<code>Xi</code>是线路承包公司的编号，<code>Si</code>是经停站的编号。但必须只输出始发地、换乘点和目的地，不能输出中间的经停站。题目保证满足要求的路线是唯一的。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">7 1001 3212 1003 1204 1005 1306 7797</span><br><span class="line">9 9988 2333 1204 2006 2005 2004 2003 2302 2001</span><br><span class="line">13 3011 3812 3013 3001 1306 3003 2333 3066 3212 3008 2302 3010 3011</span><br><span class="line">4 6666 8432 4011 1306</span><br><span class="line">4</span><br><span class="line">3011 3013</span><br><span class="line">6666 2001</span><br><span class="line">2004 3001</span><br><span class="line">2222 6666</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">Go by the line of company #3 from 3011 to 3013.</span><br><span class="line">10</span><br><span class="line">Go by the line of company #4 from 6666 to 1306.</span><br><span class="line">Go by the line of company #3 from 1306 to 2302.</span><br><span class="line">Go by the line of company #2 from 2302 to 2001.</span><br><span class="line">6</span><br><span class="line">Go by the line of company #2 from 2004 to 1204.</span><br><span class="line">Go by the line of company #1 from 1204 to 1306.</span><br><span class="line">Go by the line of company #3 from 1306 to 3001.</span><br><span class="line">Sorry, no line is available.</span><br></pre></td></tr></table></figure>
-
-<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><ul>
-<li>题目大意就是很多条地铁线，每条地铁线会经过地铁站。两条相交的地铁线中间的交点站，可以更换线路，也即是换成。要求从起始地，到目的地。经过的地铁站数最少，如果多条线路到达时经过的地铁站数目一样多，那就比较换乘的次数（需要最少）。<ul>
-<li>题目输出很麻烦，需要记录路径所经过的地铁线编号，以及地铁站编号。</li>
-<li>如果没有可达的线路，需要输出指定的字符串。</li>
-</ul>
-</li>
-<li>dfs 函数三参数，起点，终点，以及经过的地铁站数。<ul>
-<li>每次递归，地铁站数目 + 1。</li>
-<li>经过的地铁站，用 vis 数组标记，下次就别搜索了。</li>
-<li>递归出口，起点 == 终点，用 cnt 更新全局 minCnt。</li>
-<li>如果，cnt == minCnt 比较换乘次数，与minTran最小换乘次数大小。</li>
-</ul>
-</li>
-<li>如何得到换乘次数呢？需要我们搜索过程中，记录中间路径。<ul>
-<li>也即是用 vector 每次添加经过的地铁站编号。递归结束后在 .pop_back() 删掉。</li>
-<li>这样保证每一次到达递归出口，都有一个唯一的线路 vector 。</li>
-<li>我们需要最优线路，所以需要弄个最终 path 来保存。该值可以动态更新，和 minCnt , minTran一样。<strong>vector 对象之间可以直接用 = 号赋值。</strong></li>
-</ul>
-</li>
-<li>如何存储地铁线路呢？图的存储一般两种，接邻矩阵，接邻表。<ul>
-<li>接邻矩阵开销大，对于离散的点，不好存。所以用接邻表。</li>
-<li>接邻表要用指针，太麻烦。所以直接用 c++ 容器 vector 类型的数组。vector<int>v[maxn]<ul>
-<li>声明符 [] 决定了 v 是一个数组，类型符 vector<int> 标识数组每一个元素是一个 vector<int> 类型的对象。</li>
-</ul>
-</li>
-<li>这样子，v[pos] 标，表示每一个地铁站编号，元素值表示与该地铁站相连的其他若干个地铁站编号。</li>
-<li>与接邻表一个意思。</li>
-</ul>
-</li>
-<li>如何知道，两个地铁站之间的边，是属于哪一条地铁线呢？<ul>
-<li>用 map 做映射，将两条端点的编号弄进去，映射出一个地铁线编号。</li>
-<li>map只能做 1对1映射，2对1不行，所以需要将两个数字 hash 映射成一个数字。</li>
-<li>如何 hash？数字1作为高四位，数字2作为低四位，就组成了唯一的一个8位数字了。</li>
-</ul>
-</li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>可以用二维 vector 模拟接邻表。</li>
-<li>可以自定义一种 hash 映射方法，配合 map 映射。将离散的节点，变成不离散的节点。</li>
-</ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(a, b) memset( a, b, sizeof(a) )</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ssclr(ss) ss.clear(),ss.str(<span class="meta-string">&quot;&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> f(x, y, z) for( int x = (y), __ = (z); x &lt; __; ++x )</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MOD 1000000007</span></span><br><span class="line"><span class="comment">//namespace solve&#123;  &#125;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e4</span>+<span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> minCnt, minTran; <span class="comment">// 两个代价，都需要最小</span></span><br><span class="line"><span class="keyword">int</span> vis[maxn]; <span class="comment">//搜索表记数组</span></span><br><span class="line"><span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; Line;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v[maxn], tpath, path;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ToLine</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>;   <span class="comment">// hash 映射边</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">TranCnt</span><span class="params">()</span></span>;              <span class="comment">// 计算路径换乘次数</span></span><br><span class="line"><span class="comment">// 搜索出最优路径，保存到 path 中。中间过程存放到 tpath。</span></span><br><span class="line"><span class="comment">// 使用二维 vector&lt;int&gt;v[maxn] 模拟接邻表，进行搜索。使用数组，对已搜索点标记。</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> s, <span class="keyword">int</span> e, <span class="keyword">int</span> cnt)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">putAns</span><span class="params">()</span></span>; <span class="comment">// 按格式输出 path</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m, pre;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    f(i, <span class="number">1</span>, n+<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;m, &amp;pre);</span><br><span class="line">        <span class="keyword">int</span> id;</span><br><span class="line">        f(j, <span class="number">1</span>, m)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;id);</span><br><span class="line">            <span class="comment">//存每一条道路</span></span><br><span class="line">            v[pre].push_back(id); v[id].push_back(pre);</span><br><span class="line">            <span class="comment">//每一道路所属联盟</span></span><br><span class="line">            Line[ToLine(pre, id)] = Line[ToLine(id, pre)] = i;</span><br><span class="line">            pre = id;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;t);</span><br><span class="line">    <span class="keyword">int</span> s, e;</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;s , &amp;e);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//搜索前初始化所有</span></span><br><span class="line">        mem(vis, <span class="number">0</span>);</span><br><span class="line">        tpath.<span class="built_in">clear</span>();</span><br><span class="line">        minCnt=minTran=INF;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//进行搜索</span></span><br><span class="line">        vis[s] = <span class="number">1</span>;</span><br><span class="line">        tpath.push_back(s);</span><br><span class="line">        dfs(s, e, <span class="number">1</span>);</span><br><span class="line">        tpath.pop_back();</span><br><span class="line">        vis[s] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断是否得到最优结果</span></span><br><span class="line">        <span class="keyword">if</span>(minCnt == INF)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Sorry, no line is available.\n&quot;</span>);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            putAns();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> s, <span class="keyword">int</span> e, <span class="keyword">int</span> cnt)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>( s==e &amp;&amp; ( cnt &lt; minCnt || (cnt == minCnt &amp;&amp; TranCnt() &lt; minTran) ) )</span><br><span class="line">    &#123;</span><br><span class="line">        path = tpath; <span class="comment">// 这个赋值我是真的不知道，vector复制还可以这么玩</span></span><br><span class="line">        minCnt = cnt;</span><br><span class="line">        minTran = TranCnt();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(s==e) <span class="keyword">return</span>;    <span class="comment">//搜索到终点，但是代价不满足，舍弃</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> len = v[s].<span class="built_in">size</span>();</span><br><span class="line">    f(i, <span class="number">0</span>, len)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> s2 = v[s][i];</span><br><span class="line">        <span class="keyword">if</span>(!vis[s2])</span><br><span class="line">        &#123;</span><br><span class="line">            vis[s2] = <span class="number">1</span>;</span><br><span class="line">            tpath.push_back(s2);</span><br><span class="line">            dfs(s2, e, cnt+<span class="number">1</span>);</span><br><span class="line">            tpath.pop_back();</span><br><span class="line">            vis[s2] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//计算边的唯一标识，自定义 hash 映射规则。</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ToLine</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x*<span class="number">10000</span>+y; <span class="comment">// x: 起点  y: 终点</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">TranCnt</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pre =<span class="number">0</span> , cnt = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">int</span> cur;</span><br><span class="line">    <span class="keyword">int</span> len = tpath.<span class="built_in">size</span>();</span><br><span class="line">    f(i, <span class="number">1</span>, len)</span><br><span class="line">    &#123;</span><br><span class="line">        cur = Line[ ToLine(tpath[i<span class="number">-1</span>], tpath[i]) ];<span class="comment">//计算当前边的所属联盟编号</span></span><br><span class="line">        <span class="keyword">if</span>(cur != pre)<span class="comment">//如果当前边，与上一条边不同属一个联盟</span></span><br><span class="line">        &#123;</span><br><span class="line">            pre = cur;</span><br><span class="line">            cnt ++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cnt; <span class="comment">// 返回当前路径所换乘的次数。</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">putAns</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, minCnt<span class="number">-1</span>); <span class="comment">// 不包括 起始，终止站，所以减2</span></span><br><span class="line">    <span class="keyword">int</span> len = path.<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">int</span> pre = path[<span class="number">0</span>];  <span class="comment">//记录下起点</span></span><br><span class="line">    <span class="keyword">int</span> pre_id = Line[ ToLine(path[<span class="number">0</span>], path[<span class="number">1</span>]) ], cur_id; <span class="comment">//记录下第一段路线所属联盟号</span></span><br><span class="line">    f(i, <span class="number">2</span>, len)</span><br><span class="line">    &#123;</span><br><span class="line">        cur_id = Line[ ToLine(path[i<span class="number">-1</span>], path[i]) ];</span><br><span class="line">        <span class="keyword">if</span>(cur_id != pre_id)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Go by the line of company #%d from %04d to %04d.\n&quot;</span>, pre_id, pre, path[i<span class="number">-1</span>]);</span><br><span class="line">            pre_id = cur_id;</span><br><span class="line">            pre = path[i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Go by the line of company #%d from %04d to %04d.\n&quot;</span>, pre_id, pre, path[len<span class="number">-1</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="题目3：七段码"><a href="#题目3：七段码" class="headerlink" title="题目3：七段码"></a>题目3：七段码</h1><p>该题为第十一届蓝桥杯省赛C/C++B组第5道填空题。基本上，会做这道题，省一没啥问题的。</p>
-<p>不过蓝桥杯省一没啥用，国二及以上才有点儿用吧。</p>
-<h2 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h2><p>小蓝要用七段码数码管来表示一种特殊的文字。</p>
-<p><img src="http://images.fangning.xyz//20201114185630.png" alt="数码管"></p>
-<p>七段码上图给出了七段码数码管的一个图示，数码管中一共有7 段可以发光的二极管，分别标记为a, b, c, d, e, f, g。小蓝要选择一部分二极管（至少要有一个）发光来表达字符。在设计字符的表达时，要求所有发光的二极管是连成一片的。</p>
-<p>例如：b 发光，其他二极管不发光可以用来表达一种字符。<br>例如：c 发光，其他二极管不发光可以用来表达一种字符。这种方案与上一行的方案可以用来表示不同的字符，尽管看上去比较相似。<br>例如：a, b, c, d, e 发光，f, g 不发光可以用来表达一种字符。<br>例如：b, f 发光，其他二极管不发光则不能用来表达一种字符，因为发光的二极管没有连成一片。<br>请问，小蓝可以用七段码数码管表达多少种不同的字符？</p>
-<h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><p>直接使用深度搜索。</p>
-<p>把数码管每一段看成一个点，相邻表示相连。一共七个点。相邻的话，加一条双向边。可以用二维 vector 来存点，与边的信息。</p>
-<p>然后暴力从每个点开始，搜索相应的深度，得到一条路径。</p>
-<p>去重：</p>
-<ul>
-<li>同一深度的搜索结果，路径可能经过的数码管段，是一样的，比如a-b，和b-a。可以将搜索结果（是一个集合）加到 set 集合内，进行去重。</li>
-<li>也就是用集合的集合。set&lt; set<int> &gt; ss。</li>
-<li>ss 中每一个集合都是不重复的，所以不存在 a-b ， b-a 的情况。</li>
-</ul>
-<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>可以使用集合的集合存储搜索结果。</li>
-<li>set的一些方法：set.insert(x) , set.erase(x) , set.clear() , set.size() 。</li>
-</ul>
-<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;&gt; ss;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v[<span class="number">10</span>];</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">10</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">putadge</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    v[a].push_back(b);</span><br><span class="line">    v[b].push_back(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> st, <span class="keyword">int</span> Cnt , <span class="keyword">int</span> <span class="built_in">step</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">step</span> == Cnt)</span><br><span class="line">    &#123;</span><br><span class="line">        ss.insert(s);<span class="comment">//搜索路径虽然有重复，可以用集合的集合进行去重</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">step</span> &gt; Cnt) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> X:v[st])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!vis[X])</span><br><span class="line">        &#123;</span><br><span class="line">            vis[X] = <span class="literal">true</span>;</span><br><span class="line">            s.insert(X);</span><br><span class="line">            dfs(X, Cnt, <span class="built_in">step</span>+<span class="number">1</span>);</span><br><span class="line">            s.erase(X);</span><br><span class="line">            vis[X] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    putadge(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">    putadge(<span class="number">1</span>, <span class="number">6</span>);</span><br><span class="line">    putadge(<span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">    putadge(<span class="number">2</span>, <span class="number">7</span>);</span><br><span class="line">    putadge(<span class="number">3</span>, <span class="number">4</span>);</span><br><span class="line">    putadge(<span class="number">3</span>, <span class="number">7</span>);</span><br><span class="line">    putadge(<span class="number">4</span>, <span class="number">5</span>);</span><br><span class="line">    putadge(<span class="number">5</span>, <span class="number">6</span>);</span><br><span class="line">    putadge(<span class="number">5</span>, <span class="number">7</span>);</span><br><span class="line">    putadge(<span class="number">6</span>, <span class="number">7</span>);</span><br><span class="line">    <span class="comment">//以 i 开始，搜索深度为 j</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">7</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">7</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            s.<span class="built_in">clear</span>();</span><br><span class="line">            <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">            vis[i] = <span class="literal">true</span>;</span><br><span class="line">            s.insert(i);</span><br><span class="line">            dfs(i, j, <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ss.<span class="built_in">size</span>() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/10/07/2020.10.07%20DFS%E6%B7%B1%E6%90%9C/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-2020.10.02 Linux概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -887,7 +666,7 @@
 <p>其他学习 PCB 设计交流的联盟论坛：</p>
 <ul>
 <li>PCB联盟网：<a href="pcbbar.com">pcbbar.com</a>   —— 可进行一些资料的下载，以及问题的提问。</li>
-<li><a href="mailto:&#x70;&#x63;&#x62;&#113;&#x61;&#64;&#x66;&#97;&#110;&#x79;&#45;&#101;&#100;&#97;&#x2e;&#99;&#x6f;&#x6d;">&#x70;&#x63;&#x62;&#113;&#x61;&#64;&#x66;&#97;&#110;&#x79;&#45;&#101;&#100;&#97;&#x2e;&#99;&#x6f;&#x6d;</a>   ———- PCB图纸公益评审提交邮箱</li>
+<li><a href="mailto:&#x70;&#99;&#x62;&#113;&#97;&#64;&#x66;&#97;&#x6e;&#121;&#45;&#101;&#x64;&#97;&#x2e;&#99;&#111;&#109;">&#x70;&#99;&#x62;&#113;&#97;&#64;&#x66;&#97;&#x6e;&#121;&#45;&#101;&#x64;&#97;&#x2e;&#99;&#111;&#109;</a>   ———- PCB图纸公益评审提交邮箱</li>
 </ul>
 <p>PCB 生产，外包，制版的话</p>
 <ul>
@@ -1329,6 +1108,94 @@
 
 
   
+    <article id="post-2020.09.10 搭建开发环境编写及仿真" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/" target="_blank">zigbee环境搭建</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/" class="archive-article-date">
+        <time datetime="2020-09-10T12:46:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-10</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="软件安装，程序编写运行，烧录"><a href="#软件安装，程序编写运行，烧录" class="headerlink" title="软件安装，程序编写运行，烧录"></a>软件安装，程序编写运行，烧录</h1><h2 id="IAR安装"><a href="#IAR安装" class="headerlink" title="IAR安装"></a>IAR安装</h2> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> IAR程序下载:</span><br><span class="line">    <span class="number">1</span>) 不要从脚本之家之类的网站下载软件。否则，你的浏览器会被恶意串改主页。并且，电脑上会被恶意下载软件。</span><br><span class="line">    <span class="number">2</span>) 从官网下载最新版的 IAR <span class="keyword">for</span> <span class="number">8051</span> 就行了。</span><br><span class="line">    </span><br><span class="line"><span class="number">2.</span> IAR程序破解:   教程：<span class="string">&quot; https://blog.csdn.net/qq_38351824/article/details/85005672 &quot;</span></span><br><span class="line">    <span class="number">1</span>) 从可靠途径获得破解软件。</span><br><span class="line">    <span class="number">2</span>) 运行破解软件，选择所需要破解的版本。生成密钥</span><br><span class="line">    <span class="number">3</span>) 将密钥复制到 IAR程序密钥验证 步骤中，注意断网。</span><br><span class="line">    <span class="number">4</span>) IAR 会在生成一个文本，给它放在桌面。</span><br><span class="line">    <span class="number">5</span>) 将该文本路径填写到 破解软件 第二栏中，生成另外一个破解 文本。</span><br><span class="line">    <span class="number">6</span>) 将破解文本填写到 IAR程序 注册所需文件中，然后一直下一步就行了。</span><br><span class="line">    <span class="comment"># 注意，最后提取库文件的时候会失败，因为 IAR库文件 是需要另外一套 password 的。</span></span><br><span class="line">    <span class="comment"># 但是也不需要担心，我们一般用不到库文件，或者即使要用，也是后期手动下载导入。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">zigbee</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/09/10/2020.09.10%20%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%BC%96%E5%86%99%E5%8F%8A%E4%BB%BF%E7%9C%9F/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
@@ -1486,11 +1353,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">C/C++</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color1">C/C++</a>
               </li>
              
               <li class="article-tag-list-item">
