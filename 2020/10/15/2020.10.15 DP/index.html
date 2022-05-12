@@ -10,19 +10,19 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="样例1：铺满 2*N 方格描述杭电题目链接 在2×n的一个长方形方格中,用一个1× 2的骨牌铺满方格,输入n ,输出铺放方案的总数. 输入输入数据由多行组成，每行包含一个整数n,表示该测试实例的长方形方格的规格是2×n (0&lt;n&lt;&#x3D;50)。 输出对于每个测试实例，请输出铺放方案的总数，每个实例的输出占一行。 样例12345678输入：1350输出：1320365011074  代码12">
+  <meta name="description" content="样例1：铺满 2*N 方格描述杭电题目链接 在2×n的一个长方形方格中,用一个1× 2的骨牌铺满方格,输入n ,输出铺放方案的总数. 输入输入数据由多行组成，每行包含一个整数n,表示该测试实例的长方形方格的规格是2×n (0&lt;n&lt;&#x3D;50)。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DP动态规划">
 <meta property="og:url" content="http://www.fangning.xyz.com/2020/10/15/2020.10.15%20DP/index.html">
 <meta property="og:site_name" content="方宁 blog">
-<meta property="og:description" content="样例1：铺满 2*N 方格描述杭电题目链接 在2×n的一个长方形方格中,用一个1× 2的骨牌铺满方格,输入n ,输出铺放方案的总数. 输入输入数据由多行组成，每行包含一个整数n,表示该测试实例的长方形方格的规格是2×n (0&lt;n&lt;&#x3D;50)。 输出对于每个测试实例，请输出铺放方案的总数，每个实例的输出占一行。 样例12345678输入：1350输出：1320365011074  代码12">
+<meta property="og:description" content="样例1：铺满 2*N 方格描述杭电题目链接 在2×n的一个长方形方格中,用一个1× 2的骨牌铺满方格,输入n ,输出铺放方案的总数. 输入输入数据由多行组成，每行包含一个整数n,表示该测试实例的长方形方格的规格是2×n (0&lt;n&lt;&#x3D;50)。">
 <meta property="og:locale">
 <meta property="og:image" content="http://images.fangning.xyz//20201031211138.png">
 <meta property="og:image" content="http://images.fangning.xyz//20201031212825.png">
 <meta property="og:image" content="http://images.fangning.xyz//20201031213012.png">
 <meta property="og:image" content="http://images.fangning.xyz//20201031213300.png">
 <meta property="article:published_time" content="2020-10-15T09:26:30.000Z">
-<meta property="article:modified_time" content="2020-11-13T03:20:54.187Z">
+<meta property="article:modified_time" content="2022-05-12T08:59:00.837Z">
 <meta property="article:author" content="方宁">
 <meta property="article:tag" content="ACM">
 <meta name="twitter:card" content="summary">
@@ -264,6 +264,10 @@
     <h1 id="样例1：铺满-2-N-方格"><a href="#样例1：铺满-2-N-方格" class="headerlink" title="样例1：铺满 2*N 方格"></a>样例1：铺满 2*N 方格</h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=2046">杭电题目链接</a></p>
 <p>在2×n的一个长方形方格中,用一个1× 2的骨牌铺满方格,输入n ,输出铺放方案的总数.</p>
 <h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>输入数据由多行组成，每行包含一个整数n,表示该测试实例的长方形方格的规格是2×n (0&lt;n&lt;=50)。</p>
+<a id="more"></a>
+
+
+
 <h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>对于每个测试实例，请输出铺放方案的总数，每个实例的输出占一行。</p>
 <h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入：</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">50</span></span><br><span class="line">输出：</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">20365011074</span></span><br></pre></td></tr></table></figure>
 
@@ -677,7 +681,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 方宁
+    		&copy; 2020-2022 方宁
     	</div>
       	<div class="footer-right">
 			
@@ -820,11 +824,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">C/C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">C/C++</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -833,6 +841,26 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SQLServer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">javaWeb</a>
               </li>
              
               <li class="article-tag-list-item">

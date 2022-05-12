@@ -207,7 +207,7 @@
             
 
   
-    <article id="post-2020.09.09 zigbee 概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2022.02.09 Spring" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -215,7 +215,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/" target="_blank">zigbee概述</a>
+	  <a class="article-title" href="/2022/02/09/2022.02.09%20Spring/" target="_blank">Spring</a>
   
     </h1>
   
@@ -223,8 +223,8 @@
 
   
   
-<a href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/" class="archive-article-date">
-        <time datetime="2020-09-09T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-09</time>
+<a href="/2022/02/09/2022.02.09%20Spring/" class="archive-article-date">
+        <time datetime="2022-02-09T03:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-09</time>
 </a>
 
   
@@ -236,816 +236,20 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="zigbee"><a href="#zigbee" class="headerlink" title="zigbee"></a>zigbee</h1><h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> zigbee 不像 <span class="number">51</span>单片机 只需要理解里面的寄存器就可以玩转:</span><br><span class="line">    <span class="number">1</span>) zigbee 最主要的是协议栈。它包含了很多的协议站，以及相关代码。这是最难的。</span><br><span class="line">    <span class="number">2</span>) 资料方面，互联网上关于 zigbee 相关的深入浅出的资料很少。特别是关于讲解<span class="string">&#x27;协议栈&#x27;</span>这一方面。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 术语:</span><br><span class="line">    <span class="number">1</span>) zigbee, zigbee通信方式，zigbee协议 三者都是一个意思。</span><br><span class="line">    <span class="number">2</span>) 节点，无线模块，无线设备，三者都是一个意思。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 计算机之间，局域网采用以太网协议:</span><br><span class="line">    <span class="number">1</span>) zigbee之间通信，同样的，采用zigbee协议</span><br><span class="line">    <span class="number">2</span>) 作用：<span class="string">&#x27;构建无线局域网！！&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 如果一个无线局域网用于传感器的数据收集和监控，那么这个网络就叫做<span class="string">&#x27;无线传感器网络&#x27;</span></span><br><span class="line">    <span class="number">1</span>) 也就是说，无线传感器网络是无线局域网的一个具体应用。</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 已经有了 蓝牙 和 wifi 为什么还要用 zigbee:</span><br><span class="line">    <span class="number">1</span>) 蓝牙：功耗低，但是组件网络的节点数少 <span class="number">7</span>~<span class="number">8</span>个。</span><br><span class="line">    <span class="number">2</span>) wifi：通信功率 比较大， 功耗大。</span><br><span class="line">    <span class="number">3</span>) zigbee：可以组将大概模网络，节点可以上万个！功耗低(cc <span class="number">2530</span> 正常工作电流<span class="number">8</span>mA, 最低工作达到几个uA)。</span><br><span class="line">    	缺点：通信速率比较小，<span class="number">250</span> kbs。比较适合传感器的信息传送。</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 应用方面:</span><br><span class="line">    <span class="number">1</span>) 家具方面：可以用电池，或者太阳能供电。</span><br><span class="line">    <span class="number">2</span>) 工业方面：传统使用总线组将局域网，如果有zigbee的话，就可以无线组网。</span><br><span class="line">    <span class="number">3</span>) 农业方面：组将无线传感器网络，温湿度传感器，二氧化碳浓度等传感器的数据组网收集。</span><br><span class="line">    <span class="number">4</span>) 医疗方面：......</span><br><span class="line">    <span class="number">5</span>) 物联网时代，zigbee 使用十分频繁。</span><br><span class="line"></span><br><span class="line"><span class="number">7.</span> zigbee 模块一般配合上位机构建控制系统:</span><br><span class="line">    <span class="number">1</span>) 上位机可以是 pc，也可以是通过互联网的远程服务器。</span><br><span class="line">    <span class="number">2</span>) 上位机可以实现对 zigbee 系统中的元件控制。</span><br><span class="line">    <span class="number">3</span>) 主 zigbee 与 计算机之间 是<span class="string">&#x27;采用串口进行通信&#x27;</span>的。也就是和 arduino 串口通信一样，需要使用一根数据线连接电脑。计算机获取数据。 </span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">zigbee</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/09/2020.09.09%20zigbee%20%E6%A6%82%E8%BF%B0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hexo 默认文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/09/03/hexo%20%E9%BB%98%E8%AE%A4%E6%96%87%E7%AB%A0/" target="_blank">Hello world</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/09/03/hexo%20%E9%BB%98%E8%AE%A4%E6%96%87%E7%AB%A0/" class="archive-article-date">
-        <time datetime="2020-09-03T09:42:39.545Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-03</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-    
-    <a class="article-more-a" href="/2020/09/03/hexo%20%E9%BB%98%E8%AE%A4%E6%96%87%E7%AB%A0/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">个人博客搭建</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/03/hexo%20%E9%BB%98%E8%AE%A4%E6%96%87%E7%AB%A0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.08.24 PKI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/24/2020.08.24%20PKI/" target="_blank">PKI</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/24/2020.08.24%20PKI/" class="archive-article-date">
-        <time datetime="2020-08-24T14:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-24</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="PKI"><a href="#PKI" class="headerlink" title="PKI"></a>PKI</h1><h2 id="什么是-PKI"><a href="#什么是-PKI" class="headerlink" title="什么是 PKI"></a>什么是 PKI</h2>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> Public Key Infrastructure：公钥基础设施</span><br><span class="line">    <span class="number">1</span>) 作用：通过加密技术 和 数字签名 保证信息的安全。例如：互联网中数据传输过程中进行加密、</span><br><span class="line">    <span class="number">2</span>) 组成：<span class="string">&#x27;公钥加密技术、数字证书、CA&#x27;</span>、RA......</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 信息安全三要素:</span><br><span class="line">    <span class="number">1</span>) <span class="string">&#x27;机密性&#x27;</span>：别人拿到数据，但是看不懂，破不开。</span><br><span class="line">    <span class="number">2</span>) <span class="string">&#x27;完整性&#x27;</span>：要防止接受到的数据不能被是被中间人破坏，篡改的。如果被破坏了，接收方不能获取，需要重新发送。</span><br><span class="line">    <span class="number">3</span>) <span class="string">&#x27;身份验证/操作的不可否认性&#x27;</span>：检查接收方获得的数据是否是由发送方发出的。防止数据被伪造发送，就像伪 DHCP 服务器发送 Offer 包，导致客户机获取网络配置失败。</span><br><span class="line">	<span class="comment"># 这些三种技术，都包含在 PKI 技术范畴。无论那种加密技术，都有包含 PKI 技术。</span></span><br><span class="line">    </span><br><span class="line"><span class="number">3.</span> 应用领域:</span><br><span class="line">    <span class="number">1</span>) SSL/HTTPS ：网页信息技术。（https = http ssl）</span><br><span class="line">    <span class="number">2</span>) IPsecVPN：很多网络公司用到的 vpn。</span><br><span class="line">    <span class="number">3</span>) 以及部分远程访问 VPN。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/08/24/2020.08.24%20PKI/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/24/2020.08.24%20PKI/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.08.22 BFS广度优先遍历" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/22/2020.08.22%20BFS%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/" target="_blank">BFS广度搜索</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/22/2020.08.22%20BFS%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/" class="archive-article-date">
-        <time datetime="2020-08-22T09:14:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-22</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="BFS-广度优先遍历"><a href="#BFS-广度优先遍历" class="headerlink" title="BFS 广度优先遍历"></a>BFS 广度优先遍历</h1><h2 id="经验"><a href="#经验" class="headerlink" title="经验"></a>经验</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 不同于 深度优先遍历dfs ———— 递归式遍历(所问即所答)。</span><br><span class="line">	<span class="number">1</span>) 广度优先遍历采用的是 迭代遍历的方式，非递归只有循环.   </span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 该算法主要思想是:</span><br><span class="line">    <span class="number">1</span>) 从<span class="string">&#x27;最开始&#x27;</span>的<span class="string">&#x27;第一个节点&#x27;</span>，按照一种固定的规律，<span class="string">&#x27;遍历出&#x27;</span>与之<span class="string">&#x27;相邻的节点&#x27;</span>。</span><br><span class="line">    <span class="number">2</span>) 采用的存储数据结构是 ———— <span class="string">&#x27;队列&#x27;</span>。有时根据题目需求和效率需求，会采用 c++ stl容器 ———— <span class="string">&#x27;优先队列&#x27;</span>( Priority queue )。</span><br><span class="line">    <span class="number">3</span>) <span class="string">&#x27;手动添加第一个&#x27;</span>结点到队列，然后进入循环体，<span class="string">&#x27;直到队列为空&#x27;</span>或<span class="string">&#x27;找到目标&#x27;</span>结束遍历。遍历的同时，<span class="string">&#x27;会向&#x27;</span>队列中<span class="string">&#x27;添加新的节点&#x27;</span>，<span class="string">&#x27;删除已经遍历过的节点&#x27;</span>。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 结构体队列:</span><br><span class="line">    <span class="number">1</span>) 大多数情况下，我们采用的对象并不是简单的级别数据类型。需要我们<span class="string">&#x27;自己设定抽象数据类型&#x27;</span>。</span><br><span class="line">    <span class="number">2</span>) 比如跑图的时候，需要记录 <span class="string">&#x27;步数step、坐标xy、路径string&#x27;</span>。这些记录每走一步，都需要记录下来，所以定义一个结构体，然后<span class="string">&#x27;采用结构体队列&#x27;</span>来存储遍历时的<span class="string">&#x27;中间结果&#x27;</span>。</span><br><span class="line">    </span><br><span class="line"><span class="number">4.</span> 结构体声明:</span><br><span class="line">    struct node&#123;</span><br><span class="line">        int x, y;</span><br><span class="line">        node( int x1, int y1 )&#123;</span><br><span class="line">            x = x1;</span><br><span class="line">            y = y1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    构造方法的使用:</span><br><span class="line">        node t( <span class="number">1</span>, <span class="number">1</span>);   <span class="comment"># 声明了一个结构体变量，初始化成员 x = 1, y = 1 </span></span><br><span class="line">    </span><br><span class="line"><span class="number">5.</span> 队列的操作:</span><br><span class="line">    queue&lt;node&gt; q;		<span class="comment"># 定义一个结构体队列</span></span><br><span class="line">    q.push( node t );	<span class="comment"># 添加一个节点到队列</span></span><br><span class="line">    q.pop( node t );	<span class="comment"># 从队列删除一个节点</span></span><br><span class="line">    q.front();		    <span class="comment"># 读出队列一个节点</span></span><br><span class="line">    q.empty();		    <span class="comment"># 判断队列是否为空 true/false</span></span><br><span class="line">    q.size();		   	<span class="comment"># 读取队列中元素个数</span></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/08/22/2020.08.22%20BFS%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/22/2020.08.22%20BFS%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.08.20 域3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/20/2020.08.20%20%E5%9F%9F3/" target="_blank">域3</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/20/2020.08.20%20%E5%9F%9F3/" class="archive-article-date">
-        <time datetime="2020-08-20T11:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="域3"><a href="#域3" class="headerlink" title="域3"></a>域3</h1><h2 id="将域用户获得成员机的完全控制权限"><a href="#将域用户获得成员机的完全控制权限" class="headerlink" title="将域用户获得成员机的完全控制权限"></a>将域用户获得成员机的完全控制权限</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 新建的域用户虽然可以登陆任何的计算机，但是<span class="string">&#x27;没有本地计算机的完全控制权限&#x27;</span>。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 如果需要让某个域用户获得某台计算机的完全控制权限。</span><br><span class="line">	<span class="number">1</span>) 需要将该用户<span class="string">&#x27;加入&#x27;</span>本地计算机的 <span class="string">&#x27;administrators 组&#x27;</span>当中，而不是加入 域管理员组Domain admins。</span><br><span class="line">    <span class="number">2</span>) 方法就是，先用 <span class="string">&#x27;域管理员账&#x27;</span>号 登陆 <span class="string">&#x27;该计算&#x27;</span>机，然后将 <span class="string">&#x27;普通域用户&#x27;</span> 添加到 <span class="string">&#x27;本地管理员组&#x27;</span>。</span><br><span class="line">    <span class="number">3</span>) 这样，该<span class="string">&#x27;普通域用户&#x27;</span>就<span class="string">&#x27;获得&#x27;</span>了<span class="string">&#x27;该本地计算机&#x27;</span>的<span class="string">&#x27;完全控制权限&#x27;</span>。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 所有的 Domain admins 用户都属于该域下所有计算机的 Administrators。可想而知，<span class="string">&#x27;域管理员的权限非常之大&#x27;</span>，是<span class="string">&#x27;所有计算机的管理员&#x27;</span>。</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/08/20/2020.08.20%20%E5%9F%9F3/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/20/2020.08.20%20%E5%9F%9F3/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.08.19 域2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/19/2020.08.19%20%E5%9F%9F2/" target="_blank">域2</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/19/2020.08.19%20%E5%9F%9F2/" class="archive-article-date">
-        <time datetime="2020-08-19T07:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="部署安装活动目录"><a href="#部署安装活动目录" class="headerlink" title="部署安装活动目录"></a>部署安装活动目录</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 部署安装 win2008 虚拟机。配置静态 IP 地址。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> win2008 装管理工具，不需要从光盘中获取安装包.</span><br><span class="line">	1) 右击计算机 -&gt; 角色(服务器) -&gt; 添加角色 -&gt; DC服务 -&gt; 安装。  ##此方法不推荐使用，还有方法二</span><br><span class="line">    </span><br><span class="line">	<span class="number">2</span>) <span class="comment">#方法二:</span></span><br><span class="line">	<span class="number">3</span>) 安装<span class="string">&#x27;活动目录&#x27;</span>：</span><br><span class="line">    	<span class="number">0</span>) 配置之前，不要给该计算机指定 DNS 和 网关，<span class="string">&#x27;只需要给一个固定IP就行了&#x27;</span>。</span><br><span class="line">           给该服务器的计算机名改为 DC1。因为，AD配置完之后，会自动该计算机加入域。</span><br><span class="line">    	1) win + r -&gt; &#x27;dcpromo&#x27; 该命令可进行安装/卸载</span><br><span class="line">        <span class="number">2</span>) 高级模式不用勾选。</span><br><span class="line">        <span class="number">3</span>) 如果没指定 DNS 的话，它会有一个是否在该计算机上安装 DNS。<span class="string">&#x27;一步一定要勾选&#x27;</span>.</span><br><span class="line">        <span class="number">4</span>) <span class="comment">#域树:</span></span><br><span class="line">            	如果当前有一个域，位于一棵树的根部 root，我们可以称之为<span class="string">&#x27;根域&#x27;</span>。与根域相连的可能是若干个<span class="string">&#x27;子域&#x27;</span>，子域与根域之间通过<span class="string">&#x27;专线&#x27;</span>连接，现实中可能是公司内部建立的<span class="string">&#x27;独立通信线路&#x27;</span>，以便<span class="string">&#x27;跨区域实现局域网&#x27;</span>。而，根域可能是一个公司的总部，<span class="string">&#x27;子域可能&#x27;</span>是一个公司在其他地区的<span class="string">&#x27;分部&#x27;</span>，但是他们<span class="string">&#x27;同属一个域&#x27;</span>。例如 根域域控: qf.com 子域域控: shanghai.qf.com(表示上海分布)。</span><br><span class="line">           <span class="comment">#域林:</span></span><br><span class="line">            	一个公司内部两个不太相关的业务，建立<span class="string">&#x27;两个独立&#x27;</span>的<span class="string">&#x27;根域&#x27;</span> ———— 如 weixin.com 和 qq.com 。两者都属于腾讯公司内部业务，但是互不包含，<span class="string">&#x27;都是根域级别&#x27;</span>。两棵域树，或者<span class="string">&#x27;多棵域树的集合&#x27;</span>，就是<span class="string">&#x27;域林&#x27;</span>。一般，国内很少有公司使用域林管理结构，顶多就是域树级别。</span><br><span class="line">        <span class="number">5</span>) 设置根域名：fn222.com，<span class="comment">#与此同时也表示 DC 的计算机名为 fn222</span></span><br><span class="line">        <span class="number">6</span>) 设置林功能级别：windows server <span class="number">2003</span>。也就是规定，整个林中，所有域服务器版本不能低于 win2003。</span><br><span class="line">        <span class="number">7</span>) 设置域功能级别：windows server <span class="number">2008</span>。也就是规定，整个域中，所有子域服务器版本不能低于 win2008。</span><br><span class="line">        <span class="number">8</span>) 设置数据库(活动目录AD)、日志、策略存储路径，这里选默认就好。</span><br><span class="line">        <span class="number">9</span>) 设置 AD 还原密码，一般用不到。用来还原活动目录。</span><br><span class="line">            </span><br><span class="line">	<span class="number">4</span>) 重启安装完成后，登陆域 fn222/administrator 原来的 <span class="string">&#x27;本地管理员&#x27;</span> 已经<span class="string">&#x27;升级&#x27;</span>为 <span class="string">&#x27;域管理员&#x27;</span>。</span><br><span class="line">	<span class="number">5</span>) 查看管理工具，DNS管理工具，发现自动生成了一个域名解析区域，以及主机A记录。如果需要设置转发器，可以进行进一步修改。</span><br><span class="line">	<span class="number">6</span>) 查看 <span class="string">&#x27;Active Director 用户和计算机&#x27;</span>。<span class="string">&#x27;验证&#x27;</span>Domain Controllers 和 Users中的分组。用户，管理员等<span class="string">&#x27;用户和组&#x27;</span>都<span class="string">&#x27;升级&#x27;</span>了，变成了<span class="string">&#x27;域用户，域组&#x27;</span>。</span><br><span class="line">        Computer：普通域成员机列表</span><br><span class="line">        Domain Controller：DC列表</span><br><span class="line">        Users：域用户/组</span><br><span class="line">    </span><br><span class="line"><span class="number">3.</span> <span class="comment">#加入域添加成员机:</span></span><br><span class="line">    <span class="number">1</span>) 配置 IP 与域控同属一个局域网；给员工计算机指定 DNS 到 域控地址。</span><br><span class="line">    2) 修改计算机属性，计算机名 -&gt; 更改 -&gt; 隶属于域 fn222.com -&gt; 使用域管理员登陆fn222.com/administrator。</span><br><span class="line">    <span class="number">3</span>) 查看活动目录用户管理工具，是否新添加了 成员机。</span><br><span class="line">    4) 在活动目录用户管理工具 -&gt; user 中为该成员机添加一个 域用户。右击，添加用户，填写相应信息即可。用户登陆名一般为 &#x27;名.姓&#x27; eg: &#x27;ning.fang&#x27; @fn222 。</span><br><span class="line">    <span class="number">5</span>) 成员机，使用<span class="string">&#x27;域用户&#x27;</span>登陆计算机检查是否能够登陆成功。</span><br><span class="line">    </span><br><span class="line"><span class="string">&#x27;注意&#x27;</span>: 一旦计算机处于域环境中:</span><br><span class="line">    <span class="comment">#那么  域管理员组 会自动加入本地计算机的  管理员adminitrators组。</span></span><br><span class="line">    <span class="comment">#另外  域用户组   会自动加入本地计算机的  用户users组。</span></span><br><span class="line">    因此在设置一些访问控制列表权限的时候，一定要注意考虑这两个组的位置，以免权限产生相互影响。</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/08/19/2020.08.19%20%E5%9F%9F2/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/19/2020.08.19%20%E5%9F%9F2/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.08.17 域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/17/2020.08.17%20%E5%9F%9F/" target="_blank">域</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/17/2020.08.17%20%E5%9F%9F/" class="archive-article-date">
-        <time datetime="2020-08-17T07:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-17</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="域"><a href="#域" class="headerlink" title="域"></a>域</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> Domain 英文名。</span><br><span class="line">	<span class="number">1</span>) 很多方面都需要用到域，并且域的重要性很高。或者说是，域管理器的重要性很高。就像，对于DHCP网络连接来讲，dhcp服务器很重要。</span><br><span class="line">    <span class="number">2</span>) 越是大型的公司，对于域的依赖性也就越高。有些公司会专门聘请 域管理员，并且资薪也特别高。不过，这种职业需求很少。</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 对于内外环境:</span><br><span class="line">    <span class="number">1</span>) 工作组：默认模式，特点是<span class="string">&#x27;人人平等&#x27;</span>，但是不利于管理。</span><br><span class="line">    <span class="number">2</span>) 域：<span class="string">&#x27;人人不平等&#x27;</span>，可以<span class="string">&#x27;实现集中管理，统一管理&#x27;</span>。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 域的组成:</span><br><span class="line">    <span class="number">1</span>) 域控制器：老大。是一种服务器，电脑，简称<span class="string">&#x27;域控&#x27;</span> —— DC（Domain Contronller）。</span><br><span class="line">    <span class="number">2</span>) 成员机：普通用户，相互平等。</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 域的部署:</span><br><span class="line">    <span class="number">1</span>) 首先用一台服务器，安装域管理软件，这时，域就形成了。</span><br><span class="line">       但是，在形成之初，域中只有 DC，也就是域控一台计算机。</span><br><span class="line">       接下来，就需要一个个进行<span class="string">&#x27;加入域&#x27;</span>操作。该操作只出现在公司成立之初，或者大型改造过程中。</span><br><span class="line">    <span class="number">2</span>) 安装域控制器 ———— 就生成了域环境。</span><br><span class="line">    <span class="number">3</span>) 安装活动目录 ———— 就生成了域控制器。以此，域的部署，要先从活动目录开始。</span><br><span class="line">    <span class="number">4</span>) 活动目录：Active Directory == AD</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> 拓扑图中，域用一个三角形显示</span><br><span class="line">	<span class="number">1</span>) 每个域都有一个域名 ———— 一般以公司名命名，如 qf.com</span><br><span class="line">	<span class="number">2</span>) 域中每台计算机的计算机名，其实也是一个主机名。如: 计算机名为 FANGING 那么，它在<span class="string">&#x27;域中的名字标识就是 FANGNING.qf.com&#x27;</span> 并且 该域名与你这太计算机的 IP 地址进行绑定。</span><br><span class="line">	<span class="number">3</span>) 这种功能<span class="string">&#x27;类似于 DNS域名解析服务器&#x27;</span>，但是全过程不需要安装 DNS管理工具，也不需要添加 A记录。<span class="string">&#x27;全程自动完成&#x27;</span>。可以说，<span class="string">&#x27;域控本身也是一台dns服务器&#x27;</span>。</span><br><span class="line">	<span class="number">4</span>) 域环境中，<span class="string">&#x27;只需要知道员工的姓名&#x27;</span>，就可以知道他的域名，通过 dc 进行解析，<span class="string">&#x27;就可以知道他的 IP 地址&#x27;</span>，通过交换机还可以知道他的 mac地址。公司内部的计算机，不能随意改动计算机名。</span><br><span class="line">    </span><br><span class="line"><span class="number">6.</span> 活动目录特点:</span><br><span class="line">    <span class="number">1</span>) 域控的<span class="string">&#x27;核心&#x27;</span>，其实就是依赖于<span class="string">&#x27;活动目录&#x27;</span>。所以，活动目录是<span class="string">&#x27;域环境中最重要的部分&#x27;</span> ———— 集中/统一 管理。</span><br><span class="line">    <span class="number">2</span>) 活动目录是一张表。存放着整个公司的<span class="string">&#x27;公共资源&#x27;</span>，也成为<span class="string">&#x27;域资源&#x27;</span>.</span><br><span class="line">    	(<span class="number">1</span>) 域账号：区别于计算机的本地账号。可以<span class="string">&#x27;通过该域账号&#x27;</span>，<span class="string">&#x27;登陆&#x27;</span>处于域中的<span class="string">&#x27;成员机&#x27;</span>.</span><br><span class="line">        	<span class="number">1</span>)首次通过域账号密码登陆成员机时，计算机<span class="string">&#x27;不会直接判断账号密码错误&#x27;</span>。先会通过 DC域名 <span class="string">&#x27;解析出 DC地址&#x27;</span></span><br><span class="line">        	<span class="number">2</span>)然后，询问 DC，<span class="string">&#x27;活动目录中&#x27;</span>，是否有该<span class="string">&#x27;域账号&#x27;</span>，<span class="string">&#x27;进行核对&#x27;</span>。如果有，那么成员机就会<span class="string">&#x27;允许&#x27;</span>这个域账号进行登陆。</span><br><span class="line">        	<span class="number">3</span>)登陆成功后，成员机会在本地<span class="string">&#x27;创建&#x27;</span>对应该账号的<span class="string">&#x27;家目录&#x27;</span>。</span><br><span class="line">        (<span class="number">2</span>) 存储企业内部所有<span class="string">&#x27;公共服务器地址&#x27;</span>。一个企业中，有很多的服务器地址，例如域名解析服务器地址、动态主机配置服务器地址、ftp服务器地址、web服务器地址。这些地址很难记住，可以将其存储到活动目录中，创建一个成员机都可以访问的公共资源。这样<span class="string">&#x27;只需要记住活动目录地址&#x27;</span>。</span><br><span class="line"></span><br><span class="line"><span class="number">7.</span> 组策略 GPO:</span><br><span class="line">    <span class="number">1</span>) 与活动目录配合，进行集中管理。组策略很强大，并且设计了很多很多条。</span><br><span class="line">    <span class="number">2</span>) Group Policy ———— 组 策略</span><br><span class="line">    <span class="number">3</span>) 一个组策略就像是一个<span class="string">&#x27;能实现某种功能的批处理指令&#x27;</span>。它可以对活动目录中的一组域账号统一下达某种指令。</span><br><span class="line">    例如统一修改成员机桌面图标。只需要<span class="string">&#x27;在活动目录中&#x27;</span>添加相应的<span class="string">&#x27;一条组策略&#x27;</span>，然后<span class="string">&#x27;应用&#x27;</span>就行了。</span><br><span class="line"></span><br><span class="line"><span class="number">8.</span> 将计算机通过域账号登陆时:</span><br><span class="line">    <span class="number">1</span>) 首先会<span class="string">&#x27;询问 DC&#x27;</span>，是否对我下达了什么指令</span><br><span class="line">    <span class="number">2</span>) DC 通过访问活动目录发现，该<span class="string">&#x27;成员机所属的分组内，有一条组策略&#x27;</span>。</span><br><span class="line">    <span class="number">3</span>) 该成员机通过读取该组策略，<span class="string">&#x27;就会按照要求执行&#x27;</span>。</span><br><span class="line">    <span class="number">4</span>) 这就实现了一种 集中/统一 管理。全靠活动目录！</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/08/17/2020.08.17%20%E5%9F%9F/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/17/2020.08.17%20%E5%9F%9F/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.08.16 IIS 之 FTP 服务器2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/16/2020.08.16%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A82/" target="_blank">FTP服务器搭建2</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/16/2020.08.16%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A82/" class="archive-article-date">
-        <time datetime="2020-08-16T14:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-16</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="FTP-服务器2"><a href="#FTP-服务器2" class="headerlink" title="FTP 服务器2"></a>FTP 服务器2</h1><h2 id="ftp-主被动模式"><a href="#ftp-主被动模式" class="headerlink" title="ftp 主被动模式"></a>ftp 主被动模式</h2><h3 id="知识储备"><a href="#知识储备" class="headerlink" title="知识储备"></a>知识储备</h3><p>![ftp主被动模式过程](<a target="_blank" rel="noopener" href="http://images.fangning.xyz//ftp">http://images.fangning.xyz//ftp</a> 主被动模式过程.png)**</p>
-    
-    <a class="article-more-a" href="/2020/08/16/2020.08.16%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A82/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/16/2020.08.16%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A82/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.08.16 最大子序列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/16/2020.08.16%20%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97/" target="_blank">分而治之</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/16/2020.08.16%20%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97/" class="archive-article-date">
-        <time datetime="2020-08-16T03:41:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-16</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="分而治之思想——最大子序列和"><a href="#分而治之思想——最大子序列和" class="headerlink" title="分而治之思想——最大子序列和"></a>分而治之思想——最大子序列和</h1><h2 id="首先说一下自己O-n-算法的总体思路"><a href="#首先说一下自己O-n-算法的总体思路" class="headerlink" title="首先说一下自己O(n)算法的总体思路"></a>首先说一下自己O(n)算法的总体思路</h2><p><strong>思路</strong>：一段序列的子序列，必须是连续的。要求最大的子序列，就是找出原序列中一段连续空间元素和最大应该是多少。</p>
-<p>​            朴素算法是，枚举起始位置 i , 和终止位置 j。然后每次求 i ~ j的和，最终得到结果。该算法时间复杂度为O(n^n)，明显是不可取的。</p>
-<p>​            要求和的话，肯定先想到前缀和，然后由于要找一段子序列的和，那么如果两个位置的前缀和相减，得到的不就是中间一段连续空间的和了嘛？需要添加一个数组 sum。</p>
-<p>​            那么应该如何确定哪两个位置的前缀和相减呢？首先，肯定是后面的位置 j 减前面的位置 i，我们可以枚举每一个后面的位置 j。</p>
-<p>​            那如何确定 i ？很显然，找小于 j 的最小的一个数，他们之间的差就一定最大。那么如何找最小的数？每次都遍历一遍太费时间。所以我们可以一遍找出所有位置<strong>之前所有元素中最小元素</strong>所在位置。这需要我们再添加一个数组 vis。</p>
-    
-    <a class="article-more-a" href="/2020/08/16/2020.08.16%20%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ACM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/16/2020.08.16%20%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020.08.13 IIS 之 FTP 服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/13/2020.08.13%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A8/" target="_blank">FTP服务器搭建</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/13/2020.08.13%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="archive-article-date">
-        <time datetime="2020-08-13T11:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-13</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="FTP-服务器搭建"><a href="#FTP-服务器搭建" class="headerlink" title="FTP 服务器搭建"></a>FTP 服务器搭建</h1><h2 id="FTP服务器"><a href="#FTP服务器" class="headerlink" title="FTP服务器"></a>FTP服务器</h2><ul>
-<li>File Transfer Protocol：文件传输协议。</li>
-<li>端口号： TCP 20 / 21 </li>
-<li>FTP 工作方式：<ul>
-<li>主动(活动)模式。</li>
-<li>被动模式。</li>
+    <h1 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h1><h1 id="Spring-框架"><a href="#Spring-框架" class="headerlink" title="Spring 框架"></a>Spring 框架</h1><ul>
+<li>框架：框架是指一些能完成特定功能的半成品（别人写好的代码），必须配置完框架才能</li>
+<li>Spring 框架：解决了程序中出现的很多<strong>耦合，内聚</strong>问题。</li>
+<li>Spring 主要功能：<ul>
+<li>轻松使代码解耦；</li>
+<li>可以帮助我们控制数据库事务；</li>
+<li>是一个非侵入式的轻量级框架；</li>
+<li>可以集成市面上所有主流框架；</li>
+<li>Spring 自身提供了 JavaEE 一张式开发。</li>
 </ul>
 </li>
 </ul>
     
-    <a class="article-more-a" href="/2020/08/13/2020.08.13%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A8/#more">more >></a>
+    <a class="article-more-a" href="/2022/02/09/2022.02.09%20Spring/#more">more >></a>
     
     
 
@@ -1062,7 +266,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">千锋网络安全</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaWeb</a>
         		</li>
       		
 		</ul>
@@ -1072,7 +276,899 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/13/2020.08.13%20IIS%20%E4%B9%8B%20FTP%20%E6%9C%8D%E5%8A%A1%E5%99%A8/">展开全文 >></a>
+      <a class="article-more-a" href="/2022/02/09/2022.02.09%20Spring/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2022.02.09 Maven" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/02/09/2022.02.09%20Maven/" target="_blank">maven</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/02/09/2022.02.09%20Maven/" class="archive-article-date">
+        <time datetime="2022-02-09T01:19:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-09</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><p>​    Maven 是 apache 旗下的一个项目，这个项目是纯 Java 开发，主要用来管理 Java 项目。</p>
+<p>​    目前我们使用的第三方 jar 包越来越多，而伴随 jar 包的增加，项目的体积会越来越大，使用 Maven 可以减少项目体积。</p>
+<p>​    伴随着我们使用的 jar 包越来越多，我们需要上网到处寻找需要的 jar 包及版本，非常麻烦，==<strong>而 Maven 提供一个中央仓库，里面有所有常用的 jar 包。</strong>==</p>
+<h1 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h1><ul>
+<li>Maven 可以管理项目的生命周期：编码、编译、测试、运行、打包、部署。</li>
+<li>Maven 的依赖管理：<ul>
+<li>jar 包冲突；</li>
+<li>jar 包之间互相再依赖的关系；</li>
+<li>jar 包体积过大。</li>
+</ul>
+</li>
+</ul>
+    
+    <a class="article-more-a" href="/2022/02/09/2022.02.09%20Maven/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaWeb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/02/09/2022.02.09%20Maven/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2022.1.21 Jquery" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/01/21/2022.1.21%20Jquery/" target="_blank">Jquery</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/01/21/2022.1.21%20Jquery/" class="archive-article-date">
+        <time datetime="2022-01-21T15:37:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-21</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="jQuery优点"><a href="#jQuery优点" class="headerlink" title="jQuery优点"></a>jQuery优点</h3><p>​    jQuery的字面意思其实就是JavaScript和查询（Query），即用于辅助开发JavaScript的库。jQuery是继prototype之后的又一个优质的Javascript库，属于开源编程语言。</p>
+<p>​    jQuery使用户可以更加方便地处理HTML（标准通用标记语言下的一个应用）、events、实现动画效果，而且方便地为网站提供<a target="_blank" rel="noopener" href="https://www.w3cschool.cn/ajax">AJAX</a>交互。jQuery还有一个比较大的优势是，它的文档说明很全，而且各种应用也说得很详尽，同时还有很多成熟的插件可供选择。jQuery可以使用户的html页面保持代码和html的内容分离，也就是说，不需要再在html里面插入一堆js来调用命令了，只需要定义id即可。</p>
+<h3 id="jQuery的缺点："><a href="#jQuery的缺点：" class="headerlink" title="jQuery的缺点："></a>jQuery的缺点：</h3><p>1、不能向后兼容。每一个新版本不能兼容早期的版本。 </p>
+<p>2、插件兼容性不是太好，与上一点类似。 </p>
+<p>3、在同一页面上使用多个插件时，很容易碰到冲突现象，尤其是这些插件依赖相同事件或selector时最为明显。 </p>
+<p>4、在大型框架中，jQuery核心代码库对动画和特效的支持相对较差。但是实际上这不是一个问题。目前在这方面有一个单独的jQuery UI项目和众多插件来弥补此点。 </p>
+<h3 id="jQuery安装"><a href="#jQuery安装" class="headerlink" title="jQuery安装"></a>jQuery安装</h3>
+    
+    <a class="article-more-a" href="/2022/01/21/2022.1.21%20Jquery/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaWeb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/01/21/2022.1.21%20Jquery/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2022.1.20 注解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/01/20/2022.1.20%20%E6%B3%A8%E8%A7%A3/" target="_blank">注解</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/01/20/2022.1.20%20%E6%B3%A8%E8%A7%A3/" class="archive-article-date">
+        <time datetime="2022-01-20T07:07:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-20</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="注解定义"><a href="#注解定义" class="headerlink" title="注解定义"></a>注解定义</h1><ul>
+<li>通过 <code>@interface</code> 关键字进行定义</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> TestAnnotation &#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>创建和接口类似，仅仅添加了一个 @ 符号；==<strong>注解，就相当于标签</strong>==。</p>
+    
+    <a class="article-more-a" href="/2022/01/20/2022.1.20%20%E6%B3%A8%E8%A7%A3/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaWeb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/01/20/2022.1.20%20%E6%B3%A8%E8%A7%A3/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2022.1.12 CRM项目改进" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/01/12/2022.1.12%20CRM%E9%A1%B9%E7%9B%AE%E6%94%B9%E8%BF%9B/" target="_blank">CRM项目</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/01/12/2022.1.12%20CRM%E9%A1%B9%E7%9B%AE%E6%94%B9%E8%BF%9B/" class="archive-article-date">
+        <time datetime="2022-01-12T01:42:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-12</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="访问拦截"><a href="#访问拦截" class="headerlink" title="访问拦截"></a>访问拦截</h1><h2 id="未登录访问-jsp-页面"><a href="#未登录访问-jsp-页面" class="headerlink" title="未登录访问 jsp 页面"></a>未登录访问 jsp 页面</h2><ul>
+<li><strong>方法一：</strong>每一个 jsp 前面加入拦截代码：从 session 域中取登陆信息，如果为 NULL 则重定向到登陆界面。==该方法，虽然可以实现，但是需要在前端写java逻辑代码，没有实现前后端分离==。</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:<span class="keyword">if</span> test=<span class="string">&quot;$&#123;empty admin&#125;&quot;</span>&gt;</span><br><span class="line">	&lt;c:redirect url=&quot;/login.html&quot;&gt;&lt;/c:redirect&gt;</span><br><span class="line">&lt;/c:if&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>方法二：</strong>将**==除了登陆界面以外的所有界面放到 web-inf 下保护起来==**，禁止用户直接通过 URL 访问。<ul>
+<li><strong>在前后端不分离的项目中，一般我们会在 WEB-INF 下新建一个 page 文件夹，然后将所界面（除了登陆页面以外）放到里面，进行保护起来。</strong></li>
+<li>有一个问题：</li>
+</ul>
+</li>
+</ul>
+    
+    <a class="article-more-a" href="/2022/01/12/2022.1.12%20CRM%E9%A1%B9%E7%9B%AE%E6%94%B9%E8%BF%9B/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaWeb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/01/12/2022.1.12%20CRM%E9%A1%B9%E7%9B%AE%E6%94%B9%E8%BF%9B/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2021.12.25 mysql升级" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/12/25/2021.12.25%20mysql%E5%8D%87%E7%BA%A7/" target="_blank">mysql备份升级</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/12/25/2021.12.25%20mysql%E5%8D%87%E7%BA%A7/" class="archive-article-date">
+        <time datetime="2021-12-25T01:44:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-25</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="卸载旧版本"><a href="#卸载旧版本" class="headerlink" title="卸载旧版本"></a>卸载旧版本</h1><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zgdwxp/article/details/103168552">不能使用 on update stamp 事件</a></p>
+<p>给 timestamp 类型字段添加，默认创建时间，以及默认更新时间，以及多个共存的功能，老版本不支持。</p>
+    
+    <a class="article-more-a" href="/2021/12/25/2021.12.25%20mysql%E5%8D%87%E7%BA%A7/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/12/25/2021.12.25%20mysql%E5%8D%87%E7%BA%A7/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2021.12.22 Ajax" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/12/22/2021.12.22%20Ajax/" target="_blank">Ajax</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/12/22/2021.12.22%20Ajax/" class="archive-article-date">
+        <time datetime="2021-12-22T11:15:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-22</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Ajax简介"><a href="#Ajax简介" class="headerlink" title="Ajax简介"></a>Ajax简介</h1><ul>
+<li>Ajax 全称 asynchronous javascript and xml：异步的 JS 和 XML；</li>
+<li>AJAX 不是一门新的编程语言，而是现有语言的一种使用方式。</li>
+</ul>
+    
+    <a class="article-more-a" href="/2021/12/22/2021.12.22%20Ajax/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaWeb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/12/22/2021.12.22%20Ajax/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2021.12.21 JSP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/12/21/2021.12.21%20JSP/" target="_blank">jsp</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/12/21/2021.12.21%20JSP/" class="archive-article-date">
+        <time datetime="2021-12-21T06:18:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-21</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h1><h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>​    为什么需要 JSP（java servlet page）？</p>
+<ul>
+<li>虽然我们可以在 Servlet 中使用输出流，通过 ServletResponse 来写一个 HTML 数据响应给浏览器，但是这样编写页码非常麻烦，并且 Servlet 中写前端代码的话没有做到责任分离。</li>
+<li>HTML 是一个静态页面，而我们通过数据库查找数据，一般都是后期传递给 HTML 页面的，如果想要将数据填充到 HTML 页码内，需要编写复杂的 JS 代码（通过 JS 动态输出表格，然后插入数据），编写此类代码，大大提高了开发难度。</li>
+</ul>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><ul>
+<li><code>&lt;%--注释内容、代码--%&gt;</code>： 真正的注释，注释掉的的东西，不会执行。==快捷键：ctrl+shift+c==</li>
+<li><code>&lt;!--假注释--&gt;</code>：注释掉的代码依旧会执行！！！</li>
+</ul>
+    
+    <a class="article-more-a" href="/2021/12/21/2021.12.21%20JSP/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaWeb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/12/21/2021.12.21%20JSP/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2021.12.21 Servlet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/12/21/2021.12.21%20Servlet/" target="_blank">Servlet</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/12/21/2021.12.21%20Servlet/" class="archive-article-date">
+        <time datetime="2021-12-21T01:34:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-21</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Servlet-作用域"><a href="#Servlet-作用域" class="headerlink" title="Servlet 作用域"></a>Servlet 作用域</h1><p><img src="http://images.fangning.xyz//20211227194637.png" alt="tomacat与浏览器"></p>
+<h2 id="三大作用域"><a href="#三大作用域" class="headerlink" title="三大作用域"></a>三大作用域</h2><p>​    作用域主要就是用来存储数据的，根据作用域的级别不同，数据的存储范围也不同。</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">作用域名称</th>
+<th align="center">对应Servlet对象</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">应用域</td>
+<td align="center">application</td>
+<td align="center">ServletContext</td>
+</tr>
+<tr>
+<td align="center">会话域</td>
+<td align="center">session</td>
+<td align="center">HttpSession</td>
+</tr>
+<tr>
+<td align="center">请求域</td>
+<td align="center">request</td>
+<td align="center">ServletRequest</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>应用域</strong><ul>
+<li>服务器开启，会自动创建应用域对象，这个对象是全局唯一的；</li>
+<li>应用域中的数据，==在整个应用中可共享==。</li>
+</ul>
+</li>
+<li><strong>会话域</strong><ul>
+<li>会话是指浏览器的一次开启以及关闭，开启浏览器表示开启了一个会话，关闭浏览器表示会话结束（与同一个浏览器有多少标签页无关）。</li>
+<li>==数据可在同一个会话之间共享==。</li>
+</ul>
+</li>
+<li><strong>请求域</strong><ul>
+<li>浏览器每次访问我们的服务器都称为一次请求，数据如果存放在请求域中，==则仅当前请求可访问该数据==。</li>
+</ul>
+</li>
+</ul>
+    
+    <a class="article-more-a" href="/2021/12/21/2021.12.21%20Servlet/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaWeb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/12/21/2021.12.21%20Servlet/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2021.12.20  javaWeb" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/12/20/2021.12.20%20%20javaWeb/" target="_blank">JavaWeb</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/12/20/2021.12.20%20%20javaWeb/" class="archive-article-date">
+        <time datetime="2021-12-20T12:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-20</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Web-发展史"><a href="#Web-发展史" class="headerlink" title="Web 发展史"></a>Web 发展史</h1><h2 id="最早时期"><a href="#最早时期" class="headerlink" title="最早时期"></a>最早时期</h2><p>​    1990年 HTML 标记性语言的出现代表开启了 web 时代，从 web 时代开始 B/S架构 就不断的蚕食 C/S 架构，但是<strong>这个时期的浏览器页面非常差，只有简单的静态页面</strong>。</p>
+<h2 id="C-S-客户机-服务器架构"><a href="#C-S-客户机-服务器架构" class="headerlink" title="C/S 客户机/服务器架构"></a>C/S 客户机/服务器架构</h2><ul>
+<li>特点<ul>
+<li>客户端软件都会有一个本地数据库，所有的页面渲染和业务逻辑的处理都由客户端来完成（由于所有的内容几乎都下载到本地了，所以<strong>大部分功能都是由本地客户端完成</strong>，只需要网络交换极少数重要数据)。</li>
+</ul>
+</li>
+<li>优点<ul>
+<li>网络占用较少，较为安全，用户体验度较高，功能丰富。</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>对客<strong>户端要求较高</strong>，并且每次更新的时候要<strong>客户端进行手动更新</strong>，不同的操作系统无法兼容，<strong>可移植性较差</strong>。</li>
+</ul>
+</li>
+</ul>
+    
+    <a class="article-more-a" href="/2021/12/20/2021.12.20%20%20javaWeb/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaWeb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/12/20/2021.12.20%20%20javaWeb/">展开全文 >></a>
     </p>
     
 
@@ -1104,7 +1200,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1116,7 +1212,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 方宁
+    		&copy; 2020-2022 方宁
     	</div>
       	<div class="footer-right">
 			
@@ -1259,11 +1355,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">C/C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">C/C++</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1272,6 +1372,26 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SQLServer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">javaWeb</a>
               </li>
              
               <li class="article-tag-list-item">
